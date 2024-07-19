@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <title>Document</title>
+    <title>TV Desa Batu</title>
 </head>
 
 <body>
@@ -44,6 +44,25 @@
             </div>
         </div>
     </section>
+
+    <!-- Primary Banner -->
+    <div class="banner">
+        <img src="{{asset('images/banner.png')}}" alt="">
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="column primary-column">
+            <p><span class="low-highlight">Berita Terbaru &nbsp; &nbsp;</span></p>
+            <div class="news">
+                <img src="{{asset('images/slide1.png')}}" alt="">
+            </div>
+        </div>
+
+        <div class="column secondary-column">
+            <h2>Testing</h2>
+        </div>
+    </div>
 
     <script src="{{asset('js/script.js')}}"></script>
 </body>
