@@ -1,0 +1,53 @@
+/* Responsive Adjustment Carousel */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .slider-wrapper {
+    max-width: 100%;
+  }
+
+  .slider-nav {
+    bottom: 0.5rem;
+  }
+}
+
+/* Responsive Adjustments  Content*/
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .primary-column,
+  .secondary-column {
+    flex: 0 0 100%;
+  }
+
+  .primary-column p {
+    font-size: 2rem; /* Smaller font size for smaller screens */
+  }
+
+  .hamburger-icon {
+    height: 1.25rem;
+    width: 1.5rem;
+  }
+
+  .hamburger-icon span {
+    height: 0.1rem;
+  }
+
+  .menu-text {
+    font-size: 0.875rem;
+  }
+
+  .menu-links a {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .primary-column p {
+    font-size: 1.5rem; 
+  }
+}
