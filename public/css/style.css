@@ -100,3 +100,49 @@ body {
 .hamburger-icon span:last-child {
   transform: none;
 }
+
+
+.news-card2 {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  width: 600px;
+  margin: 20px;
+}
+
+.news-card2-image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.news-card-content2 {
+  padding: 15px;
+  width: 50%;
+}
+
+.kategori {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0 0 10px 0;
+}
+
+.news-card-title2 {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.news-card-description2 {
+  font-size: 0.9em;
+  margin: 10px 0;
+  color: #666;
+}
+
+.news-footer2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
