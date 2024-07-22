@@ -29,7 +29,6 @@
             </div>
         </div>
     </nav>
-    <script src="{{asset('js/script.js')}}"></script>
     <div class="page-title">Berita Popular</div>
     <div class="container">
         <div class="column column-left">
@@ -133,5 +132,7 @@
             </div>
         </div>
     </div>
+    <script src="{{asset('js/script.js')}}"></script>
+</body>
 
 </html>

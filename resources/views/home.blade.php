@@ -22,10 +22,10 @@
             </div>
             <span class="menu-text" onclick="toggleMenu()">Menu</span>
             <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a href="/" onclick="toggleMenu()">Beranda</a></li>
+                <li><a href="/berita" onclick="toggleMenu()">Berita</a></li>
+                <li><a href="/galeri" onclick="toggleMenu()">Galeri</a></li>
+                <li><a href="/tautan" onclick="toggleMenu()">Tautan</a></li>
             </div>
         </div>
     </nav>
