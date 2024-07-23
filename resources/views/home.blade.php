@@ -45,12 +45,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Primary Banner -->
-    <div class="banner">
-        <img src="{{asset('images/banner.png')}}" alt="">
-    </div>
-
     <!-- Content -->
     <div class="content">
         <div class="column primary-column">
@@ -59,9 +53,6 @@
                 <img src="{{asset('images/slide1.png')}}" alt="">
                 <h2>Tim Volly Desa Pesanggrahan Lolos ke Babak Semi Final Kapolres Cup 2023</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.</p>
-            </div>
-            <div class="banner">
-                <img src="{{asset('images/banner.png')}}" alt="">
             </div>
             <p><span class="low-highlight">Live Stream Terbaru &nbsp; &nbsp;</span></p>
             <div class="iframe-container">
@@ -75,7 +66,7 @@
                 <p><span class="low-highlight">TV Desa Kota Batu &nbsp; &nbsp;</span></p>
                 <div class="container">
                     <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Desa Pesanggrahan</p>
+                    <p>TV Desa Oro-Oro Ombo</p>
                 </div>
                 <div class="container">
                     <img src="{{ asset('images/logo tvd.png') }}" alt="">
@@ -83,19 +74,91 @@
                 </div>
                 <div class="container">
                     <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Desa Pesanggrahan</p>
+                    <p>TV Desa Sidomulyo</p>
                 </div>
                 <div class="container">
                     <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Desa Pesanggrahan</p>
+                    <p>TV Desa Sumberjo</p>
                 </div>
                 <div class="container">
                     <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Desa Pesanggrahan</p>
+                    <p>TV Desa Bulukerto</p>
                 </div>
                 <div class="container">
                     <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Desa Pesanggrahan</p>
+                    <p>TV Desa Bumiaji</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Giripurno</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Gunungsari</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Pandanrejo</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Punten</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Sumber Brantas</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Sumbergondo</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Tulungrejo</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Beji</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Junrejo</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Mojorejo</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Pendem</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Tlekung</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Torongrejo</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Ngaglik</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Sisir</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Songgokerto</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Temas</p>
+                </div>
+                <div class="container">
+                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
+                    <p>TV Desa Dadaprejo</p>
                 </div>
             </div>
         </div>
