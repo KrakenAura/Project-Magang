@@ -162,27 +162,28 @@
         <hr>
     </div>
     </div>
+    <footer>
+        <div class="column left-column">
+            <div class="left-card">
+                <h3>Komunitas Informasi Masyarakat Kota Batu</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
+            </div>
+        </div>
+        <div class="column center-column">
+            <div class="mid-card">
+                <h3>Another Section</h3>
+                <p>Additional content for the center column. You can put any information or links here.</p>
+            </div>
+        </div>
+        <div class="column right-column">
+            <div class="right-card">
+                <h3>Contact Information</h3>
+                <p>Address: 1234 Street Name, City, Country. Phone: (123) 456-7890. Email: info@example.com.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
-<footer>
-    <div class="column left-column">
-        <div class="left-card">
-            <h3>Komunitas Informasi Masyarakat Kota Batu</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        </div>
-    </div>
-    <div class="column center-column">
-        <div class="mid-card">
-            <h3>Another Section</h3>
-            <p>Additional content for the center column. You can put any information or links here.</p>
-        </div>
-    </div>
-    <div class="column right-column">
-        <div class="right-card">
-            <h3>Contact Information</h3>
-            <p>Address: 1234 Street Name, City, Country. Phone: (123) 456-7890. Email: info@example.com.</p>
-        </div>
-    </div>
-</footer>
 
 </html>
