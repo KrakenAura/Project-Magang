@@ -98,11 +98,6 @@
                     <p>TV Desa Pesanggrahan</p>
                 </div>
             </div>
-
-            <!-- Secondary Banner -->
-            <div class="sec-banner">
-                <img src="{{asset('images/image 4.png')}}" alt="">
-            </div>
         </div>
     </div>
 
