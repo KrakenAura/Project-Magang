@@ -29,7 +29,6 @@
             </div>
         </div>
     </nav>
-    <script src="{{asset('js/script.js')}}"></script>
     <div class="page-title">Berita Popular</div>
     <div class="container">
         <div class="column column-left">
@@ -90,13 +89,13 @@
                     </div>
                     <div class="article">
                         <h4>Title</h4>
+                        <div class="post-date">
+                            <p>12th .July, 2024</p>
+                        </div>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
                     </div>
                     <div class="news-view">
                         <a href="#" class="button">Selengkapnya</a>
-                    </div>
-                    <div class="post-date">
-                        <p>12th .July, 2024</p>
                     </div>
                 </div>
                 <div class="card">
@@ -105,13 +104,13 @@
                     </div>
                     <div class="article">
                         <h4>Title</h4>
+                        <div class="post-date">
+                            <p>12th .July, 2024</p>
+                        </div>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
                     </div>
                     <div class="news-view">
                         <a href="#" class="button">Selengkapnya</a>
-                    </div>
-                    <div class="post-date">
-                        <p>12th .July, 2024</p>
                     </div>
                 </div>
                 <div class="card">
@@ -120,18 +119,20 @@
                     </div>
                     <div class="article">
                         <h4>Title</h4>
+                        <div class="post-date">
+                            <p>12th .July, 2024</p>
+                        </div>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
                     </div>
                     <div class="news-view">
                         <a href="" class="button">Selengkapnya</a>
 
                     </div>
-                    <div class="post-date">
-                        <p>12th .July, 2024</p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="{{asset('js/script.js')}}"></script>
+</body>
 
 </html>
