@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/aboutus.css')}}">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{asset('css/download.css')}}">
+    <title>Download</title>
 </head>
 
 <body>
+
     <nav id="hamburger-nav">
         <img class="logo" src="{{ asset('images/logo tvd.png') }}" alt="">
         <div class="hamburger-menu">
@@ -29,13 +30,47 @@
     </nav>
 
     <div class="container">
-        <h1>Tentang Kami</h1>
-        <div class="section">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
-            </p>
-        </div>
+        <h1>Download</h1>
     </div>
+    <div class="download-table">
+        <table>
 
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th class="download-button">Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                    <td>Row 1, Cell 3</td>
+                    <td class="download-button">
+                        <button>Download</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                    <td>Row 1, Cell 3</td>
+                    <td class="download-button">
+                        <button>Download</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                    <td>Row 1, Cell 3</td>
+                    <td class="download-button">
+                        <button>Download</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <footer>
         <div class="column left-column">
             <div class="left-card">
@@ -56,7 +91,6 @@
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>
