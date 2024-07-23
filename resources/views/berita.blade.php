@@ -88,10 +88,11 @@
                         <img src="{{asset('images/news 1.png')}}">
                     </div>
                     <div class="article">
-                        <h4>Title</h4>
-                        <div class="post-date">
-                            <p>12th .July, 2024</p>
+                        <div class="metadata">
+                            <h5>admin</h5>
+                            <h5>12th July, 2024 </h5>
                         </div>
+                        <h4>Title</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
                     </div>
                     <div class="news-view">
@@ -103,10 +104,11 @@
                         <img src="{{asset('images/news 1.png')}}">
                     </div>
                     <div class="article">
-                        <h4>Title</h4>
-                        <div class="post-date">
-                            <p>12th .July, 2024</p>
+                        <div class="metadata">
+                            <h5>admin</h5>
+                            <h5>12th July, 2024 </h5>
                         </div>
+                        <h4>Title</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
                     </div>
                     <div class="news-view">
@@ -118,10 +120,11 @@
                         <img src="{{asset('images/news 1.png')}}">
                     </div>
                     <div class="article">
-                        <h4>Title</h4>
-                        <div class="post-date">
-                            <p>12th .July, 2024</p>
+                        <div class="metadata">
+                            <h5>admin</h5>
+                            <h5>12th July, 2024 </h5>
                         </div>
+                        <h4>Title</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
                     </div>
                     <div class="news-view">
@@ -131,7 +134,87 @@
                 </div>
             </div>
         </div>
+        <div class="news-section">
+
+        </div>
+        <div class="section-content news">
+            <div class="cards">
+                <div class="card">
+                    <div class="image-section">
+                        <img src="{{asset('images/news 1.png')}}">
+                    </div>
+                    <div class="article">
+                        <div class="metadata">
+                            <h5>admin</h5>
+                            <h5>12th July, 2024 </h5>
+                        </div>
+                        <h4>Title</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
+                    </div>
+                    <div class="news-view">
+                        <a href="#" class="button">Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-section">
+                        <img src="{{asset('images/news 1.png')}}">
+                    </div>
+                    <div class="article">
+                        <div class="metadata">
+                            <h5>admin</h5>
+                            <h5>12th July, 2024 </h5>
+                        </div>
+                        <h4>Title</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
+                    </div>
+                    <div class="news-view">
+                        <a href="#" class="button">Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-section">
+                        <img src="{{asset('images/news 1.png')}}">
+                    </div>
+                    <div class="article">
+                        <div class="metadata">
+                            <h5>admin</h5>
+                            <h5>12th July, 2024 </h5>
+                        </div>
+                        <h4>Title</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
+                    </div>
+                    <div class="news-view">
+                        <a href="" class="button">Selengkapnya</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news-section">
+
+        </div>
     </div>
+
+    <footer>
+        <div class="column left-column">
+            <div class="left-card">
+                <h3>Komunitas Informasi Masyarakat Kota Batu</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
+            </div>
+        </div>
+        <div class="column center-column">
+            <div class="mid-card">
+                <h3>Another Section</h3>
+                <p>Additional content for the center column. You can put any information or links here.</p>
+            </div>
+        </div>
+        <div class="column right-column">
+            <div class="right-card">
+                <h3>Contact Information</h3>
+                <p>Address: 1234 Street Name, City, Country. Phone: (123) 456-7890. Email: info@example.com.</p>
+            </div>
+        </div>
+    </footer>
     <script src="{{asset('js/script.js')}}"></script>
 </body>
 

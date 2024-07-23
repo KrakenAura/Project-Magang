@@ -185,7 +185,10 @@ ul {
   border-color: white;
 }
 
-.news-section .section-content .cards .card .post-date {
+.news-section .section-content .cards .card .metadata{
   color: white;
-  padding: 6px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
+
