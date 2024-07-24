@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Document</title>
 </head>
@@ -23,13 +25,14 @@
             </form>
         </div>
         <div class="form-container sign-in-container" id="loginForm">
-            <form action="#">
+            <form id="login-form" action="/visitor/login" method="POST">
                 <h1>Sign in</h1>
                 <input type="email" placeholder="Email" id="email" name="email" required />
                 <input type="password" placeholder="Password" id="password" name="password" required />
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
+
         </div>
         <div class="overlay-container">
             <div class="overlay">
