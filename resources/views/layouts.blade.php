@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Homepage')</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     @yield('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <title>TV Desa Batu</title>
 </head>
 
@@ -26,6 +29,20 @@
                 <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <!-- Conditional display for authentication status -->
+                @if(Auth::check())
+                <li>
+                    <span>Hi, {{ Auth::user()->name }}</span>
+                </li>
+                <li>
+                    <a href="{{ route('visitor.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                </li>
+                <form id="logout-form" action="{{ route('visitor.logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                @else
+                <li><a href="{{ route('login') }}">Login</a></li>
+                @endif
             </div>
         </div>
     </nav>
@@ -53,7 +70,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="{{ asset('js/auth.js') }}" defer></script>
     <script src=" {{asset('js/script.js')}}"></script>
 </body>
 
