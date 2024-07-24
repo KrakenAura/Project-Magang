@@ -16,17 +16,17 @@
             <form action="#">
                 <h1>Sign up</h1>
                 <span>use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="text" placeholder="Name" id="name" name="name" />
+                <input type="email" placeholder="Email" id="email-regis" name="email-regis" required />
+                <input type="password" placeholder="Password" id="password-regis" name="password-regis" required />
                 <button>Sign Up</button>
             </form>
         </div>
-        <div class="form-container sign-in-container">
+        <div class="form-container sign-in-container" id="loginForm">
             <form action="#">
                 <h1>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="email" placeholder="Email" id="email" name="email" required />
+                <input type="password" placeholder="Password" id="password" name="password" required />
                 <a href="#">Forgot your password?</a>
                 <button>Sign In</button>
             </form>
