@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
@@ -10,3 +11,6 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{id}', [BeritaController::class, 'show']);
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout'])->middleware(['auth:sanctum']);
