@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Homepage')</title>
-    @yield('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/Bighome.css')}}">
-    <link rel="stylesheet" href="{{asset('css/Smallhome.css')}}">
+    @yield('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>TV Desa Batu</title>
 </head>
@@ -31,3 +29,32 @@
             </div>
         </div>
     </nav>
+
+
+    @yield('content')
+
+    <footer>
+        <div class="column left-column">
+            <div class="left-card">
+                <h3>Komunitas Informasi Masyarakat Kota Batu</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
+            </div>
+        </div>
+        <div class="column center-column">
+            <div class="mid-card">
+                <h3>Another Section</h3>
+                <p>Additional content for the center column. You can put any information or links here.</p>
+            </div>
+        </div>
+        <div class="column right-column">
+            <div class="right-card">
+                <h3>Contact Information</h3>
+                <p>Address: 1234 Street Name, City, Country. Phone: (123) 456-7890. Email: info@example.com.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src=" {{asset('js/script.js')}}"></script>
+</body>
+
+</html>
