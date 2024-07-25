@@ -6,7 +6,6 @@
     <title>@yield('title', 'Homepage')</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     @yield('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
@@ -29,7 +28,6 @@
                 <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                <!-- Conditional display for authentication status -->
                 @if(Auth::check())
                 <li>
                     <span>Hi, {{ Auth::user()->name }}</span>
@@ -46,14 +44,12 @@
             </div>
         </div>
     </nav>
-
-
     @yield('content')
 
     <footer>
         <div class="column left-column">
             <div class="left-card">
-                <h3>Komunitas Informasi Masyarakat Kota Batu</h3>
+                <h3>TV Desa Kota Batu</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
             </div>
         </div>
