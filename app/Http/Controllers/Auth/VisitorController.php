@@ -50,6 +50,7 @@ class VisitorController extends \App\Http\Controllers\Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return response()->json(['message' => 'Visitor logged out successfully.'], 200);
+        return
+            redirect('/');
     }
 }

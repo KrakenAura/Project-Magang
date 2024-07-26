@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-
+use \Illuminate\Support\Facades\Log;
 
 class AdminController extends \App\Http\Controllers\Controller
 {
@@ -15,7 +15,7 @@ class AdminController extends \App\Http\Controllers\Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8',
         ]);
 
         $user = User::create([
@@ -32,18 +32,25 @@ class AdminController extends \App\Http\Controllers\Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
+        try {
+            $credentials = $request->validate([
+                'email' => 'required|string|email',
+                'password' => 'required|string',
+            ]);
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'admin'])) {
-            $request->session()->regenerate();
-            return response()->json(['message' => 'Admin logged in successfully.'], 200);
+            if (Auth::attempt(array_merge($credentials, ['role' => 'admin']))) {
+                $request->session()->regenerate();
+
+                return response()->json(['message' => 'Admin logged in successfully.'], 200);
+            }
+
+            return response()->json(['message' => 'Invalid credentials.'], 401);
+        } catch (\Exception $e) {
+            Log::error('Admin login error: ' . $e->getMessage());
+            return response()->json(['message' => 'An error occurred during login.', 'error' => $e->getMessage()], 500);
         }
-
-        return response()->json(['message' => 'Invalid credentials.'], 401);
     }
+
     public function logout(Request $request)
     {
         Auth::logout();
@@ -51,5 +58,14 @@ class AdminController extends \App\Http\Controllers\Controller
         $request->session()->regenerateToken();
 
         return response()->json(['message' => 'Admin logged out successfully.'], 200);
+    }
+
+    public function dashboard()
+    {
+        if (!Auth::guard('web')->check()) {
+            return redirect()->route('adminlogin');
+        }
+
+        return view('admin');
     }
 }

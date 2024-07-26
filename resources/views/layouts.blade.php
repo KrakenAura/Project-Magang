@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Homepage')</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <script src="https://unpkg.com/feather-icons"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('css')
@@ -25,10 +26,6 @@
             </div>
             <span class="menu-text" onclick="toggleMenu()">Menu</span>
             <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                 <!-- Conditional display for authentication status -->
                 @if(Auth::check())
                 <li>
@@ -41,8 +38,13 @@
                     @csrf
                 </form>
                 @else
-                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('login') }}" data-feather="log-in">Login</a></li>
                 @endif
+                <li><a href="/berita" onclick="toggleMenu()">Berita</a></li>
+                <li><a href="/galeri" onclick="toggleMenu()">Galeri</a></li>
+                <li><a href="/tentang-kami" onclick="toggleMenu()">Tentang Kami</a></li>
+                <li><a href="/tautan" onclick="toggleMenu()">Tautan</a></li>
+                <li><a href="/download" onclick="toggleMenu()">Download</a></li>
             </div>
         </div>
     </nav>
@@ -70,6 +72,9 @@
             </div>
         </div>
     </footer>
+    <script>
+        feather.replace();
+    </script>
     <script src="{{ asset('js/auth.js') }}" defer></script>
     <script src=" {{asset('js/script.js')}}"></script>
 </body>
