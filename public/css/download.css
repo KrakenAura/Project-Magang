@@ -1,5 +1,4 @@
 
-
 table {
     padding: 100px;
     width: 100%;
@@ -43,7 +42,7 @@ th {
     padding: 100px;
 }
 
-.container {
+.page-title {
     color: white;
     display: flex;
     justify-content: center;

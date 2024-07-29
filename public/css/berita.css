@@ -1,29 +1,18 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  font-family: poppins;
   box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
 }
 
 .page-title {
   color: white;
   font-size: 4rem;
-  margin-left: 7rem;
+  margin-bottom: 2rem;
+  margin-left: 8rem;
 }
 
 /*News1*/
 .container {
   display: flex;
   flex-direction: row;
-  padding: 2rem;
   gap: 1rem;
 }
 

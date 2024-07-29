@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
 }
 .section {
     font-size: 32px;
@@ -20,4 +19,17 @@ h1 {
     font-size: 64px;
     color: white;
 
+}
+.struktur{
+    color: white;
+    display: flex;
+    justify-content:space-between;
+}
+
+.struktur p{
+    font-size: 64px;
+    font-weight: bold;
+    padding: 10%;
+    justify-content: center;
+    text-align: justify;
 }
