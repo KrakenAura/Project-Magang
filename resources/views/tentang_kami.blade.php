@@ -15,7 +15,8 @@
 </div>
 
 <div class="struktur">
-
+    <p>Struktur</p>
+    <img src="{{asset('images/struktur.png')}}" alt="">
 </div>
 
 @endsection

@@ -27,7 +27,6 @@
             </div>
             <span class="menu-text" onclick="toggleMenu()">Menu</span>
             <div class="menu-links">
-                <!-- Conditional display for authentication status -->
     <li><a href="/berita" onclick="toggleMenu()">Berita</a></li>
     <li><a href="/galeri" onclick="toggleMenu()">Galeri</a></li>
     <li><a href="/tentang-kami" onclick="toggleMenu()">Tentang Kami</a></li>
@@ -72,7 +71,6 @@
                         <div class="nav__link">
                             Informasi <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
-
                         <ul class="dropdown__menu">
                             <li>
                                 <a href="#" class="dropdown__link">
@@ -125,6 +123,7 @@
                             </li>
                         </ul>
                     </li>
+                    <li><a href="#" class="nav__link">Login</a></li>
 
                 </ul>
             </div>

@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <h1>Download</h1>
+<div class="page-title">
+    <h1>Library</h1>
 </div>
 <div class="download-table">
     <table>

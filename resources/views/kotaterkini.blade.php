@@ -6,7 +6,8 @@
 @endsection
 
 @section('content')
-<div class="page-title">Berita Popular</div>
+
+<div class="page-title">Kota Terkini</div>
 <div class="container">
     <div class="column column-left">
         <div class="news-card1">
@@ -56,9 +57,6 @@
 
 <div class="news-section">
     <div class="section-content news">
-        <div class="title">
-            <h2>Berita Terbaru</h2>
-        </div>
         <div class="cards">
             <div class="card">
                 <div class="image-section">
