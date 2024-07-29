@@ -1,0 +1,58 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.content {
+  display: flex;
+  margin: 3rem;
+}
+
+h1 {
+  margin: 5rem;
+  color: white;
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.card h2,
+p {
+  color: rgb(20, 20, 20);
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: #ffffff;
+  height: 7.75rem;
+  width: 100%;
+}
+
+.left-content {
+  flex: 0 0 60%;
+  justify-content: center;
+  text-align: start;
+  margin-right: 1rem;
+}
+
+.right-content {
+  flex: 0 0 35%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  background-color: #081f37;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle i {
+  font-size: 48px;
+  color: #2e79ba;
+}

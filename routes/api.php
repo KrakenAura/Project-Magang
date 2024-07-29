@@ -24,11 +24,12 @@ Route::get('/berita/{id}', [BeritaController::class, 'show']);
 
 // Visitor routes
 Route::middleware(['web'])->group(function () {
+    // Visitor Routes
     Route::post('/visitor/login', [VisitorController::class, 'login'])->name('visitor.login');
     Route::post('/visitor/register', [VisitorController::class, 'register'])->name('visitor.register');
     Route::post('/visitor/logout', [VisitorController::class, 'logout'])->name('visitor.logout');
-    // Admin routes
 
+    // Admin routes
     Route::post('/admin/login', [AdminController::class, 'login'])->name('api.admin.login');
     Route::post('/admin/register', [AdminController::class, 'register'])->name('api.admin.register');
     Route::post('/admin/logout', [AdminController::class, 'logout'])->name('api.admin.logout');

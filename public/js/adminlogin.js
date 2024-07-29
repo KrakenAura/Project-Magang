@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
           const data = await response.json();
           alert("Login successful!");
-          window.location.href = "/admin/dashboard"; // Redirect to home page
+          window.location.href = "admin/dashboard";
         } else {
           const errorData = await response.json();
           alert("Login failed: " + errorData.message);

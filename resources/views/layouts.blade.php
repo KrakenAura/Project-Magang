@@ -27,7 +27,7 @@
             </div>
             <span class="menu-text" onclick="toggleMenu()">Menu</span>
             <div class="menu-links">
-                <!-- Conditional display for authentication status -->
+
     <li><a href="/berita" onclick="toggleMenu()">Berita</a></li>
     <li><a href="/galeri" onclick="toggleMenu()">Galeri</a></li>
     <li><a href="/tentang-kami" onclick="toggleMenu()">Tentang Kami</a></li>
