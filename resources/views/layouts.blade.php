@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Homepage')</title>
+    <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('css')
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <title>TV Desa Batu</title>
@@ -14,7 +16,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav id="hamburger-nav">
+    <!-- <nav id="hamburger-nav">
         <img class="logo" src="{{ asset('images/logo tvd.png') }}" alt="">
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
@@ -24,10 +26,11 @@
             </div>
             <span class="menu-text" onclick="toggleMenu()">Menu</span>
             <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a href="/berita" onclick="toggleMenu()">Berita</a></li>
+                <li><a href="/galeri" onclick="toggleMenu()">Galeri</a></li>
+                <li><a href="/tentang-kami" onclick="toggleMenu()">Tentang Kami</a></li>
+                <li><a href="/tautan" onclick="toggleMenu()">Tautan</a></li>
+                <li><a href="/download" onclick="toggleMenu()">Download</a></li>
                 @if(Auth::check())
                 <li>
                     <span>Hi, {{ Auth::user()->name }}</span>
@@ -43,7 +46,83 @@
                 @endif
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <img class="logo" src="{{ asset('images/logo tvd.png') }}" alt="Logo">
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Informasi <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-building-2-line"></i>Kota Terkini
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="dropdown__link"><i class="ri-earth-line"></i> Layanan Publik
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link"><i class="ri-government-line"></i>Kabar BalaiKota
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link"><i class="ri-group-line"></i>Citizen Journalist
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" class="nav__link">Library</a></li>
+
+
+                    <li><a href="#" class="nav__link">Warga Bicara</a></li>
+                    <li><a href="#" class="nav__link">Contact</a></li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Tentang Kami <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-user-line"></i> Profil
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-lock-line"></i> Gallery
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-message-3-line"></i> Program TV Desa
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
     @yield('content')
 
     <footer>
@@ -66,6 +145,7 @@
             </div>
         </div>
     </footer>
+    <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/auth.js') }}" defer></script>
     <script src=" {{asset('js/script.js')}}"></script>
 </body>

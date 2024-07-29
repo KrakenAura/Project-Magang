@@ -1,11 +1,6 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-.container {
+.aboutus {
     height: 100vh;
-    background: linear-gradient(to bottom, #161618 30%, #081F37 70%); /* Warna latar belakang berbeda di atas dan bawah */
+    background: linear-gradient(to bottom, #161618 30%, #081F37 70%);
     display: flex;
     flex-direction: column;
     justify-content: center;

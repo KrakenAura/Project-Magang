@@ -192,25 +192,7 @@
 
 
         </div>
-        <div class="chat-container">
-            <div class="chat-header">
-                <h2>Live Chat</h2>
-            </div>
-            <div class="chat-box">
-                <div class="message received">
-                    <p>Hello! How can I help you today?</p>
-                    <span class="time">10:00 AM</span>
-                </div>
-                <div class="message sent">
-                    <p>Hi, I have a question about your services.</p>
-                    <span class="time">10:02 AM</span>
-                </div>
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Type your message...">
-                <button>Send</button>
-            </div>
-        </div>
+
     </div>
 </div>
 @endsection
