@@ -5,6 +5,10 @@ body {
   font-family: "Inria Sans", sans-serif;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* Hamburger Nav */
 /* #hamburger-nav {
   display: flex;
@@ -203,7 +207,6 @@ footer .card p {
     transform: rotate(-45deg) translate(0.28125rem, -0.140625rem);
   }
 }
-
 
 .news-card2 {
   background-color: #fff;
