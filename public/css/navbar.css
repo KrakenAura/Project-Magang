@@ -283,7 +283,7 @@ a {
     column-gap: 3rem;
   }
   .nav__link {
-    height: 100%;
+    height: 70%;
     padding: 0;
     justify-content: initial;
     column-gap: 0.25rem;
@@ -327,7 +327,7 @@ a {
   /* Show dropdown menu */
   .dropdown__item:hover .dropdown__menu {
     opacity: 1;
-    top: 5.5rem;
+    top: 4rem;
     pointer-events: initial;
     transition: top 0.3s;
   }

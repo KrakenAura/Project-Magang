@@ -22,14 +22,12 @@ h1 {
 }
 .struktur{
     color: white;
-    display: flex;
-    justify-content:space-between;
+    justify-content: center;
+    text-align: center;
 }
 
 .struktur p{
     font-size: 64px;
     font-weight: bold;
-    padding: 10%;
-    justify-content: center;
-    text-align: justify;
+    margin-bottom: 4rem;
 }

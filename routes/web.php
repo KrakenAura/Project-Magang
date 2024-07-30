@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminController;
 
 Route::get('/', function () {
-    return view('home0');
+    return view('pengaduan');
 })->name('home');
 Route::get('/kota-terkini', function () {
     return view('kotaterkini');
