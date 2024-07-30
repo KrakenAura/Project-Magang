@@ -7,7 +7,9 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\OutlookController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -33,6 +35,19 @@ Route::post('/galery/create', [GaleryController::class, 'store']);
 Route::put('/galery/update/{id}', [GaleryController::class, 'update']);
 Route::delete('/galery/delete/{id}', [GaleryController::class, 'destroy']);
 
+//Outlook
+Route::get('/outlook', [OutlookController::class, 'index']);
+Route::get('/outlook/{id}', [OutlookController::class, 'show']);
+Route::post('/outlook/create', [OutlookController::class, 'store']);
+Route::put('/outlook/update/{id}', [OutlookController::class, 'update']);
+Route::delete('/outlook/delete/{id}', [OutlookController::class, 'destroy']);
+
+//Complaints
+Route::get('/complaint', [ComplaintController::class, 'index']);
+Route::get('/complaint/{id}', [ComplaintController::class, 'show']);
+Route::post('/complaint/create', [ComplaintController::class, 'store']);
+Route::put('/complaint/update/{id}', [ComplaintController::class, 'update']);
+Route::delete('/complaint/delete/{id}', [ComplaintController::class, 'destroy']);
 
 
 // Visitor routes
