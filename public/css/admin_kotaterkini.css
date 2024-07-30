@@ -1,3 +1,4 @@
+
 .kota-terkini {
     padding: 20px;
 }
@@ -5,8 +6,9 @@
 .berita-baru {
     margin-top: 20px;
     padding: 1rem;
-    box-shadow: 1px 1px 1px 1px grey;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    background-color: #fff;
 }
 
 .list-berita {
@@ -15,66 +17,103 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
 }
+
 .berita-item {
     display: flex;
-    margin-bottom: 20px;
     width: 100%;
 }
 
 .berita-image {
     width: 150px;
-    height: 100%;
+    height: auto;
     margin-right: 20px;
+    border-radius: 5px;
 }
 
 .berita-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex-grow: 1;
 }
 
-.berita-content h3{
+.berita-content h3 {
     font-size: 21px;
+    margin: 0;
 }
+
 .berita-text {
     flex-grow: 1;
 }
 
 .berita-date {
     margin-top: auto;
+    color: #777;
+    font-size: 14px;
+}
+
+.berita-actions .btn {
+    margin-top: 10px;
 }
 
 .btn {
-    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-primary:hover, .btn-danger:hover, .btn-success:hover {
+    opacity: 0.9;
 }
 
 ::-webkit-scrollbar {
     width: 7px;
 }
-  
+
 ::-webkit-scrollbar-track {
+    background: #f0f0f0;
     border-radius: 10px;
 }
-  
-  /* Handle */
+
 ::-webkit-scrollbar-thumb {
     background: grey;
     border-radius: 10px;
 }
-.card-body{
-    
+
+.card-body {
+    padding: 20px;
 }
 
-.product-info .comment-on{
+.product-info .comment-on {
     margin-left: 20px;
-    align-items: end;
+    align-items: flex-end;
 }
 
-.comment-section{
-
+.comment-section {
     height: 400px;
     overflow-y: scroll;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
-

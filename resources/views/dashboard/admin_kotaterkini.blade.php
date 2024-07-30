@@ -12,70 +12,22 @@
             <h2>Berita Terbaru</h2>
             <div class="list-berita">
                 <div class="berita-item">
-                    <img src="{{ asset('images/news 1.png') }}" alt="News Title 1" class="berita-image">
+                    <div class="change-img">
+                        <img src="{{ asset('images/news 1.png') }}" alt="News Title 1" class="berita-image">
+                    </div>
                     <div class="berita-content">
                         <h3>TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</h3>
                         <div class="berita-text">
+                            <!-- Berita text goes here -->
                         </div>
-                        <p class="berita-date">. 12th July, 2024</p>
+                        <p class="berita-date">12th July, 2024</p>
                         <div class="berita-actions">
-                            <button class="btn btn-primary  ">Edit</button>
+                            <button class="btn btn-primary">Edit</button>
                             <button class="btn btn-danger">Delete</button>
                         </div>
                     </div>
                 </div>
-                <div class="berita-item">
-                    <img src="{{ asset('images/news 1.png') }}" alt="News Title 1" class="berita-image">
-                    <div class="berita-content">
-                        <h3>TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</h3>
-                        <div class="berita-text">
-                        </div>
-                        <p class="berita-date">. 12th July, 2024</p>
-                        <div class="berita-actions">
-                            <button class="btn btn-primary  ">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="berita-item">
-                    <img src="{{ asset('images/news 1.png') }}" alt="News Title 1" class="berita-image">
-                    <div class="berita-content">
-                        <h3>TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</h3>
-                        <div class="berita-text">
-                        </div>
-                        <p class="berita-date">. 12th July, 2024</p>
-                        <div class="berita-actions">
-                            <button class="btn btn-primary  ">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="berita-item">
-                    <img src="{{ asset('images/news 1.png') }}" alt="News Title 1" class="berita-image">
-                    <div class="berita-content">
-                        <h3>TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</h3>
-                        <div class="berita-text">
-                        </div>
-                        <p class="berita-date">. 12th July, 2024</p>
-                        <div class="berita-actions">
-                            <button class="btn btn-primary  ">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="berita-item">
-                    <img src="{{ asset('images/news 1.png') }}" alt="News Title 1" class="berita-image">
-                    <div class="berita-content">
-                        <h3>TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</h3>
-                        <div class="berita-text">
-                        </div>
-                        <p class="berita-date">. 12th July, 2024</p>
-                        <div class="berita-actions">
-                            <button class="btn btn-primary  ">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <button type="button" class="btn btn-success">+ Tambah Berita</button>
             <button type="button" class="btn btn-primary">Lihat Semua</button>
