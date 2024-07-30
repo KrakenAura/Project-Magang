@@ -53,68 +53,68 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="/admin/beranda" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Beranda</p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="pages/forms/advanced.html" class="nav-link">
+                                <a href="/admin/kotaterkini" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Kota Terkini</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/editors.html" class="nav-link">
+                                <a href="/admin/pelayananpublik" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Pelayanan Publik</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/kabarbalaikota" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Kabar Balai Kota</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/citizenjournalist" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Citizen Journalist</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/profil" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Profil</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/galeri" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Galeri</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/programtvdesa" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Program TV Desa</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/wargabicara" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Warga Bicara</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/library" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Library</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/admin/contactus" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Contact us</p>
                                 </a>

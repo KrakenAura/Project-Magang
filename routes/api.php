@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\GaleryController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -17,9 +18,21 @@ use App\Http\Controllers\BeritaController;
 // });
 
 
-
+//Berita Routes
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{id}', [BeritaController::class, 'show']);
+Route::post('/berita/create', [BeritaController::class, 'store']);
+Route::put('/berita/update/{id}', [BeritaController::class, 'update']);
+Route::delete('/berita/delete/{id}', [BeritaController::class, 'destroy']);
+
+
+//Galery Routes
+Route::get('/galery', [GaleryController::class, 'index']);
+Route::get('/galery/{id}', [GaleryController::class, 'show']);
+Route::post('/galery/create', [GaleryController::class, 'store']);
+Route::put('/galery/update/{id}', [GaleryController::class, 'update']);
+Route::delete('/galery/delete/{id}', [GaleryController::class, 'destroy']);
+
 
 
 // Visitor routes
