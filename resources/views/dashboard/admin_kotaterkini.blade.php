@@ -18,6 +18,10 @@
                         <div class="berita-text">
                         </div>
                         <p class="berita-date">. 12th July, 2024</p>
+                        <div class="berita-actions">
+                            <button class="btn btn-primary  ">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
                 <div class="berita-item">
@@ -27,6 +31,10 @@
                         <div class="berita-text">
                         </div>
                         <p class="berita-date">. 12th July, 2024</p>
+                        <div class="berita-actions">
+                            <button class="btn btn-primary  ">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
                 <div class="berita-item">
@@ -36,6 +44,10 @@
                         <div class="berita-text">
                         </div>
                         <p class="berita-date">. 12th July, 2024</p>
+                        <div class="berita-actions">
+                            <button class="btn btn-primary  ">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
                 <div class="berita-item">
@@ -45,6 +57,10 @@
                         <div class="berita-text">
                         </div>
                         <p class="berita-date">. 12th July, 2024</p>
+                        <div class="berita-actions">
+                            <button class="btn btn-primary  ">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
                 <div class="berita-item">
@@ -54,6 +70,10 @@
                         <div class="berita-text">
                         </div>
                         <p class="berita-date">. 12th July, 2024</p>
+                        <div class="berita-actions">
+                            <button class="btn btn-primary  ">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>

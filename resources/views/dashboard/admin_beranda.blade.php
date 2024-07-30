@@ -10,9 +10,12 @@
         <h1><strong>Halaman Beranda</strong></h1>
 
         <h2>Slideshow</h2>
-        <img src="{{asset('images/news 1.png')}}" alt="">
-        <img src="{{asset('images/news 1.png')}}" alt="">
-        <img src="{{asset('images/news 1.png')}}" alt="">
+        <div class="slideshow-img">
+            <div class="change-img">
+                <img src="{{asset('images/news 1.png')}}" alt="">
+                <button type="button" class="btn btn-info">Info</button>
+            </div>
+        </div>
         <p>Buat Hover trs bikin modal untuk update image</p>
 
         <h2>Link TV Desa</h2>
