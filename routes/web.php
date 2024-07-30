@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminController;
 
 Route::get('/', function () {
-    return view('pengaduan');
+    return view('home0');
 })->name('home');
 Route::get('/kota-terkini', function () {
     return view('kotaterkini');
@@ -53,21 +53,21 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('das
 
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
     Route::get('/beranda', function () {
-        return view('admin_beranda');
+        return view('dashboard/admin_beranda');
     })->name('admin.beranda');
     Route::get('/kotaterkini', function () {
-        return view('kotaterkini');
+        return view('dashboard/kotaterkini');
     })->name('admin.kotaterkini');
     Route::get('/pelayananpublik', function () {
-        return view('pelayananpublik');
+        return view('dashboard/pelayananpublik');
     })->name('admin.pelayananpublik');
     Route::get('/kabarbalaikota', function () {
-        return view('kabarbalaikota');
+        return view('dashboard/kabarbalaikota');
     })->name('admin.kabarbalaikota');
     Route::get('/citizenjournalist', function () {
-        return view('citizenjournalist');
+        return view('dashboard/citizenjournalist');
     })->name('admin.citizenjournalist');
     Route::get('/galeri', function () {
-        return view('galeri');
+        return view('dashboard/galeri');
     })->name('admin.galeri');
 });
