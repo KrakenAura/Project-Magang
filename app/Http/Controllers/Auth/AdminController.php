@@ -66,6 +66,6 @@ class AdminController extends \App\Http\Controllers\Controller
             return redirect()->route('adminlogin');
         }
 
-        return view('admin');
+        return view('dashboard/admin');
     }
 }
