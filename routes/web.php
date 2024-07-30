@@ -50,3 +50,24 @@ Route::get('/adminlogin', function () {
 // })->name('dashboard');
 
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+Route::prefix('/admin')->middleware(['admin'])->group(function () {
+    Route::get('/beranda', function () {
+        return view('admin_beranda');
+    })->name('admin.beranda');
+    Route::get('/kotaterkini', function () {
+        return view('kotaterkini');
+    })->name('admin.kotaterkini');
+    Route::get('/pelayananpublik', function () {
+        return view('pelayananpublik');
+    })->name('admin.pelayananpublik');
+    Route::get('/kabarbalaikota', function () {
+        return view('kabarbalaikota');
+    })->name('admin.kabarbalaikota');
+    Route::get('/citizenjournalist', function () {
+        return view('citizenjournalist');
+    })->name('admin.citizenjournalist');
+    Route::get('/galeri', function () {
+        return view('galeri');
+    })->name('admin.galeri');
+});
