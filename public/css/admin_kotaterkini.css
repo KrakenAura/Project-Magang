@@ -117,3 +117,22 @@
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
+
+.all-berita{
+    border: 2px solid #f1f1f1;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.viewall-berita{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comments-list h1{
+    margin-bottom: 10px;
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/admin_logout.css') }}">
     @yield('css')
 </head>
 
@@ -15,12 +16,23 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-dark">
-            <!-- Left navbar links -->
+            <!-- Left navbar links  -->
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+
                 </li>
             </ul>
+            <div class="logout-div">
+
+                <a class="button" href="">
+                    <img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+
+                    <div class="logout">LOGOUT</div>
+
+                </a>
+            </div>
+
 
         </nav>
 
