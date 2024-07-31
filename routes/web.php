@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\GaleryController;
 
 Route::get('/', function () {
     return view('home0');
@@ -11,14 +12,16 @@ Route::get('/', function () {
 
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
 
-Route::get('/kota-terkini', function () {
-    return view('kotaterkini');
-});
+Route::get('/kotaterkini', [BeritaController::class, 'index'])->name('kotaterkini.index');
+Route::get('/galerri', [GaleryController::class, 'index'])->name('galeri.index');
+// Route::get('/kota-terkini', function () {
+//     return view('kotaterkini');
+// });
 Route::get('/layanan-publik', function () {
     return view('layananpublik');
 });
 Route::get('/kerja', function () {
-    return view('dashboard/admin_galeri');
+    return view('kotaterkini');
 });
 Route::get('/kabar-balai-kota', function () {
     return view('kabarbalaikota');
