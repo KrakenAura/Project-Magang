@@ -45,24 +45,25 @@
         </div>
         <!-- Add more gallery items as needed -->
     </div>
+    <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">+ Add New Image</button>
 
     <!--Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Change images</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">images</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Change Description</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter New Description">
+                        <label for="exampleInputEmail1">Enter Description</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Description">
                     </div>
                     <div class="mb-3">
-                        <label for="formFile" class="form-label">Change Image</label>
+                        <label for="formFile" class="form-label">Image</label>
                         <input class="form-control" type="file" id="formFile" name="image" accept="image/*">
                     </div>
 
@@ -74,6 +75,6 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-success">+ Add New Image</button>
+
 </div>
 @endsection
