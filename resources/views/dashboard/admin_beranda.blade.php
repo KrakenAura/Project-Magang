@@ -8,25 +8,122 @@
 <div class="row">
     <div class="col-12">
         <h1><strong>Halaman Beranda</strong></h1>
-
         <h2>Slideshow</h2>
         <div class="slideshow-img">
             <div class="change-img">
                 <img src="{{asset('images/news 1.png')}}" alt="">
-                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-info">Change</button>
+            </div>
+            <div class="change-img">
+                <img src="{{asset('images/news 1.png')}}" alt="">
+                <button type="button" class="btn btn-info">Change</button>
+            </div>
+            <div class="change-img">
+                <img src="{{asset('images/news 1.png')}}" alt="">
+                <button type="button" class="btn btn-info">Change</button>
+            </div>
+            <div class="change-img">
+                <img src="{{asset('images/news 1.png')}}" alt="">
+                <button type="button" class="btn btn-info">Change</button>
+            </div>
+            <div class="change-img">
+                <button type="button" class="btn btn-success">Tambah</button>
             </div>
         </div>
-        <p>Buat Hover trs bikin modal untuk update image</p>
 
         <h2>Link TV Desa</h2>
-        <p>Link 1</p>
-        <p>Link 1</p>
-        <p>Link 1</p>
-        <p>Buat button CRUD, bisa pake tabel , kolom nya logo, nama tv, link, action button (Edit, Delete). nanti dibawah kasih button add new</p>
+        <div class="link-tv">
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Logo</th>
+                            <th>Nama TV</th>
+                            <th>Link</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="{{ asset('images/logo tvd.png') }}" alt="Logo" class="table-logo"></td>
+                            <td>TV Desa 1</td>
+                            <td><a href="#">https://example.com</a></td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/logo tvd.png') }}" alt="Logo" class="table-logo"></td>
+                            <td>TV Desa 2</td>
+                            <td><a href="#">https://example.com</a></td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/logo tvd.png') }}" alt="Logo" class="table-logo"></td>
+                            <td>TV Desa 3</td>
+                            <td><a href="#">https://example.com</a></td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/logo tvd.png') }}" alt="Logo" class="table-logo"></td>
+                            <td>TV Desa 4</td>
+                            <td><a href="#">https://example.com</a></td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/logo tvd.png') }}" alt="Logo" class="table-logo"></td>
+                            <td>TV Desa 4</td>
+                            <td><a href="#">https://example.com</a></td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/logo tvd.png') }}" alt="Logo" class="table-logo"></td>
+                            <td>TV Desa 4</td>
+                            <td><a href="#">https://example.com</a></td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-success">Tambah</button>
+        </div>
 
         <h2>Link Live Streaming</h2>
-        <p>bla bla bla .com</p>
-        <p>Sama kyk link tv desa tpi kolom nya cuma link sama action button (edit)</p>
+        <div class="link-live">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Link</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">https://streaming.com</a></td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-success">Tambah</button>
+        </div>
     </div>
 </div>
 @endsection
