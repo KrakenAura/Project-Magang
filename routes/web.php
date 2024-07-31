@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
     return view('home0');
 })->name('home');
+
+Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
+
 Route::get('/kota-terkini', function () {
     return view('kotaterkini');
 });
@@ -77,3 +81,6 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
         return view('dashboard/galeri');
     })->name('admin.galeri');
 });
+
+Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
+Route::post('/comments/{comment}/reply', [CommentController::class, 'reply'])->middleware('auth')->name('comments.reply');

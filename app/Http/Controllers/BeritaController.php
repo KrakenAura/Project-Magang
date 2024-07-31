@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\BeritaResource;
 use App\Models\Berita;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -20,6 +21,14 @@ class BeritaController extends Controller
         $beritas = Berita::where('category', 'KotaTerkini')->get();
         return view('dashboard.admin_kotaterkini', compact('beritas'));
     }
+
+    public function view_berita($id)
+    {
+        $berita = Berita::findOrFail($id);
+        $comments = Comment::where('news_id', $id)->with('replies')->get();
+        return view('viewberita', compact('berita', 'comments'));
+    }
+
     public function view_edit($id)
     {
         $berita = Berita::findOrFail($id);
