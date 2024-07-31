@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\GaleryController;
 
 Route::get('/', function () {
     return view('home0');
@@ -77,9 +78,9 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
     Route::get('/citizenjournalist', function () {
         return view('dashboard/citizenjournalist');
     })->name('admin.citizenjournalist');
-    Route::get('/galeri', function () {
-        return view('dashboard/galeri');
-    })->name('admin.galeri');
+
+    //Galeri
+    Route::get('/galeri', [GaleryController::class, 'view_dashboard'])->name('admin.galeri');
 });
 
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');

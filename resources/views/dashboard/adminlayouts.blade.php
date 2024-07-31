@@ -211,6 +211,7 @@
                     .catch(error => console.error('Error:', error));
             }
         </script>
+        @yield('scripts')
 
 </body>
 
