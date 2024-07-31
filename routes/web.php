@@ -18,6 +18,9 @@ Route::get('/kota-terkini', function () {
 Route::get('/layanan-publik', function () {
     return view('layananpublik');
 });
+Route::get('/kerja', function () {
+    return view('dashboard/admin_galeri');
+});
 Route::get('/kabar-balai-kota', function () {
     return view('kabarbalaikota');
 });
