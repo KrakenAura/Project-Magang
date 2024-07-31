@@ -23,11 +23,16 @@
                 </li>
             </ul>
             <div class="logout-div">
-                <a class="button" href="">
+                <a class="button" href="#" onclick="logout()">
                     <img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
                     <div class="logout">LOGOUT</div>
                 </a>
             </div>
+
+
+
+
+
         </nav>
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -186,6 +191,24 @@
             $(function() {
                 bsCustomFileInput.init();
             });
+        </script>
+        <script>
+            function logout() {
+                fetch('/api/admin/logout', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.message === 'Admin logged out successfully.') {
+                            window.location.href = '/adminlogin'; // Redirect to login page
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
         </script>
 
 </body>
