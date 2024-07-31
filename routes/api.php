@@ -23,9 +23,9 @@ use App\Http\Controllers\OutlookController;
 //Berita Routes
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{id}', [BeritaController::class, 'show']);
-Route::post('/berita/create', [BeritaController::class, 'store']);
-Route::put('/berita/update/{id}', [BeritaController::class, 'update']);
-Route::delete('/berita/delete/{id}', [BeritaController::class, 'destroy']);
+Route::post('/berita/create', [BeritaController::class, 'store'])->name('CreateBerita');
+Route::put('/berita/update/{id}', [BeritaController::class, 'update'])->name('UpdateBerita');
+Route::delete('/berita/delete/{id}', [BeritaController::class, 'destroy'])->name('berita.delete');
 
 
 //Galery Routes

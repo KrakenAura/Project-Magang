@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminController;
+use App\Http\Controllers\BeritaController;
 
 Route::get('/', function () {
     return view('home0');
@@ -52,12 +53,17 @@ Route::get('/adminlogin', function () {
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
+    //Beranda
     Route::get('/beranda', function () {
         return view('dashboard/admin_beranda');
     })->name('admin.beranda');
-    Route::get('/kotaterkini', function () {
-        return view('dashboard/kotaterkini');
-    })->name('admin.kotaterkini');
+
+    //Kota Terkini
+    Route::get('/kotaterkini', [BeritaController::class, 'view_dashboard'])->name('admin.kotaterkini');
+    Route::get('/kotaterkini/tambah', [BeritaController::class, 'view_tambah'])->name('admin.kotaterkini');
+    Route::get('/admin/kotaterkini/edit/{id}', [BeritaController::class, 'view_edit'])->name('berita.edit');
+
+    //Layanan Publik
     Route::get('/pelayananpublik', function () {
         return view('dashboard/pelayananpublik');
     })->name('admin.pelayananpublik');
