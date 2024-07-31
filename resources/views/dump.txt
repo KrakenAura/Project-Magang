@@ -1,0 +1,86 @@
+    <!-- <div class="comment-section">
+        <h2>Comments</h2>
+        <div class="comment-form">
+            <h3>Leave a Comment</h3>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="comment-author">Name:</label>
+                    <input type="text" id="comment-author" name="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment-text">Comment:</label>
+                    <textarea id="comment-text" name="comment" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit Comment</button>
+            </form>
+        </div>
+        <div class="comment-list">
+            <div class="comment">
+                <div class="comment-details">
+                    <div class="comment-author-wrapper">
+                        <img src="{{asset('images/logo tvd.png')}}" alt="Profile Picture" class="comment-profile-image">
+                        <div class="comment-author-info">
+                            <div class="comment-author">John Doe</div>
+                            <div class="comment-date">12th July, 2024</div>
+                        </div>
+                    </div>
+                    <div class="comment-content">This is a great article! Thanks for sharing.</div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    
+    <!-- Cody -->
+    <!-- <div class="comment-section">
+        <div class="comment-form">
+        <h3>Leave a Comment</h3>
+        <form action="{{ route('comments.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="news_id" value="{{ $news->id }}">
+            <div class="form-group">
+                <label for="comment-author">Name:</label>
+                <input type="text" id="comment-author" name="author" required>
+            </div>
+            <div class="form-group">
+                <label for="comment-text">Comment:</label>
+                <textarea id="comment-text" name="content" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit Comment</button>
+        </form>
+    </div>
+
+    <div class="comment-list">
+        @foreach($comments as $comment)
+        <div class="comment">
+            <div class="comment-details">
+                <div class="comment-author-wrapper">
+                    <img src="{{asset('images/logo tvd.png')}}" alt="Profile Picture" class="comment-profile-image">
+                    <div class="comment-author-info">
+                        <div class="comment-author">{{ $comment->user->name }}</div>
+                        <div class="comment-date">{{ $comment->created_at->format('d M, Y') }}</div>
+                    </div>
+                </div>
+                <div class="comment-content">{{ $comment->content }}</div>
+            </div>
+            <button class="reply-button" data-comment-id="{{ $comment->id }}">Reply</button>
+
+            <div id="reply-form-{{ $comment->id }}" class="reply-form">
+                <form action="{{ route('comments.reply', $comment->id) }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="parent_id" value="{{ $comment->id }}">
+                    <textarea name="content" rows="2" required></textarea>
+                    <button type="submit">Submit Reply</button>
+                </form>
+            </div>
+            @foreach($comment->replies as $reply)
+            <div class="reply">
+                <div class="comment-author">{{ $reply->author }}</div>
+                <div class="comment-date">{{ $reply->created_at->format('d M, Y') }}</div>
+                <div class="comment-content">{{ $reply->content }}</div>
+            </div>
+            @endforeach
+        </div>
+        @endforeach
+    </div>
+</div> -->

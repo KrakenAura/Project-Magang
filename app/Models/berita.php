@@ -12,7 +12,13 @@ class berita extends Model
     protected $fillable = [
         'image',
         'description',
+        'teaser',
+        'category',
         'title',
-        'author'
+        'date'
+    ];
+
+    protected $casts = [
+        'date' => 'datetime',
     ];
 }

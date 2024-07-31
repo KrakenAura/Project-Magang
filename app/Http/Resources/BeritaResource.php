@@ -19,6 +19,8 @@ class BeritaResource extends JsonResource
             'description' => $this->description,
             'title' => $this->title,
             'author' => $this->author,
+            'category' => $this->category,
+            'teaser' => $this->teaser,
             'tanggal' => $this->created_at->format('Y/m/d')
         ];
     }
