@@ -32,7 +32,7 @@ Route::delete('/berita/delete/{id}', [BeritaController::class, 'destroy'])->name
 Route::get('/galery', [GaleryController::class, 'index']);
 Route::get('/galery/{id}', [GaleryController::class, 'show']);
 Route::post('/galery/create', [GaleryController::class, 'store']);
-Route::put('/galery/update/{id}', [GaleryController::class, 'update']);
+Route::put('/galery/update/{id}', [GaleryController::class, 'update'])->name('UpdateGaleri');
 Route::delete('/galery/delete/{id}', [GaleryController::class, 'destroy']);
 
 //Outlook

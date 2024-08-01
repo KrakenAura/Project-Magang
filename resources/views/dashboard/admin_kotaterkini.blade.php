@@ -24,7 +24,7 @@
                         </div>
                         <p class="berita-date">{{ $berita->created_at->format('d F, Y') }}</p>
                         <div class="berita-actions">
-                            <a href="{{ route('berita.edit', $berita->id) }}"><button class="btn btn-primary">Edit</button></a>
+                            <a href="{{ route('kotaterkini_edit', $berita->id) }}"><button class="btn btn-primary">Edit</button></a>
                             <form action="{{ route('berita.delete', $berita->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
@@ -37,7 +37,7 @@
 
 
             </div>
-            <a href="{{route('admin.kotaterkini')}}"><button type="button" class="btn btn-success">+ Tambah Berita</button></a>
+            <a href="{{route('admin.kotaterkini_tambah')}}"><button type="button" class="btn btn-success">+ Tambah Berita</button></a>
             <button type="button" class="btn btn-primary">Lihat Semua</button>
         </div>
         <div class="card mt-3">

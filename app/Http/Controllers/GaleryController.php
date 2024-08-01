@@ -34,7 +34,7 @@ class GaleryController extends Controller
         }
 
         $galeri = Galery::create($validatedData);
-        return new GaleriResource($galeri);
+        return redirect('/admin/galeri')->with('success', 'Berita created successfully');
     }
 
     public function update(Request $request, $id)
@@ -42,19 +42,24 @@ class GaleryController extends Controller
         $galeri = Galery::findOrFail($id);
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            // 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'created_at' => 'required|date',
-            'updated_at' => 'required|date',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'updated_at' => now(),
         ]);
 
         $galeri->update($validatedData);
-        return new GaleriResource($galeri);
+        return redirect('/admin/galeri')->with('success', 'Berita updated successfully');
     }
 
     public function destroy($id)
     {
         $galeri = Galery::findOrFail($id);
         $galeri->delete();
-        return response()->json(null, 204);
+        return redirect('/admin/galeri')->with('success', 'Berita deleted successfully');
+    }
+
+    public function view_dashboard()
+    {
+        $galeries = Galery::all();
+        return view('dashboard.admin_galeri', compact('galeries'));
     }
 }

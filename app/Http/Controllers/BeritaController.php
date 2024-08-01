@@ -6,20 +6,16 @@ use App\Http\Resources\BeritaResource;
 use App\Models\Berita;
 use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BeritaController extends Controller
 {
+    //General use
     public function index()
     {
         $berita = Berita::all();
         // return response()->json($berita);
         return BeritaResource::collection($berita);
-    }
-
-    public function view_dashboard()
-    {
-        $beritas = Berita::where('category', 'KotaTerkini')->get();
-        return view('dashboard.admin_kotaterkini', compact('beritas'));
     }
 
     public function view_berita($id)
@@ -29,18 +25,6 @@ class BeritaController extends Controller
         return view('viewberita', compact('berita', 'comments'));
     }
 
-    public function view_edit($id)
-    {
-        $berita = Berita::findOrFail($id);
-        return view('dashboard.admin_kotaterkini_edit', compact('berita'));
-    }
-    public function view_tambah()
-    {
-        return view('dashboard.admin_kotaterkini_tambah');
-    }
-
-
-
     public function show($id)
     {
         $berita = Berita::find($id);
@@ -48,6 +32,7 @@ class BeritaController extends Controller
     }
     public function store(Request $request)
     {
+
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
@@ -57,19 +42,20 @@ class BeritaController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'author' => 'required|max:255',
             'category' => 'required',
-            'created_at' => now(),
-            'updated_at' => now(),
-
         ]);
+
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('berita_images', 'public');
             $validatedData['image'] = $imagePath;
         }
 
+        // dd($validatedData);
         $berita = Berita::create($validatedData);
         // return new BeritaResource($berita);
-        return redirect('/admin/kotaterkini')->with('success', 'Berita created successfully');
+        $redirectUrl = '/admin/' . strtolower($validatedData['category']);
+
+        return redirect($redirectUrl)->with('success', 'Berita created successfully');
     }
 
     public function update(Request $request, $id)
@@ -79,20 +65,63 @@ class BeritaController extends Controller
             'title' => 'required|max:255',
             'description' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'author' => 'required|max:255',
             'category' => 'required',
+            'author' => 'required|max:255',
         ]);
 
         $berita->update($validatedData);
         // return new BeritaResource($berita);
-        return redirect('/admin/kotaterkini')->with('success', 'Berita updated successfully');
+        $redirectUrl = '/admin/' . strtolower($validatedData['category']);
+
+        return redirect($redirectUrl)->with('success', 'Berita created successfully');
     }
 
     public function destroy($id)
     {
         $berita = Berita::findOrFail($id);
+        $category = $berita->category;
         $berita->delete();
-        return redirect('/admin/kotaterkini')->with('success', 'Berita deleted successfully');
+        $categoryPath = strtolower($category);
+
+        $redirectUrl = '/admin/' . $categoryPath;
+
+        return redirect($redirectUrl)->with('success', 'Berita deleted successfully');
         // return response()->json(null, 204);
+    }
+
+
+    //Kota Terkini
+    public function view_dashboard_kotaterkini()
+    {
+        $beritas = Berita::where('category', 'KotaTerkini')->get();
+        return view('dashboard.admin_kotaterkini', compact('beritas'));
+    }
+
+    public function view_kotaterkini_edit($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('dashboard.admin_kotaterkini_edit', compact('berita'));
+    }
+    public function view_kotaterkini_tambah()
+    {
+        return view('dashboard.admin_kotaterkini_tambah');
+    }
+
+
+    //Layanan Publik
+    public function view_dashboard_layananpublik()
+    {
+        $beritas = Berita::where('category', 'LayananPublik')->get();
+        return view('dashboard.admin_layananpublik', compact('beritas'));
+    }
+
+    public function view_layananpublik_edit($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('dashboard.admin_layananpublik_edit', compact('berita'));
+    }
+    public function view_layananpublik_tambah()
+    {
+        return view('dashboard.admin_layananpublik_tambah');
     }
 }
