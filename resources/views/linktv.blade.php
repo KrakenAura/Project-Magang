@@ -11,10 +11,10 @@
     <div class="container-contact">
         <div class="card">
             <div class="content">
-                <div class="img"><img src="{{asset('images/logo tvd.png')}}"></div>
                 <div class="cardContent">
                     <h3>Desa Pesanggrahan</h3>
                 </div>
+                <div class="img"><img src="{{asset('images/banner5.jpeg')}}"></div>
             </div>
             <ul class="sci">
                 <li style="--i:3">
@@ -24,7 +24,7 @@
         </div>
         <div class="card">
             <div class="content">
-                <div class="img"><img src="{{asset('images/logo tvd.png')}}"></div>
+                <div class="img"><img src="{{asset('images/banner7.jpg')}}"></div>
                 <div class="cardContent">
                     <h3>Desa Pesanggrahan</h3>
                 </div>

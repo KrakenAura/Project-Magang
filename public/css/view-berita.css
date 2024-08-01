@@ -330,3 +330,53 @@ button:hover {
   margin-top: 10px;
   display: none;
 }
+
+.reply-button {
+  color: #999;
+  cursor: pointer;
+  font-size: 1em;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.reply-button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+}
+
+
+.reply-toggle {
+  display: none;
+}
+
+.reply-form {
+  display: none;
+  margin-top: 10px;
+}
+
+.reply-toggle:checked + .reply-button + .reply-form {
+  display: block;
+}
+
+.reply-form textarea {
+  width: 100%;
+  max-width: 1800px;
+  height: 100px; 
+  max-height: 300px;
+  padding: 10px; 
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  resize: both; 
+  box-sizing: border-box; 
+}
+
+.reply-form button {
+  margin-top: 10px; /* Add some margin to the submit button */
+  color: #999;
+  cursor: pointer;
+  font-size: 1em;
+  background: none;
+  border: none;
+  padding: 0;
+}
