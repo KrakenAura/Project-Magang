@@ -12,14 +12,16 @@ Route::get('/', function () {
 
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
 
-Route::get('/kota-terkini', function () {
-    return view('kotaterkini');
-});
+Route::get('/kotaterkini', [BeritaController::class, 'index'])->name('kotaterkini.index');
+// Route::get('/galerri', [GaleryController::class, 'index'])->name('galeri.index');
+// Route::get('/kota-terkini', function () {
+//     return view('kotaterkini');
+// });
 Route::get('/layanan-publik', function () {
     return view('layananpublik');
 });
 Route::get('/kerja', function () {
-    return view('dashboard/admin_galeri');
+    return view('dashboard/admin_layananpublik_edit');
 });
 Route::get('/kabar-balai-kota', function () {
     return view('kabarbalaikota');

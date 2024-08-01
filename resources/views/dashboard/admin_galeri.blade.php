@@ -61,7 +61,7 @@
         </form>
     </div>
     @endforeach
-        <div class="modal fade" id="modalUpdate{{$galeri->id}}" tabindex="-1" role="dialog" aria-labelledby="modalUpdate" aria-hidden="true">
+    <div class="modal fade" id="modalUpdate{{$galeri->id}}" tabindex="-1" role="dialog" aria-labelledby="modalUpdate" aria-hidden="true">
         <form action="{{ route('UpdateGaleri', $galeri->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -97,6 +97,6 @@
             </div>
         </form>
     </div>
-    <button class="btn btn-success">+ Add New Image</button>
+
 </div>
 @endsection
