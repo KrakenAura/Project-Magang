@@ -50,7 +50,6 @@
         </div>
     </div>
 
-    <h2>Comments</h2>
     <!-- Cody -->
     <div class="comment-section">
         @auth
@@ -81,11 +80,11 @@
                         <div class="comment-author-info">
                             <div class="comment-author">{{ $comment->user->name }}</div>
                             <div class="comment-date">{{ $comment->created_at->format('d M, Y') }}</div>
+                            <button class="reply-button" data-comment-id="{{ $comment->id }}">Reply</button>
                         </div>
                     </div>
                     <div class="comment-content">{{ $comment->content }}</div>
                 </div>
-                <button class="reply-button" data-comment-id="{{ $comment->id }}">Reply</button>
 
                 <div id="reply-form-{{ $comment->id }}" class="reply-form">
                     <form action="{{ route('comments.reply', $comment->id) }}" method="POST">
