@@ -146,4 +146,15 @@ class BeritaController extends Controller
     {
         return view('dashboard.admin_kabarbalaikota_tambah');
     }
+
+    public function view_dashboard_citizen()
+    {
+        $beritas = Berita::where('category', 'citizen')->get();
+        return view('dashboard.admin_citizen', compact('beritas'));
+    }
+
+    public function view_citizen_tambah()
+    {
+        return view('dashboard.admin_citizen_tambah');
+    }
 }

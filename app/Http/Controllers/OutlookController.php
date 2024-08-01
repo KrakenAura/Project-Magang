@@ -14,6 +14,12 @@ class OutlookController extends Controller
         return OutlookResource::collection($outlook);
     }
 
+    public function view_dashboard()
+    {
+        $outlooks = Outlook::all();
+        return view('dashboard.admin_linktv', compact('outlooks'));
+    }
+
     public function show($id)
     {
         $outlook = Outlook::find($id);

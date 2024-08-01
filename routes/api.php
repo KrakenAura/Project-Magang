@@ -11,6 +11,8 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\OutlookController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\LibraryController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -52,6 +54,20 @@ Route::get('/complaint/{id}', [ComplaintController::class, 'show']);
 Route::post('/complaint/create', [ComplaintController::class, 'store']);
 Route::put('/complaint/update/{id}', [ComplaintController::class, 'update']);
 Route::delete('/complaint/delete/{id}', [ComplaintController::class, 'destroy']);
+
+//Link TV
+Route::get('/social', [SocialController::class, 'index']);
+Route::get('/social/{id}', [SocialController::class, 'show']);
+Route::post('/social/create', [SocialController::class, 'store']);
+Route::put('/social/update/{id}', [SocialController::class, 'update']);
+Route::delete('/social/delete/{id}', [SocialController::class, 'destroy']);
+
+//Library
+Route::get('/library', [LibraryController::class, 'index']);
+Route::get('/library/{id}', [LibraryController::class, 'show']);
+Route::post('/library/create', [LibraryController::class, 'store']);
+Route::put('/library/update/{id}', [LibraryController::class, 'update']);
+Route::delete('/library/delete/{id}', [LibraryController::class, 'destroy']);
 
 
 // Visitor routes

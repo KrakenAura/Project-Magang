@@ -5,6 +5,9 @@ use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\OutlookController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\LibraryController;
 
 Route::get('/', function () {
     return view('home0');
@@ -66,7 +69,7 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('das
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
 
     Route::get('/komentar/category/{category}', [CommentController::class, 'view_komentar_by_category'])->name('komentar.by_category');
-    
+
     //Beranda
     Route::get('/beranda', function () {
         return view('dashboard/admin_beranda');
@@ -82,18 +85,31 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
     Route::get('/layananpublik/tambah', [BeritaController::class, 'view_layananpublik_tambah'])->name('admin.layananpublik_tambah');
     Route::get('/layananpublik/edit/{id}', [BeritaController::class, 'view_layananpublik_edit'])->name('admin.layananpublik_edit');
 
-    //Layanan Publik
+    //Kabar Balai Kota
     Route::get('/kabarbalaikota', [BeritaController::class, 'view_dashboard_kabarbalaikota'])->name('admin.kabarbalaikota');
     Route::get('/kabarbalaikota/tambah', [BeritaController::class, 'view_kabarbalaikota_tambah'])->name('admin.kabarbalaikota_tambah');
     Route::get('kabarbalaikota/edit/{id}', [BeritaController::class, 'view_kabarbalaikota_edit'])->name('admin.kabarbalaikota_edit');
 
+    //Citizen Journalist
+    Route::get('/citizen', [BeritaController::class, 'view_dashboard_citizen'])->name('admin.citizen');
+    Route::get('/citizen/tambah', [BeritaController::class, 'view_citizen_tambah'])->name('admin.citizen_tambah');
 
-    Route::get('/citizenjournalist', function () {
-        return view('dashboard/citizenjournalist');
-    })->name('admin.citizenjournalist');
+    //Program TV Desa
+    Route::get('/programtvdesa', [OutlookController::class, 'view_dashboard'])->name('admin.programtvdesa');
+    Route::get('/programtvdesa/tambah', [OutlookController::class, 'view_programtvdesa_tambah'])->name('admin.programtvdesa_tambah');
+    Route::get('programtvdesa/edit/{id}', [OutlookController::class, 'view_programtvdesa_edit'])->name('admin.programtvdesa_edit');
+
+    //Library
+    Route::get('/library', [LibraryController::class, 'view_dashboard'])->name('admin.library');
+    Route::get('/library/tambah', [LibraryController::class, 'view_library_tambah'])->name('admin.library_tambah');
+    Route::get('library/edit/{id}', [LibraryController::class, 'view_library_edit'])->name('admin.library_edit');
+
 
     //Galeri
     Route::get('/galeri', [GaleryController::class, 'view_dashboard'])->name('admin.galeri');
+
+    //Link TV Desa
+    Route::get('/social', [SocialController::class, 'view_dashboard'])->name('admin.linktv');
 });
 
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
