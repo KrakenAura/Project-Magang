@@ -15,7 +15,8 @@ class berita extends Model
         'teaser',
         'category',
         'title',
-        'date'
+        'date',
+        'author'
     ];
 
     protected $casts = [

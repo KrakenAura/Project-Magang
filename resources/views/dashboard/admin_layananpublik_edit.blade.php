@@ -19,7 +19,8 @@
         <div class="cover">
             <label for="banner-image" class="banner-label">Cover</label>
             <input type="file" name="image" id="banner-image" class="banner-input" accept="image/*">
-            <img src="{{ asset('storage/' . $berita->image) }}" alt="Current Image" style="max-width: 200px;">
+            <img src="{{ asset('storage/' . $berita->image) }}" alt="Current Image" class="current-image" style="max-width: 200px;">
+
         </div>
         <div class="custom-editor">
             <div id="editor">{!! $berita->description !!}</div>
