@@ -98,7 +98,7 @@
     padding: 20px;
 }
 
-.product-info .comment-on {
+.user-info .comment-on {
     margin-left: 20px;
     align-items: flex-end;
 }
@@ -145,16 +145,15 @@
 .item {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+
     border-bottom: 1px solid #ddd;
 }
 
 
-.product-info {
+.user-info {
     flex-grow: 1;
+    margin-left: 10px;
 }
-
-
 
 .comment-on {
     display: block;
@@ -178,10 +177,4 @@
 
 .delete-button:hover {
     background-color: darkred;
-}
-
-.products-list .item {
-    border-radius: .25rem;
-    background-color: #fff;
-    padding: 10px;
 }

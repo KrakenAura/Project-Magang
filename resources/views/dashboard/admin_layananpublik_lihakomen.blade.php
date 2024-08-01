@@ -7,13 +7,11 @@
 @section('content')
 <div class="comments-list">
     <h1>All Comments</h1>
-    <ul class="products-list product-list-in-card pl-2 pr-2">
+    <ul class="products-list product-list-in-card">
         <!-- Sample Comment Item -->
         <li class="item">
-            <div class="product-img">
-                <img src="{{ asset('images/logo tvd.png') }}" alt="User Image" class="img-size-50">
-            </div>
-            <div class="product-info">
+
+            <div class="user-info">
                 <a class="product-title">User 1
                     <span class="comment-on">comment on ...</span>
                     <span class="product-description">
