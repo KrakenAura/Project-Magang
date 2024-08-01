@@ -21,7 +21,7 @@ Route::get('/layanan-publik', function () {
     return view('layananpublik');
 });
 Route::get('/kerja', function () {
-    return view('dashboard/admin_layananpublik_lihakomen');
+    return view('dashboard/admin_linktv');
 });
 
 Route::get('/kabar-balai-kota', function () {
