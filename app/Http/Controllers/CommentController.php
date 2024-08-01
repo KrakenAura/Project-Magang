@@ -11,7 +11,8 @@ class CommentController extends Controller
 
     public function view_komentar_by_category($category)
     {
-        $beritas = Berita::with('comments')->where('category', $category)->get();
+
+        $beritas = Berita::with(['comments.user'])->where('category', $category)->get();
 
         return view('dashboard.admin_' . strtolower($category) . '_lihatkomen', compact('beritas'));
     }

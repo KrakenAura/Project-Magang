@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\VisitorController;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,9 @@ Route::get('/berita/{id}', [BeritaController::class, 'show']);
 Route::post('/berita/create', [BeritaController::class, 'store'])->name('CreateBerita');
 Route::put('/berita/update/{id}', [BeritaController::class, 'update'])->name('UpdateBerita');
 Route::delete('/berita/delete/{id}', [BeritaController::class, 'destroy'])->name('berita.delete');
+
+//Comment
+Route::delete('/komentar/delete/{id}', [CommentController::class, 'destroy'])->name('komentar.delete');
 
 
 //Galery Routes
