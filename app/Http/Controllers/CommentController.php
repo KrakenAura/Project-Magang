@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    
+
+    public function view_komentar_by_category($category)
+    {
+        $beritas = Berita::with('comments')->where('category', $category)->get();
+
+        return view('dashboard.admin_' . strtolower($category) . '_lihatkomen', compact('beritas'));
+    }
+
+
     public function store(Request $request)
     {
         $comment = new Comment();
@@ -19,7 +28,6 @@ class CommentController extends Controller
         return back();
     }
 
-
     public function reply(Request $request, $commentId)
     {
         $reply = new Comment();
@@ -30,5 +38,13 @@ class CommentController extends Controller
         $reply->save();
 
         return back();
+    }
+
+    public function destroy($id)
+    {
+        $comment = Comment::findOrFail($id);
+        $comment->delete();
+
+        return back()->with('success', 'Comment deleted successfully');
     }
 }

@@ -63,6 +63,9 @@ Route::get('/adminlogin', function () {
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
+
+    Route::get('/komentar/category/{category}', [CommentController::class, 'view_komentar_by_category'])->name('komentar.by_category');
+    
     //Beranda
     Route::get('/beranda', function () {
         return view('dashboard/admin_beranda');
