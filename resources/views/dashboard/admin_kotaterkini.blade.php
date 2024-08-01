@@ -24,7 +24,7 @@
                         </div>
                         <p class="berita-date">{{ $berita->created_at->format('d F, Y') }}</p>
                         <div class="berita-actions">
-                            <a href="{{ route('kotaterkini_edit', $berita->id) }}"><button class="btn btn-primary">Edit</button></a>
+                            <a href="{{ route('admin.kotaterkini_edit', $berita->id) }}"><button class="btn btn-primary">Edit</button></a>
                             <form action="{{ route('berita.delete', $berita->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
