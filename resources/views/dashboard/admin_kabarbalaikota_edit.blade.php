@@ -8,26 +8,39 @@
 @section('content')
 <h1>Edit Berita Kabar Balai Kota</h1>
 <div class="container-write">
-    <div class="title-section">
-        <p class="title-label">Judul</p>
-        <input type="text" class="title-input" placeholder="Title">
-    </div>
-    <div class="cover">
-        <label for="banner-image" class="banner-label">Cover</label>
-        <input type="file" name="banner_image" id="banner-image" class="banner-input" accept="image/*" required>
-    </div>
-    <div class="custom-editor">
-        <div id="editor"></div>
-    </div>
-    <div class="teaser-section">
-        <p class="teaser-label">Teaser</p>
-        <input type="text" class="teaser-input" placeholder="Teaser">
-    </div>
-    <button class="save-button">Save</button>
+    <form action="{{ route('UpdateBerita', $berita->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        <input type="hidden" name="category" value="KabarBalaiKota">
+        <div class="title-section">
+            <p class="title-label">Judul</p>
+            <input type="text" class="title-input" placeholder="Title" value="{{ $berita->title }}">
+        </div>
+        <div class="cover">
+            <label for="banner-image" class="banner-label">Cover</label>
+            <input type="file" name="banner_image" id="banner-image" class="banner-input" accept="image/*" required>
+            <img src="{{ asset('storage/' . $berita->image) }}" alt="Current Image" style="max-width: 200px;">
+        </div>
+        <div class="custom-editor">
+            <div id="editor">{!! $berita->description !!}</div>
+            <input type="hidden" name="description" id="description">
+        </div>
+        <div class="teaser-section">
+            <p class="teaser-label">Teaser</p>
+            <input type="text" name="teaser" class="teaser-input" placeholder="Teaser" value="{{ $berita->teaser }}" required>
+        </div>
+        <input type="hidden" name="author" value="{{Auth::user()->name}}">
+        <button class="save-button">Save</button>
+    </form>
 </div>
 <script>
     ClassicEditor
         .create(document.querySelector('#editor'))
+        .then(editor => {
+            document.querySelector('form').addEventListener('submit', function() {
+                document.getElementById('description').value = editor.getData();
+            });
+        })
         .catch(error => {
             console.error(error);
         });

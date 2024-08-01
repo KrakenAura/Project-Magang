@@ -124,4 +124,21 @@ class BeritaController extends Controller
     {
         return view('dashboard.admin_layananpublik_tambah');
     }
+
+    //Kabar Balai Kota
+    public function view_dashboard_kabarbalaikota()
+    {
+        $beritas = Berita::where('category', 'kabarbalaikota')->get();
+        return view('dashboard.admin_kabarbalaikota', compact('beritas'));
+    }
+
+    public function view_kabarbalaikota_edit($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('dashboard.admin_kabarbalaikota_edit', compact('berita'));
+    }
+    public function view_kabarbalaikota_tambah()
+    {
+        return view('dashboard.admin_kabarbalaikota_tambah');
+    }
 }

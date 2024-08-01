@@ -69,17 +69,19 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
     //Kota Terkini
     Route::get('/kotaterkini', [BeritaController::class, 'view_dashboard_kotaterkini'])->name('admin.kotaterkini');
     Route::get('/kotaterkini/tambah', [BeritaController::class, 'view_kotaterkini_tambah'])->name('admin.kotaterkini_tambah');
-    Route::get('/admin/kotaterkini/edit/{id}', [BeritaController::class, 'view_kotaterkini_edit'])->name('admin.kotaterkini_edit');
+    Route::get('/kotaterkini/edit/{id}', [BeritaController::class, 'view_kotaterkini_edit'])->name('admin.kotaterkini_edit');
 
     //Layanan Publik
     Route::get('/layananpublik', [BeritaController::class, 'view_dashboard_layananpublik'])->name('admin.layananpublik');
     Route::get('/layananpublik/tambah', [BeritaController::class, 'view_layananpublik_tambah'])->name('admin.layananpublik_tambah');
-    Route::get('/admin/layananpublik/edit/{id}', [BeritaController::class, 'view_layananpublik_edit'])->name('admin.layananpublik_edit');
+    Route::get('/layananpublik/edit/{id}', [BeritaController::class, 'view_layananpublik_edit'])->name('admin.layananpublik_edit');
 
-    //Kabar Balaikota
-    Route::get('/kabarbalaikota', function () {
-        return view('dashboard/kabarbalaikota');
-    })->name('admin.kabarbalaikota');
+    //Layanan Publik
+    Route::get('/kabarbalaikota', [BeritaController::class, 'view_dashboard_kabarbalaikota'])->name('admin.kabarbalaikota');
+    Route::get('/kabarbalaikota/tambah', [BeritaController::class, 'view_kabarbalaikota_tambah'])->name('admin.kabarbalaikota_tambah');
+    Route::get('kabarbalaikota/edit/{id}', [BeritaController::class, 'view_kabarbalaikota_edit'])->name('admin.kabarbalaikota_edit');
+
+
     Route::get('/citizenjournalist', function () {
         return view('dashboard/citizenjournalist');
     })->name('admin.citizenjournalist');
