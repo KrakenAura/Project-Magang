@@ -21,20 +21,10 @@
                     </span>
                 </a>
             </div>
+            <button class="delete-button">Delete</button>
         </li>
-        <li class="item">
-            <div class="product-img">
-                <img src="{{ asset('images/logo tvd.png') }}" alt="User Image" class="img-size-50">
-            </div>
-            <div class="product-info">
-                <a class="product-title">User 1
-                    <span class="comment-on">comment on ...</span>
-                    <span class="product-description">
-                        Menyala
-                    </span>
-                </a>
-            </div>
-        </li>
+
+
         <!-- Add more comment items as needed -->
     </ul>
 </div>
