@@ -26,12 +26,6 @@
     width: 100%;
 }
 
-.berita-image {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 5px;
-}
 
 .berita-content {
     display: flex;
@@ -135,4 +129,15 @@
 
 .comments-list h1{
     margin-bottom: 10px;
+}
+
+.berita-image {
+    width: 200px;
+    margin-right: 20px;
+    border-radius: 5px;       /* Fixed width */
+    height: 150px;          /* Fixed height */
+    border: 1px solid #ccc; /* Border around the image */
+    padding: 5px;           /* Optional padding inside the border */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    object-fit: cover;      /* Ensure the image covers the area without distortion */
 }
