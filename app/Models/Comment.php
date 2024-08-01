@@ -24,4 +24,6 @@ class Comment extends Model
         return $this->belongsTo(Berita::class, 'news_id');
     }
 
+    
+
 }
