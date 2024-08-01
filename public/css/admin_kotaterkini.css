@@ -141,3 +141,47 @@
     box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
     object-fit: cover;      /* Ensure the image covers the area without distortion */
 }
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.product-info {
+    flex-grow: 1;
+}
+
+
+
+.comment-on {
+    display: block;
+    font-style: italic;
+    color: #888;
+}
+
+.product-description {
+    display: block;
+    color: #333;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.products-list .item {
+    border-radius: .25rem;
+    background-color: #fff;
+    padding: 10px;
+}
