@@ -78,7 +78,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/pelayananpublik" class="nav-link">
+                                    <a href="/admin/layananpublik" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pelayanan Publik</p>
                                     </a>

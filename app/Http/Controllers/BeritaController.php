@@ -69,6 +69,11 @@ class BeritaController extends Controller
             'author' => 'required|max:255',
         ]);
 
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('berita_images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+
         $berita->update($validatedData);
         // return new BeritaResource($berita);
         $redirectUrl = '/admin/' . strtolower($validatedData['category']);

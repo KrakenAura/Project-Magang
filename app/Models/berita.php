@@ -22,4 +22,9 @@ class berita extends Model
     protected $casts = [
         'date' => 'datetime',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'news_id');
+    }
 }

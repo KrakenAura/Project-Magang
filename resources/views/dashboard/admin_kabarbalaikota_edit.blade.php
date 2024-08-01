@@ -14,12 +14,13 @@
         <input type="hidden" name="category" value="KabarBalaiKota">
         <div class="title-section">
             <p class="title-label">Judul</p>
-            <input type="text" class="title-input" placeholder="Title" value="{{ $berita->title }}">
+            <input type="text" name="title" class="title-input" placeholder="Title" value="{{ $berita->title }}" required>
         </div>
         <div class="cover">
             <label for="banner-image" class="banner-label">Cover</label>
-            <input type="file" name="banner_image" id="banner-image" class="banner-input" accept="image/*" required>
-            <img src="{{ asset('storage/' . $berita->image) }}" alt="Current Image" style="max-width: 200px;">
+            <input type="file" name="image" id="banner-image" class="banner-input" accept="image/*">
+            <img src="{{ asset('storage/' . $berita->image) }}" alt="Current Image" class="current-image">
+
         </div>
         <div class="custom-editor">
             <div id="editor">{!! $berita->description !!}</div>
