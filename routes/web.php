@@ -44,6 +44,9 @@ Route::get('/tentang-kami', function () {
 Route::get('/tautan', function () {
     return view('tautan');
 });
+Route::get('/contactus', function () {
+    return view('contactus');
+});
 Route::get('/pustaka', function () {
     return view('pustaka');
 });

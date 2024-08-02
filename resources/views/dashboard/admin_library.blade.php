@@ -8,6 +8,7 @@
 @section('content')
 
 <div class="library">
+    <h1>Library</h1>
     <table class="table">
         <thead>
             <tr>
