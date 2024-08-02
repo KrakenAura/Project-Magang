@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Complaint extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nomor_pengaduan',
+        'nama',
+        'nomor_telepon',
+        'email',
+        'tanggal',
+        'image',
+        'deskripsi',
+        'status',
+
+    ];
 }

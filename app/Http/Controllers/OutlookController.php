@@ -39,7 +39,7 @@ class OutlookController extends Controller
         }
 
         $outlook = Outlook::create($validatedData);
-        return new OutlookResource($outlook);
+        return redirect()->route('admin.programtvdesa')->with('success', 'Outlook created successfully');
     }
 
     public function update(Request $request, $id)
@@ -51,14 +51,19 @@ class OutlookController extends Controller
             'link' => 'required',
         ]);
 
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('Outlook_images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+
         $outlook->update($validatedData);
-        return new OutlookResource($outlook);
+        return redirect()->route('admin.programtvdesa')->with('success', 'Outlook updated successfully');
     }
 
     public function destroy($id)
     {
         $outlook = Outlook::findOrFail($id);
         $outlook->delete();
-        return response()->json(null, 204);
+        return redirect()->route('admin.programtvdesa')->with('success', 'Outlook deleted successfully');
     }
 }

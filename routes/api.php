@@ -42,11 +42,11 @@ Route::put('/galery/update/{id}', [GaleryController::class, 'update'])->name('Up
 Route::delete('/galery/delete/{id}', [GaleryController::class, 'destroy']);
 
 //Outlook
-Route::get('/outlook', [OutlookController::class, 'index']);
-Route::get('/outlook/{id}', [OutlookController::class, 'show']);
-Route::post('/outlook/create', [OutlookController::class, 'store']);
-Route::put('/outlook/update/{id}', [OutlookController::class, 'update']);
-Route::delete('/outlook/delete/{id}', [OutlookController::class, 'destroy']);
+Route::get('/programtv', [OutlookController::class, 'index']);
+Route::get('/programtv/{id}', [OutlookController::class, 'show']);
+Route::post('/programtv/create', [OutlookController::class, 'store'])->name('outlook.create');
+Route::put('/programtv/update/{id}', [OutlookController::class, 'update'])->name('outlook.update');
+Route::delete('/programtv/delete/{id}', [OutlookController::class, 'destroy'])->name('outlook.delete');
 
 //Complaints
 Route::get('/complaint', [ComplaintController::class, 'index']);
@@ -68,6 +68,8 @@ Route::get('/library/{id}', [LibraryController::class, 'show']);
 Route::post('/library/create', [LibraryController::class, 'store']);
 Route::put('/library/update/{id}', [LibraryController::class, 'update']);
 Route::delete('/library/delete/{id}', [LibraryController::class, 'destroy']);
+
+
 
 
 // Visitor routes

@@ -8,6 +8,7 @@ use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\OutlookController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\ComplaintController;
 
 Route::get('/', function () {
     return view('home0');
@@ -103,6 +104,10 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
     Route::get('/library', [LibraryController::class, 'view_dashboard'])->name('admin.library');
     Route::get('/library/tambah', [LibraryController::class, 'view_library_tambah'])->name('admin.library_tambah');
     Route::get('library/edit/{id}', [LibraryController::class, 'view_library_edit'])->name('admin.library_edit');
+
+
+    //Warga Bicara
+    Route::get('/wargabicara', [ComplaintController::class, 'view_dashboard'])->name('admin.wargabicara');
 
 
     //Galeri
