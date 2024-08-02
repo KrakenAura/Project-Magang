@@ -7,7 +7,10 @@
 
 @section('content')
 
-<div class="page-title">Citizen Journalist</div>
+<div class="top">
+    <div class="page-title">Citizen Journalist</div>
+    <button class="hover-button">Mulai Nulis</button>
+</div>
 <div class="container">
     <div class="column column-left">
         <div class="news-card1">
