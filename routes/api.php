@@ -37,9 +37,9 @@ Route::delete('/komentar/delete/{id}', [CommentController::class, 'destroy'])->n
 //Galery Routes
 Route::get('/galery', [GaleryController::class, 'index']);
 Route::get('/galery/{id}', [GaleryController::class, 'show']);
-Route::post('/galery/create', [GaleryController::class, 'store']);
+Route::post('/galery/create', [GaleryController::class, 'store'])->name('CreateGaleri');
 Route::put('/galery/update/{id}', [GaleryController::class, 'update'])->name('UpdateGaleri');
-Route::delete('/galery/delete/{id}', [GaleryController::class, 'destroy']);
+Route::delete('/galery/delete/{id}', [GaleryController::class, 'destroy'])->name('DeleteGalery');
 
 //Outlook
 Route::get('/programtv', [OutlookController::class, 'index']);

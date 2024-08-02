@@ -46,6 +46,11 @@ class GaleryController extends Controller
             'updated_at' => now(),
         ]);
 
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('Galery_images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+
         $galeri->update($validatedData);
         return redirect('/admin/galeri')->with('success', 'Berita updated successfully');
     }
