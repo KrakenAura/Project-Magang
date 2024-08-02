@@ -48,12 +48,12 @@ Route::post('/programtv/create', [OutlookController::class, 'store'])->name('out
 Route::put('/programtv/update/{id}', [OutlookController::class, 'update'])->name('outlook.update');
 Route::delete('/programtv/delete/{id}', [OutlookController::class, 'destroy'])->name('outlook.delete');
 
-//Complaints
-Route::get('/complaint', [ComplaintController::class, 'index']);
-Route::get('/complaint/{id}', [ComplaintController::class, 'show']);
-Route::post('/complaint/create', [ComplaintController::class, 'store']);
-Route::put('/complaint/update/{id}', [ComplaintController::class, 'update']);
-Route::delete('/complaint/delete/{id}', [ComplaintController::class, 'destroy']);
+//wargabicaras
+Route::get('/wargabicara', [ComplaintController::class, 'index']);
+Route::get('/wargabicara/{id}', [ComplaintController::class, 'show']);
+Route::post('/wargabicara/create', [ComplaintController::class, 'store']);
+Route::put('/wargabicara/update/{id}', [ComplaintController::class, 'update']);
+Route::delete('/wargabicara/delete/{id}', [ComplaintController::class, 'destroy'])->name('complaint.delete');
 
 //Link TV
 Route::get('/social', [SocialController::class, 'index']);

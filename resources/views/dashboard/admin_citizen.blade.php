@@ -128,7 +128,7 @@
                     </li>
                 </ul>
             </div>
-            <button type="button" class="btn btn-primary">Lihat Semua</button>
+            <a href="/admin/komentar/category/citizen"><button type="button" class="btn btn-primary">Lihat Semua</button></a>
         </div>
     </div>
 </div>

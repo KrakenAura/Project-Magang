@@ -17,7 +17,7 @@ class ComplaintController extends Controller
     public function view_dashboard()
     {
         $complaints = Complaint::all();
-        return view('dashboard.admin_linktv', compact('outlooks'));
+        return view('dashboard.admin_wargabicara', compact('complaints'));
     }
 
     public function show($id)
@@ -28,23 +28,28 @@ class ComplaintController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nomor_pengaduan' => 'required',
             'nama' => 'required',
             'nomor_telepon' => 'required',
             'email' => 'required',
-            'tanggal' => now(),
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'required',
             'status' => 'required',
         ]);
 
+        $validatedData['tanggal'] = now();
+
+        $date = now()->format('Ymd');
+        $lastComplaint = Complaint::latest()->first();
+        $id = $lastComplaint ? $lastComplaint->id + 1 : 1;
+        $validatedData['nomor_pengaduan'] = "WB-{$date}-{$id}";
+
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('Outlook_images', 'public');
+            $imagePath = $request->file('image')->store('WargaBicara_images', 'public');
             $validatedData['image'] = $imagePath;
         }
 
         $complaint = Complaint::create($validatedData);
-        return redirect()->route('admin.wargabicara')->with('success', 'Outlook created successfully');
+        return redirect()->route('wargabicara')->with('success', 'Complaint created successfully');
     }
 
     public function update(Request $request, $id)
@@ -62,12 +67,12 @@ class ComplaintController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('Outlook_images', 'public');
+            $imagePath = $request->file('image')->store('WargaBicara_images', 'public');
             $validatedData['image'] = $imagePath;
         }
 
         $complaint->update($validatedData);
-        return redirect()->route('admin.wargabicara')->with('success', 'Outlook updated successfully');
+        return redirect()->route('wargabicara')->with('success', 'Complaint updated successfully');
     }
 
     public function destroy($id)

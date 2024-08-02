@@ -15,17 +15,21 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="{{ route('visitor.register') }}" method="POST">
+                @csrf
+
+
                 <h1>Sign up</h1>
                 <span>use your email for registration</span>
                 <input type="text" placeholder="Name" id="name" name="name" />
                 <input type="email" placeholder="Email" id="email-regis" name="email-regis" required />
                 <input type="password" placeholder="Password" id="password-regis" name="password-regis" required />
-                <button>Sign Up</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container" id="loginForm">
-            <form id="login-form" action="/visitor/login" method="POST">
+            <form id="login-form" action="{{ route('visitor.login') }}" method="POST">
+                @csrf
                 <h1>Sign in</h1>
                 <input type="email" placeholder="Email" id="email" name="email" required />
                 <input type="password" placeholder="Password" id="password" name="password" required />
