@@ -90,7 +90,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/citizenjournalist" class="nav-link">
+                                    <a href="/admin/citizen" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Citizen Journalist</p>
                                     </a>

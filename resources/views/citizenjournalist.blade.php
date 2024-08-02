@@ -9,7 +9,7 @@
 
 <div class="top">
     <div class="page-title">Citizen Journalist</div>
-    <button class="hover-button">Mulai Nulis</button>
+    <a href="/citizen/tulis"><button class="hover-button">Mulai Nulis</button></a>
 </div>
 <div class="container">
     <div class="column column-left">

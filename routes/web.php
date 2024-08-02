@@ -24,6 +24,9 @@ Route::get('/kotaterkini', [BeritaController::class, 'index'])->name('kotaterkin
 Route::get('/layanan-publik', function () {
     return view('layananpublik');
 });
+Route::get('/warga-bicara', function () {
+    return view('pengaduan');
+})->name('wargabicara');
 Route::get('/kerja', function () {
     return view('dashboard/admin_contactus');
 });
@@ -31,9 +34,13 @@ Route::get('/kerja', function () {
 Route::get('/kabar-balai-kota', function () {
     return view('kabarbalaikota');
 });
-Route::get('/citizen-journalist', function () {
+Route::get('/citizen', function () {
     return view('citizenjournalist');
 });
+Route::get('/citizen/tulis', function () {
+    return view('citizenwrite');
+});
+
 Route::get('/galeri', function () {
     return view('galeri');
 });
@@ -96,7 +103,6 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
 
     //Citizen Journalist
     Route::get('/citizen', [BeritaController::class, 'view_dashboard_citizen'])->name('admin.citizen');
-    Route::get('/citizen/tambah', [BeritaController::class, 'view_citizen_tambah'])->name('admin.citizen_tambah');
 
     //Program TV Desa
     Route::get('/programtvdesa', [OutlookController::class, 'view_dashboard'])->name('admin.programtvdesa');
