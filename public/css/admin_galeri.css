@@ -3,12 +3,15 @@
 }
 
 .gallery-container {
+    height: 800px; /* Adjust this height as needed */
+    overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .galery-card {
+    height: 500px;
     background: #fff;
     border: 2px solid #f1f1f1;
     border-radius: 8px;
@@ -21,11 +24,15 @@
 .galery-card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.card-image {
+    width: 500px; /* Fixed width */
+    height: 700px; /* Fixed height */
+    overflow: hidden; /* Hide overflow */
+}
 
 .card-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 90%;
+    
 }
 
 .card-desc {

@@ -9,6 +9,9 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('css')
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
@@ -122,6 +125,14 @@
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <div class="logout-div">
+                            <a class="button" href="#" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <div class="logout">LOGOUT</div>
+                            </a>
+                        </div>
                     </li>
                     <li><a href="#" class="nav__link">Login</a></li>
 
