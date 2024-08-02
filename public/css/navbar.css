@@ -340,3 +340,57 @@ a {
     transition: top 0.3s;
   }
 }
+
+.logout-div i {
+  font-size: 20px; /* Adjust the size of the icon */
+  margin-top: 20px;
+  color: #5fc9f3; /* Icon color */
+  float: left;
+}
+
+.logout-div img {
+  margin-top: 18px;
+  width: 25px;
+  border-radius: 50px;
+  float: left;
+}
+
+.logout-div .logout{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #5fc9f3;
+  margin-top: 22px;
+  font-size: .8em;
+	position: relative;
+  right: -18px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+  
+}
+
+.logout-div .button {
+	text-decoration: none;
+	float: right;   
+  color: white;
+  width: 50px;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+.logout-div a:hover {
+  width: 120px;
+}
+
+.logout-div a:hover .logout{
+  opacity: .9;
+}
+
+.logout-div a {
+  text-decoration: none;
+}
+
