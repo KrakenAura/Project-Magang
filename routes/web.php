@@ -25,7 +25,7 @@ Route::get('/layanan-publik', function () {
     return view('layananpublik');
 });
 Route::get('/kerja', function () {
-    return view('layananpublik');
+    return view('dashboard/admin_contactus');
 });
 
 Route::get('/kabar-balai-kota', function () {
