@@ -20,16 +20,18 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($socials as $contact)
             <tr>
-                <td><img src="" alt="" class="library-image"></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{$contact->nama_tv}}</td>
+                <td>{{$contact->link_web}}</td>
+                <td>{{$contact->link_insta}}</td>
+                <td>{{$contact->link_yt}}</td>
                 <td>
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Edit</button>
                     <button type="button" class="btn btn-danger btn-sm">Delete</button>
                 </td>
             </tr>
+            @endforeach
 
         </tbody>
     </table>

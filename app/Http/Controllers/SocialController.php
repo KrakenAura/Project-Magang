@@ -17,9 +17,14 @@ class SocialController extends Controller
     public function view_dashboard()
     {
         $socials = Social::all();
-        return view('dashboard.admin_linktv', compact('socials'));
+        return view('dashboard.admin_contactus', compact('socials'));
     }
 
+    public function view_landing()
+    {
+        $socials = Social::all();
+        return view('linktv', compact('socials'));
+    }
     public function show($id)
     {
         $social = Social::find($id);

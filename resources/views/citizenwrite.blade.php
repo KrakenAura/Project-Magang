@@ -13,7 +13,7 @@
         <input type="hidden" name="category" value="citizen">
         <div class="title-section">
             <p class="title-label">Judul</p>
-            <input type="text" name="title" class="title-input" placeholder="Title">
+            <input type="text" name="title" class="title-input" placeholder="Title" required>
         </div>
         <div class="cover">
             <label for="banner-image" class="banner-label">Cover</label>
@@ -27,20 +27,20 @@
             <p class="teaser-label">Teaser</p>
             <input type="text" name="teaser" class="teaser-input" placeholder="Teaser" required>
         </div>
-        <input type="hidden" name="author" value="{{Auth::user()->name}}">
+        <input type="hidden" name="author" value="{{ Auth::user()->name }}">
         <button type="submit" class="save-button">Save</button>
     </form>
-</div>
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .then(editor => {
-            document.querySelector('form').addEventListener('submit', function() {
-                document.getElementById('description').value = editor.getData();
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                editor.model.document.on('change:data', () => {
+                    document.getElementById('description').value = editor.getData();
+                });
+            })
+            .catch(error => {
+                console.error(error);
             });
-        })
-        .catch(error => {
-            console.error(error);
-        });
-</script>
+    </script>
+</div>
 @endsection

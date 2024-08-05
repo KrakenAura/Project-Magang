@@ -20,6 +20,12 @@ class OutlookController extends Controller
         return view('dashboard.admin_linktv', compact('outlooks'));
     }
 
+    public function view_landing()
+    {
+        $outlooks = Outlook::all();
+        return view('linktv', compact('outlooks'));
+    }
+
     public function show($id)
     {
         $outlook = Outlook::find($id);

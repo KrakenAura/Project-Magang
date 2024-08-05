@@ -8,7 +8,6 @@ body {
 
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
-
 .carousel-container {
   padding: 1.6rem; /* Reduced by 20% from 2rem */
 }
@@ -58,7 +57,6 @@ body {
 .slider-nav a:hover {
   opacity: 1;
 }
-
 
 /* Content */
 .content {
@@ -143,14 +141,12 @@ body {
 .container p {
   margin: 1rem 0 auto 0.8rem;
   flex: 1;
-  
 }
 
 .container img {
   max-width: 3rem;
   max-height: 3rem;
   flex-grow: 0;
-
 }
 
 .sec-banner {
@@ -158,7 +154,7 @@ body {
   padding: 20px;
 }
 
-hr{
+hr {
   margin-top: 50px;
   margin-bottom: 30px;
 }
@@ -188,21 +184,19 @@ hr{
 }
 
 .banner-tv {
-
   margin-top: 30px;
   display: flex;
   transition: transform 0.5s ease;
 }
 
 .banner-tv-content {
-
-  min-width: 265px; 
-  height: 320px; 
+  min-width: 235px;
+  height: 280px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0; 
+  margin: 0;
 }
 
 .image-section {

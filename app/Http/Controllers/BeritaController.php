@@ -14,7 +14,6 @@ class BeritaController extends Controller
     public function index()
     {
         $berita = Berita::all();
-        // return response()->json($berita);
         return BeritaResource::collection($berita);
     }
 
@@ -32,7 +31,8 @@ class BeritaController extends Controller
     }
     public function store(Request $request)
     {
-
+        \Illuminate\Support\Facades\Log::info('Store method called');
+        \Illuminate\Support\Facades\Log::info($request->all());
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
@@ -43,7 +43,6 @@ class BeritaController extends Controller
             'author' => 'required|max:255',
             'category' => 'required',
         ]);
-
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('berita_images', 'public');
@@ -100,6 +99,18 @@ class BeritaController extends Controller
 
 
     //Kota Terkini
+    public function view_landing_kotaterkini()
+    {
+        $latestBeritas = Berita::where('category', 'KotaTerkini')
+            ->orderBy('id', 'desc')
+            ->take(3)
+            ->get();
+        $olderBeritas = Berita::where('category', 'KotaTerkini')
+            ->orderBy('id', 'desc')
+            ->skip(3)
+            ->paginate(6);
+        return view('kotaterkini', compact('latestBeritas', 'olderBeritas'));
+    }
     public function view_dashboard_kotaterkini()
     {
         $beritas = Berita::where('category', 'KotaTerkini')->get();
@@ -118,6 +129,18 @@ class BeritaController extends Controller
 
 
     //Layanan Publik
+    public function view_landing_layananpublik()
+    {
+        $latestBeritas = Berita::where('category', 'LayananPublik')
+            ->orderBy('id', 'desc')
+            ->take(3)
+            ->get();
+        $olderBeritas = Berita::where('category', 'LayananPublik')
+            ->orderBy('id', 'desc')
+            ->skip(3)
+            ->paginate(6);
+        return view('layananpublik', compact('latestBeritas', 'olderBeritas'));
+    }
     public function view_dashboard_layananpublik()
     {
         $beritas = Berita::where('category', 'LayananPublik')->get();
@@ -135,6 +158,18 @@ class BeritaController extends Controller
     }
 
     //Kabar Balai Kota
+    public function view_landing_kabarbalaikota()
+    {
+        $latestBeritas = Berita::where('category', 'KabarBalaiKota')
+            ->orderBy('id', 'desc')
+            ->take(3)
+            ->get();
+        $olderBeritas = Berita::where('category', 'KabarBalaiKota')
+            ->orderBy('id', 'desc')
+            ->skip(3)
+            ->paginate(6);
+        return view('kabarbalaikota', compact('latestBeritas', 'olderBeritas'));
+    }
     public function view_dashboard_kabarbalaikota()
     {
         $beritas = Berita::where('category', 'kabarbalaikota')->get();
@@ -149,6 +184,21 @@ class BeritaController extends Controller
     public function view_kabarbalaikota_tambah()
     {
         return view('dashboard.admin_kabarbalaikota_tambah');
+    }
+
+
+    //Citizen Journalist
+    public function view_landing_citizen()
+    {
+        $latestBeritas = Berita::where('category', 'citizen')
+            ->orderBy('id', 'desc')
+            ->take(3)
+            ->get();
+        $olderBeritas = Berita::where('category', 'citizen')
+            ->orderBy('id', 'desc')
+            ->skip(3)
+            ->paginate(6);
+        return view('citizenjournalist', compact('latestBeritas', 'olderBeritas'));
     }
 
     public function view_dashboard_citizen()

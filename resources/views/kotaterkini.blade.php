@@ -10,165 +10,110 @@
 <div class="page-title">Kota Terkini</div>
 <div class="container">
     <div class="column column-left">
+        @foreach($latestBeritas as $index => $berita)
+        @if($index == 0)
         <div class="news-card1">
-            <img src="{{asset('images/news 1.png')}}" alt="News Image" class="news-card1-image">
+            <img src="{{ asset('storage/' . $berita->image) }}" alt="News Image" class="news-card1-image">
             <div class="news-card-content">
-                <p class="kategori">Berita Populer</p>
-                <a href="#" class="news-card-title">TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</a>
-                <p class="news-card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+                <p class="kategori">{{ $berita->category }}</p>
+                <a href="{{ route('berita.view', $berita->id) }}" class="news-card-title">{{ $berita->title }}</a>
+                <p class="news-card-description">{{ $berita->teaser }}</p>
                 <div class="news-footer">
-                    <span>Admin</span>
-                    <span>. 12th July, 2024</span>
+                    <span>{{ $berita->author }}</span>
+                    <span>. {{ $berita->date->format('jS F, Y') }}</span>
                 </div>
             </div>
         </div>
-
-
+        @elseif($index == 1)
         <div class="news-card2">
-            <img src="{{asset('images/news 2.png')}}" alt="News Image" class="news-card2-image">
+            <img src="{{ asset('storage/' . $berita->image) }}" alt="News Image" class="news-card2-image">
             <div class="news-card-content2">
-                <p class="kategori">Berita Populer</p>
-                <a href="#" class="news-card-title">TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</a>
+                <p class="kategori">{{ $berita->category }}</p>
+                <a href="{{ route('berita.view', $berita->id) }}" class="news-card-title">{{ $berita->title }}</a>
                 <div class="news-footer">
-                    <span>Admin</span>
-                    <span>. 12th July, 2024</span>
+                    <span>{{ $berita->author }}</span>
+                    <span>. {{ $berita->date->format('jS F, Y') }}</span>
                 </div>
             </div>
         </div>
+        @endif
+        @endforeach
     </div>
     <div class="column column-right">
-        <div class="column column-left">
-            <div class="news-card3">
-                <img src="{{asset('images/news 3.png')}}" alt="News Image" class="news-card3-image">
-                <div class="news-card-content">
-                    <p class="kategori">Berita Populer</p>
-                    <a href="#" class="news-card-title">TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</a>
-                    <p class="news-card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
-                    <div class="news-footer">
-                        <span>Admin</span>
-                        <span>. 12th July, 2024</span>
-                    </div>
+        @if(isset($latestBeritas[2]))
+        <div class="news-card3">
+            <img src="{{ asset('storage/' . $latestBeritas[2]->image) }}" alt="News Image" class="news-card3-image">
+            <div class="news-card-content">
+                <p class="kategori">{{ $latestBeritas[2]->category }}</p>
+                <a href="{{ route('berita.view', $latestBeritas[2]->id) }}" class="news-card-title">{{ $latestBeritas[2]->title }}</a>
+                <p class="news-card-description">{{ $latestBeritas[2]->teaser }}</p>
+                <div class="news-footer">
+                    <span>{{ $latestBeritas[2]->author }}</span>
+                    <span>. {{ $latestBeritas[2]->date->format('jS F, Y') }}</span>
                 </div>
             </div>
-
         </div>
+        @endif
     </div>
 </div>
+
 
 <div class="news-section">
     <div class="section-content news">
         <div class="cards">
+            @foreach($olderBeritas as $berita)
             <div class="card">
                 <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}">
+                    <img src="{{ asset('storage/' . $berita->image) }}">
                 </div>
                 <div class="article">
                     <div class="metadata">
-                        <h5>admin</h5>
-                        <h5>12th July, 2024 </h5>
+                        <h5>{{ $berita->author }}</h5>
+                        <h5>{{ $berita->date->format('jS F, Y') }}</h5>
                     </div>
-                    <h4>Title</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
+                    <h4>{{ $berita->title }}</h4>
+                    <p>{{ $berita->teaser }}</p>
                 </div>
                 <div class="news-view">
-                    <a href="#" class="button">Selengkapnya</a>
+                    <a href="{{ route('berita.view', $berita->id) }}" class="button">Selengkapnya</a>
                 </div>
             </div>
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}">
-                </div>
-                <div class="article">
-                    <div class="metadata">
-                        <h5>admin</h5>
-                        <h5>12th July, 2024 </h5>
-                    </div>
-                    <h4>Title</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
-                </div>
-                <div class="news-view">
-                    <a href="#" class="button">Selengkapnya</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}">
-                </div>
-                <div class="article">
-                    <div class="metadata">
-                        <h5>admin</h5>
-                        <h5>12th July, 2024 </h5>
-                    </div>
-                    <h4>Title</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
-                </div>
-                <div class="news-view">
-                    <a href="" class="button">Selengkapnya</a>
-
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    <div class="news-section">
+    <div id="app" class="container">
+        <ul class="page">
+            {{-- Previous Page Link --}}
+            @if ($olderBeritas->onFirstPage())
+            <li class="page__btn"><span class="material-icons">chevron_left</span></li>
+            @else
+            <li class="page__btn active">
+                <a href="{{ $olderBeritas->previousPageUrl() }}" rel="prev"><span class="material-icons">chevron_left</span></a>
+            </li>
+            @endif
 
-    </div>
-    <div class="section-content news">
-        <div class="cards">
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}">
-                </div>
-                <div class="article">
-                    <div class="metadata">
-                        <h5>admin</h5>
-                        <h5>12th July, 2024 </h5>
-                    </div>
-                    <h4>Title</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
-                </div>
-                <div class="news-view">
-                    <a href="#" class="button">Selengkapnya</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}">
-                </div>
-                <div class="article">
-                    <div class="metadata">
-                        <h5>admin</h5>
-                        <h5>12th July, 2024 </h5>
-                    </div>
-                    <h4>Title</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
-                </div>
-                <div class="news-view">
-                    <a href="#" class="button">Selengkapnya</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}">
-                </div>
-                <div class="article">
-                    <div class="metadata">
-                        <h5>admin</h5>
-                        <h5>12th July, 2024 </h5>
-                    </div>
-                    <h4>Title</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et hic eaque itaque repudiandae temporibus, modi consequuntur ipsum sequi doloribus veniam, deserunt possimus, quam iusto iure vero nulla fugiat tempore autem.</p>
-                </div>
-                <div class="news-view">
-                    <a href="" class="button">Selengkapnya</a>
+            {{-- Pagination Elements --}}
+            @foreach ($olderBeritas->getUrlRange(1, $olderBeritas->lastPage()) as $page => $url)
+            @if ($page == $olderBeritas->currentPage())
+            <li class="page__numbers active">{{ $page }}</li>
+            @else
+            <li class="page__numbers"><a href="{{ $url }}">{{ $page }}</a></li>
+            @endif
+            @endforeach
 
-                </div>
-            </div>
-        </div>
+            {{-- Next Page Link --}}
+            @if ($olderBeritas->hasMorePages())
+            <li class="page__btn active">
+                <a href="{{ $olderBeritas->nextPageUrl() }}" rel="next"><span class="material-icons">chevron_right</span></a>
+            </li>
+            @else
+            <li class="page__btn"><span class="material-icons">chevron_right</span></li>
+            @endif
+        </ul>
     </div>
-    <div class="news-section">
 
-    </div>
 </div>
+
 
 @endsection
 

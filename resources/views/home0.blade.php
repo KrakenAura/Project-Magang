@@ -55,11 +55,6 @@
                 <img src="{{asset('images/banner6.jpg')}}">
             </div>
         </div>
-        <div class="banner-tv-content">
-            <div class="image-section">
-                <img src="{{asset('images/banner7.jpg')}}">
-            </div>
-        </div>
     </div>
 </div>
 <!-- Content -->

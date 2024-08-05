@@ -14,6 +14,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <title>TV Desa Batu</title>
 </head>
@@ -76,31 +78,31 @@
                         </div>
                         <ul class="dropdown__menu">
                             <li>
-                                <a href="#" class="dropdown__link">
+                                <a href="/kotaterkini" class="dropdown__link">
                                     <i class="ri-building-2-line"></i>Kota Terkini
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="dropdown__link"><i class="ri-earth-line"></i> Layanan Publik
+                                <a href="/layananpublik" class="dropdown__link"><i class="ri-earth-line"></i> Layanan Publik
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="dropdown__link"><i class="ri-government-line"></i>Kabar BalaiKota
+                                <a href="/kabarbalaikota" class="dropdown__link"><i class="ri-government-line"></i>Kabar BalaiKota
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="dropdown__link"><i class="ri-group-line"></i>Citizen Journalist
+                                <a href="/citizen" class="dropdown__link"><i class="ri-group-line"></i>Citizen Journalist
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <li><a href="#" class="nav__link">Library</a></li>
+                    <li><a href="/library" class="nav__link">Library</a></li>
 
 
-                    <li><a href="#" class="nav__link">Warga Bicara</a></li>
-                    <li><a href="#" class="nav__link">Contact</a></li>
+                    <li><a href="/warga-bicara" class="nav__link">Warga Bicara</a></li>
+                    <li><a href="/contactus" class="nav__link">Contact</a></li>
                     <li class="dropdown__item">
                         <div class="nav__link">
                             Tentang Kami <i class="ri-arrow-down-s-line dropdown__arrow"></i>
@@ -114,13 +116,13 @@
                             </li>
 
                             <li>
-                                <a href="#" class="dropdown__link">
+                                <a href="/galeri" class="dropdown__link">
                                     <i class="ri-lock-line"></i> Gallery
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="dropdown__link">
+                                <a href="/programtv" class="dropdown__link">
                                     <i class="ri-message-3-line"></i> Program TV Desa
                                 </a>
                             </li>

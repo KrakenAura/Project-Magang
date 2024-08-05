@@ -16,27 +16,21 @@ Route::get('/', function () {
 
 Route::get('/library', [LibraryController::class, 'index']);
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
-Route::get('/kotaterkini', [BeritaController::class, 'index'])->name('kotaterkini.index');
-// Route::get('/galerri', [GaleryController::class, 'index'])->name('galeri.index');
-// Route::get('/kota-terkini', function () {
-//     return view('kotaterkini');
-// });
-Route::get('/layanan-publik', function () {
-    return view('layananpublik');
-});
+Route::get('/kotaterkini', [BeritaController::class, 'view_landing_kotaterkini'])->name('kotaterkini.landing');
+
+Route::get('/layananpublik', [BeritaController::class, 'view_landing_layananpublik'])->name('layananpublik.landing');
+
 Route::get('/warga-bicara', function () {
     return view('pengaduan');
 })->name('wargabicara');
+Route::get('/programtv', [OutlookController::class, 'view_landing'])->name('programtv.landing');
 Route::get('/kerja', function () {
     return view('dashboard/admin_contactus');
 });
 
-Route::get('/kabar-balai-kota', function () {
-    return view('kabarbalaikota');
-});
-Route::get('/citizen', function () {
-    return view('citizenjournalist');
-});
+Route::get('/kabarbalaikota', [BeritaController::class, 'view_landing_kabarbalaikota'])->name('kabarbalaikota.landing');
+
+Route::get('/citizen', [BeritaController::class, 'view_landing_citizen'])->name('citizen.landing');
 Route::get('/citizen/tulis', function () {
     return view('citizenwrite');
 });
@@ -121,10 +115,7 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
     Route::get('/galeri', [GaleryController::class, 'view_dashboard'])->name('admin.galeri');
 
     //Link TV Desa
-    Route::get('/social', [SocialController::class, 'view_dashboard'])->name('admin.linktv');
-
-    //Link TV Desa
-    Route::get('/contactus', [SocialController::class, 'view_dashboard'])->name('admin.linktv');
+    Route::get('/contactus', [SocialController::class, 'view_dashboard'])->name('admin.contacus');
 });
 
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
