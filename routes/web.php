@@ -28,7 +28,7 @@ Route::get('/warga-bicara', function () {
     return view('pengaduan');
 })->name('wargabicara');
 Route::get('/kerja', function () {
-    return view('linktv');
+    return view('dashboard/admin_contactus');
 });
 
 Route::get('/kabar-balai-kota', function () {
@@ -53,6 +53,9 @@ Route::get('/tautan', function () {
 });
 Route::get('/contactus', function () {
     return view('contactus');
+});
+Route::get('/profil', function () {
+    return view('profil');
 });
 
 Route::get('/login', function () {
