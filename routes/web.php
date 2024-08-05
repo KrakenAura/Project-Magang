@@ -48,6 +48,9 @@ Route::get('/tautan', function () {
 Route::get('/contactus', function () {
     return view('contactus');
 });
+Route::get('/profil', function () {
+    return view('profil');
+});
 
 Route::get('/login', function () {
     return view('login');
