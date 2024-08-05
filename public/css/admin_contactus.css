@@ -1,0 +1,7 @@
+.library {
+
+    height: 700px; /* Fixed height */
+    overflow-y: auto;
+
+    gap: 10px;
+}
