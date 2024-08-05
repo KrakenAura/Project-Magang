@@ -126,15 +126,21 @@
                             </li>
                         </ul>
                     </li>
+                    @if(Auth::check())
                     <li>
                         <div class="logout-div">
-                            <a class="button" href="#" onclick="logout()">
-                                <i class="fas fa-sign-out-alt"></i>
+                            <a class="button" href=" {{ route('visitor.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
+                                <i class=" fas fa-sign-out-alt"></i>
                                 <div class="logout">LOGOUT</div>
                             </a>
+                            <form id="logout-form" action="{{ route('visitor.logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
-                    <li><a href="#" class="nav__link">Login</a></li>
+                    @else
+                    <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
+                    @endif
 
                 </ul>
             </div>

@@ -13,18 +13,19 @@
         <input type="hidden" name="category" value="citizen">
         <div class="title-section">
             <p class="title-label">Judul</p>
-            <input type="text" class="title-input" placeholder="Title">
+            <input type="text" name="title" class="title-input" placeholder="Title">
         </div>
         <div class="cover">
             <label for="banner-image" class="banner-label">Cover</label>
-            <input type="file" name="banner_image" id="banner-image" class="banner-input" accept="image/*" required>
+            <input type="file" name="image" id="banner-image" class="banner-input" accept="image/*" required>
         </div>
         <div class="custom-editor">
             <div id="editor"></div>
+            <input type="hidden" name="description" id="description">
         </div>
         <div class="teaser-section">
             <p class="teaser-label">Teaser</p>
-            <input type="text" class="teaser-input" placeholder="Teaser">
+            <input type="text" name="teaser" class="teaser-input" placeholder="Teaser" required>
         </div>
         <input type="hidden" name="author" value="{{Auth::user()->name}}">
         <button type="submit" class="save-button">Save</button>

@@ -14,8 +14,8 @@ Route::get('/', function () {
     return view('home0');
 })->name('home');
 
+Route::get('/library', [LibraryController::class, 'index']);
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
-
 Route::get('/kotaterkini', [BeritaController::class, 'index'])->name('kotaterkini.index');
 // Route::get('/galerri', [GaleryController::class, 'index'])->name('galeri.index');
 // Route::get('/kota-terkini', function () {
@@ -28,7 +28,7 @@ Route::get('/warga-bicara', function () {
     return view('pengaduan');
 })->name('wargabicara');
 Route::get('/kerja', function () {
-    return view('layananpublik');
+    return view('dashboard/admin_contactus');
 });
 
 Route::get('/kabar-balai-kota', function () {
@@ -54,9 +54,7 @@ Route::get('/tautan', function () {
 Route::get('/contactus', function () {
     return view('contactus');
 });
-Route::get('/pustaka', function () {
-    return view('pustaka');
-});
+
 Route::get('/login', function () {
     return view('login');
 })->name('login');
@@ -124,6 +122,9 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
 
     //Link TV Desa
     Route::get('/social', [SocialController::class, 'view_dashboard'])->name('admin.linktv');
+
+    //Link TV Desa
+    Route::get('/contactus', [SocialController::class, 'view_dashboard'])->name('admin.linktv');
 });
 
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
