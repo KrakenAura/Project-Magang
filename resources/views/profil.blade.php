@@ -41,7 +41,9 @@
         </div>
     </div>
     <div class="struktur">
+        <br>
         <p class="text-blk subHeadingText">Struktur Organisasi</p>
+        <hr>
         <img class="struktur-img" src="{{asset('images/struktur.png')}}" alt="image">
     </div>
 </body>
