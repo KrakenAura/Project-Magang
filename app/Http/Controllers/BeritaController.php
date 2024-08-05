@@ -53,7 +53,11 @@ class BeritaController extends Controller
         // dd($validatedData);
         $berita = Berita::create($validatedData);
         // return new BeritaResource($berita);
-        $redirectUrl = '/admin/' . strtolower($validatedData['category']);
+        if (strtolower($validatedData['category']) === 'citizen') {
+            $redirectUrl = '/citizen';
+        } else {
+            $redirectUrl = '/admin/' . strtolower($validatedData['category']);
+        }
 
         return redirect($redirectUrl)->with('success', 'Berita created successfully');
     }

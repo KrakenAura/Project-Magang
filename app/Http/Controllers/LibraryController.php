@@ -10,8 +10,8 @@ class LibraryController extends Controller
 {
     public function index()
     {
-        $library = Library::all();
-        return LibraryResource::collection($library);
+        $librarys = Library::all();
+        return view('download', compact('librarys'));
     }
 
     public function view_dashboard()

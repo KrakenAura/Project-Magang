@@ -11,22 +11,27 @@
         <div class="berita-baru">
             <h2>Berita Terbaru</h2>
             <div class="list-berita">
+                @foreach($beritas as $berita)
                 <div class="berita-item">
                     <div class="change-img">
-                        <img src="{{ asset('images/news 1.png') }}" alt="News Title 1" class="berita-image">
+                        <img src="{{ asset('storage/'.$berita->image) }}" alt="{{ $berita->title }}" class="berita-image">
                     </div>
                     <div class="berita-content">
-                        <h3>TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</h3>
+                        <h3>{{ $berita->title }}</h3>
                         <div class="berita-text">
                             <!-- Berita text goes here -->
                         </div>
-                        <p class="berita-date">12th July, 2024</p>
-                        <div class="berita-actions">
-                            <button class="btn btn-danger">Delete</button>
-                        </div>
+                        <p class="berita-date">{{ $berita->created_at->format('d F, Y') }}</p>
+                        <form action="{{ route('berita.delete', $berita->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
+            @endforeach
+
             <button type="button" class="btn btn-primary">Lihat Semua</button>
         </div>
         <div class="card mt-3">

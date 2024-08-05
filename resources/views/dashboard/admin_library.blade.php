@@ -22,7 +22,7 @@
         <tbody>
             @foreach ($librarys as $library)
             <tr>
-                <td><img src="{{ asset('storage/'.$library->image) }}" alt="{{ $library->title }}" class="library-image"></td>
+                <td><img src="{{ asset('storage/'.$library->image) }}" alt="{{ $library->judul }}" class="library-image"></td>
                 <td>{{ $library->judul }}</td>
                 <td>{{ $library->deskripsi }}</td>
                 <td><a href="{{ $library->link }}" target="_blank">{{ $library->link }}</a></td>
