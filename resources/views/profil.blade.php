@@ -48,46 +48,26 @@
         <img class="struktur-img" src="{{asset('images/struktur.png')}}" alt="image">
     </div>
     <div class="crew">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="our-team">
-                        <div class="pic">
-                            <img src="images/img-1.jpg">
-                            <ul class="social">
-                                <li><a href="#" class="fab fa-facebook"></a></li>
-                                <li><a href="#" class="fab fa-google-plus"></a></li>
-                                <li><a href="#" class="fab fa-instagram"></a></li>
-                                <li><a href="#" class="fab fa-linkedin"></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-content">
-                            <h3 class="title">Williamson</h3>
-                            <span class="post">Web Developer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="our-team">
-                        <div class="pic">
-                            <img src="images/img-2.jpg">
-                            <ul class="social">
-                                <li><a href="#" class="fab fa-facebook"></a></li>
-                                <li><a href="#" class="fab fa-google-plus"></a></li>
-                                <li><a href="#" class="fab fa-instagram"></a></li>
-                                <li><a href="#" class="fab fa-linkedin"></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-content">
-                            <h3 class="title">Kristiana</h3>
-                            <span class="post">Web Designer</span>
-                        </div>
-                    </div>
-                </div>
+        <p class="text-blk subHeadingText">Our Team</p>
+        <hr>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="{{asset('images/team1.jpg')}}" alt="Team Member 1">
+                <p class="text-blk">John Doe</p>
+                <p class="text-blk description">CEO</p>
             </div>
+            <div class="team-member">
+                <img src="{{asset('images/team2.jpg')}}" alt="Team Member 2">
+                <p class="text-blk">Jane Smith</p>
+                <p class="text-blk description">CTO</p>
+            </div>
+            <div class="team-member">
+                <img src="{{asset('images/team3.jpg')}}" alt="Team Member 3">
+                <p class="text-blk">Alice Johnson</p>
+                <p class="text-blk description">COO</p>
+            </div>
+            <!-- Add more team members as needed -->
         </div>
     </div>
 </body>
 @endsection
-
-</html>

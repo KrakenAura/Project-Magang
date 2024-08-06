@@ -24,8 +24,9 @@ Route::get('/warga-bicara', function () {
     return view('pengaduan');
 })->name('wargabicara');
 Route::get('/programtv', [OutlookController::class, 'view_landing'])->name('programtv.landing');
+
 Route::get('/kerja', function () {
-    return view('dashboard/admin_contactus');
+    return view('dashboard/admin_layananpublik_lihatsemua');
 });
 
 Route::get('/kabarbalaikota', [BeritaController::class, 'view_landing_kabarbalaikota'])->name('kabarbalaikota.landing');
