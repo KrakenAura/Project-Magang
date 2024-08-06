@@ -96,13 +96,24 @@ class BeritaController extends Controller
         return redirect($redirectUrl)->with('success', 'Berita deleted successfully');
         // return response()->json(null, 204);
     }
-    public function view_by_category($category)
+    public function view_by_category(Request $request, $category)
     {
+        $search = $request->input('search');
+        $query = Berita::where('category', $category);
 
-        $beritas = Berita::where('category', $category)->get();
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    ->orWhere('author', 'like', "%{$search}%");
+            });
+        }
 
-        return view('dashboard.admin_' . strtolower($category) . '_lihatsemua', compact('beritas'));
+        $beritas = $query->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('dashboard.admin_' . strtolower($category) . '_lihatsemua', compact('beritas', 'category'));
     }
+
 
 
     //Kota Terkini
