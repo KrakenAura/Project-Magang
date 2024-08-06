@@ -8,6 +8,14 @@
 <div class="news-list">
     <h1>Semua Berita</h1>
     <br>
+    <form action="" method="GET" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Search news..." value="{{ request('search') }}">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
     <div class="viewall-berita">
         @foreach ($beritas as $berita)
 
@@ -25,8 +33,9 @@
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </div>
-            @endforeach
         </div>
+        @endforeach
     </div>
+    {{ $beritas->links() }}
 </div>
 @endsection

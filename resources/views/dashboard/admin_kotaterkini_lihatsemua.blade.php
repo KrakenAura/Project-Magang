@@ -24,8 +24,8 @@
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </div>
-            @endforeach
         </div>
+        @endforeach
     </div>
 </div>
 @endsection
