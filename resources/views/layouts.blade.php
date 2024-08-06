@@ -132,7 +132,7 @@
                     @if(Auth::check())
                     <li>
                         <div class="logout-div">
-                            <a class="button" href=" {{ route('visitor.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
+                            <a class="button-logout" href=" {{ route('visitor.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
                                 <i class=" fas fa-sign-out-alt"></i>
                                 <div class="logout">LOGOUT</div>
                             </a>

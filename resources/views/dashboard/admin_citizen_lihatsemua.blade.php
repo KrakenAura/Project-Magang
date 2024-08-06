@@ -8,14 +8,12 @@
 <div class="news-list">
     <h1>Semua Berita</h1>
     <br>
-    <form action="" method="GET" class="mb-4">
-        <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Search news..." value="{{ request('search') }}">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </div>
-        </div>
+    <form action="" method="GET" class="search-form">
+        <label for="search">Search for stuff</label>
+        <input id="search" name="search" type="search" placeholder="Search..." autofocus required value="{{ request('search') }}" />
+        <button type="submit">Go</button>
     </form>
+
     <div class="viewall-berita">
         @foreach ($beritas as $berita)
 
@@ -49,7 +47,40 @@
         </div>
         @endforeach
     </div>
-    {{ $beritas->links() }}
+    <div id="app" class="container">
+        @if ($beritas->hasPages())
+        <ul class="page">
+            {{-- Previous Page Link --}}
+            @if ($beritas->onFirstPage())
+            <li class="page__btn"><span class="material-icons">chevron_left</span></li>
+            @else
+            <li class="page__btn active">
+                <a href="{{ $beritas->previousPageUrl() }}" rel="prev"><span class="material-icons">chevron_left</span></a>
+            </li>
+            @endif
+
+            {{-- Pagination Elements --}}
+            @foreach ($beritas->getUrlRange(1, $beritas->lastPage()) as $page => $url)
+            @if ($page == $beritas->currentPage())
+            <li class="page__numbers active">{{ $page }}</li>
+            @elseif ($page == 1 || $page == $beritas->lastPage() || abs($page - $beritas->currentPage()) <= 2) <li class="page__numbers"><a href="{{ $url }}">{{ $page }}</a></li>
+                @elseif (abs($page - $beritas->currentPage()) == 3)
+                <li class="page__dots">...</li>
+                @endif
+                @endforeach
+
+                {{-- Next Page Link --}}
+                @if ($beritas->hasMorePages())
+                <li class="page__btn active">
+                    <a href="{{ $beritas->nextPageUrl() }}" rel="next"><span class="material-icons">chevron_right</span></a>
+                </li>
+                @else
+                <li class="page__btn"><span class="material-icons">chevron_right</span></li>
+                @endif
+        </ul>
+        @endif
+    </div>
+
 </div>
 @section('scripts')
 <script>

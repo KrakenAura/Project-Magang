@@ -8,14 +8,12 @@
 <div class="news-list">
     <h1>Semua Berita</h1>
     <br>
-    <form action="" method="GET" class="mb-4">
-        <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Search news..." value="{{ request('search') }}">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </div>
-        </div>
+    <form action="" method="GET" class="search-form">
+        <label for="search">Search for stuff</label>
+        <input id="search" name="search" type="search" placeholder="Search..." autofocus required value="{{ request('search') }}" />
+        <button type="submit">Go</button>
     </form>
+
     <div class="viewall-berita">
         @foreach ($beritas as $berita)
 
