@@ -61,7 +61,8 @@
     <header class="header">
         <nav class="nav container">
             <div class="nav__data">
-                <img class="logo" src="{{ asset('images/logo tvd.png') }}" alt="Logo">
+                <a href="/"><img class="logo" src="{{ asset('images/logo tvd.png') }}" alt="Logo"></a>
+                <h2 style="color:white">TV Desa Kota Batu Official Website </h2>
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="ri-menu-line nav__burger"></i>
                     <i class="ri-close-line nav__close"></i>
@@ -102,7 +103,6 @@
 
 
                     <li><a href="/warga-bicara" class="nav__link">Warga Bicara</a></li>
-                    <li><a href="/contactus" class="nav__link">Contact</a></li>
                     <li class="dropdown__item">
                         <div class="nav__link">
                             Tentang Kami <i class="ri-arrow-down-s-line dropdown__arrow"></i>
@@ -128,6 +128,7 @@
                             </li>
                         </ul>
                     </li>
+                    <li><a href="/contactus" class="nav__link">Contact Us</a></li>
                     @if(Auth::check())
                     <li>
                         <div class="logout-div">

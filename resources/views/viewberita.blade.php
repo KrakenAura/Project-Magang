@@ -14,6 +14,22 @@
 <div class="title">
     <div class="tagline">{{ $berita->category }}</div>
     <div class="news-title">{{ $berita->title }}</div>
+
+    <div class="social-share">
+        <button onclick="copyLink()" class="share-button copy-link">
+            <i class="fas fa-link"></i> Copy Link
+        </button>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" class="share-button facebook">
+            <i class="fab fa-facebook-f"></i> Share
+        </a>
+        <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($berita->title) }}" target="_blank" class="share-button twitter">
+            <i class="fab fa-twitter"></i> Tweet
+        </a>
+        <a href="https://wa.me/?text={{ urlencode($berita->title . ' ' . request()->fullUrl()) }}" target="_blank" class="share-button whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+    </div>
 </div>
 <div class="news-container">
     <div class="column column-left">
@@ -177,6 +193,19 @@
             });
         });
     });
+
+    function copyLink() {
+        var dummy = document.createElement('input');
+        var text = window.location.href;
+
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+
+        alert('Link copied to clipboard!');
+    }
 </script>
 @endsection
 
