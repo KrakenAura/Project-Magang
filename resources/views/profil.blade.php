@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/profil.css')}}">
+<link rel="stylesheet" href="{{asset('css/crew.css')}}">
 @endsection
 
 @section('content')
@@ -45,6 +46,46 @@
         <p class="text-blk subHeadingText">Struktur Organisasi</p>
         <hr>
         <img class="struktur-img" src="{{asset('images/struktur.png')}}" alt="image">
+    </div>
+    <div class="crew">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="images/img-1.jpg">
+                            <ul class="social">
+                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                                <li><a href="#" class="fab fa-linkedin"></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Williamson</h3>
+                            <span class="post">Web Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="images/img-2.jpg">
+                            <ul class="social">
+                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                                <li><a href="#" class="fab fa-linkedin"></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Kristiana</h3>
+                            <span class="post">Web Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 @endsection
