@@ -96,6 +96,13 @@ class BeritaController extends Controller
         return redirect($redirectUrl)->with('success', 'Berita deleted successfully');
         // return response()->json(null, 204);
     }
+    public function view_by_category($category)
+    {
+
+        $beritas = Berita::where('category', $category)->get();
+
+        return view('dashboard.admin_' . strtolower($category) . '_lihatsemua', compact('beritas'));
+    }
 
 
     //Kota Terkini

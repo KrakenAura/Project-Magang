@@ -35,9 +35,8 @@ Route::get('/citizen/tulis', function () {
     return view('citizenwrite');
 });
 
-Route::get('/galeri', function () {
-    return view('galeri');
-});
+Route::get('/galeri', [GaleryController::class, 'view_landing'])->name('galeri.landing');
+
 Route::get('/tentang-kami', function () {
     return view('tentang_kami');
 });
@@ -75,6 +74,8 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('das
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
 
     Route::get('/komentar/category/{category}', [CommentController::class, 'view_komentar_by_category'])->name('komentar.by_category');
+
+    Route::get('/berita/category/{category}', [BeritaController::class, 'view_by_category'])->name('berita.by_category');
 
     //Beranda
     Route::get('/beranda', function () {

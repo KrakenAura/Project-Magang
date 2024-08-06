@@ -8,28 +8,15 @@
 
 <h1>Galeri</h1>
 <div class="content">
+    @foreach ( $galeries as $galeri)
+
+    @endforeach
     <div class="card galery-card">
         <div class="card-image">
-            <img src="{{asset('images/news 4.png')}}" alt="">
+            <img src="{{ asset('storage/' . $galeri->image) }}" alt="">
         </div>
         <div class="card-desc">
-            <h4>Image Description</h4>
-        </div>
-    </div>
-    <div class="card galery-card">
-        <div class="card-image">
-            <img src="{{asset('images/news 4.png')}}" alt="">
-        </div>
-        <div class="card-desc">
-            <h4>Image Description</h4>
-        </div>
-    </div>
-    <div class="card galery-card">
-        <div class="card-image">
-            <img src="{{asset('images/news 4.png')}}" alt="">
-        </div>
-        <div class="card-desc">
-            <h4>Image Description</h4>
+            <h4>{{$galeri -> title}}</h4>
         </div>
     </div>
 </div>

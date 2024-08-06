@@ -17,7 +17,7 @@ class ProfileController extends Controller
     public function view_dashboard()
     {
         $profiles = Profile::all();
-        return view('dashboard.admin_linktv', compact('Profiles'));
+        return view('dashboard.admin_profile', compact('Profiles'));
     }
 
     public function show($id)
@@ -33,41 +33,38 @@ class ProfileController extends Controller
             'struktur_organisasi' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        if ($request->hasFile('logo')) {
-            $imagePath = $request->file('logo')->store('Profile_images', 'public');
-            $validatedData['logo'] = $imagePath;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('Profile_images', 'public');
+            $validatedData['image'] = $imagePath;
         }
 
         $profile = Profile::create($validatedData);
-        return new ProfileResource($profile);
+        return redirect('/admin/profile')->with('success', 'Berita created successfully');
     }
 
     public function update(Request $request, $id)
     {
         $profile = Profile::findOrFail($id);
         // dd($request->all());
-        $validatedData =
-            $request->validate([
-                'nama_tv' => 'required|max:255',
-                'logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-                'link_web' => 'required',
-                'link_insta' => 'required',
-                'link_yt' => 'required',
-            ]);
+        $validatedData = $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'sejarah' => 'required',
+            'struktur_organisasi' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-        if ($request->hasFile('logo')) {
-            $imagePath = $request->file('logo')->store('Profile_images', 'public');
-            $validatedData['logo'] = $imagePath;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('Profile_images', 'public');
+            $validatedData['image'] = $imagePath;
         }
 
         $profile->update($validatedData);
-        return new ProfileResource($profile);
+        return redirect('/admin/profile')->with('success', 'Berita updated successfully');
     }
 
     public function destroy($id)
     {
         $profile = Profile::findOrFail($id);
         $profile->delete();
-        return response()->json(null, 204);
+        return redirect('/admin/profile')->with('success', 'Berita deleted successfully');
     }
 }
