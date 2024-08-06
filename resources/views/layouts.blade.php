@@ -110,7 +110,7 @@
 
                         <ul class="dropdown__menu">
                             <li>
-                                <a href="#" class="dropdown__link">
+                                <a href="/profil" class="dropdown__link">
                                     <i class="ri-user-line"></i> Profil
                                 </a>
                             </li>
