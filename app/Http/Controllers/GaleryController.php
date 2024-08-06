@@ -67,4 +67,9 @@ class GaleryController extends Controller
         $galeries = Galery::all();
         return view('dashboard.admin_galeri', compact('galeries'));
     }
+    public function view_landing()
+    {
+        $galeries = Galery::all();
+        return view('galeri', compact('galeries'));
+    }
 }

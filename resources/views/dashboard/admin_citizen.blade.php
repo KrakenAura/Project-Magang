@@ -22,119 +22,25 @@
                             <!-- Berita text goes here -->
                         </div>
                         <p class="berita-date">{{ $berita->created_at->format('d F, Y') }}</p>
-                        <form action="{{ route('berita.delete', $berita->id) }}" method="POST" style="display: inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        <div class="berita-actions">
+                            <a href="{{ route('admin.kabarbalaikota_edit', $berita->id) }}"><button class="btn btn-primary">Edit</button></a>
+                            <form action="{{ route('berita.delete', $berita->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            @endforeach
+                @endforeach
 
-            <button type="button" class="btn btn-primary">Lihat Semua</button>
-        </div>
-        <div class="card mt-3">
-            <div class="card-header">
-                <h3 class="card-title">Komentar Terbaru</h3>
             </div>
-            <div class="card-body p-0 comment-section">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+            <div class="action-button mt-3">
+                <a href="/admin/berita/category/citizen">
+                    <button type="button" class="btn btn-primary">Lihat Semua</button>
+                </a>
+                <a href="/admin/komentar/category/citizen"><button type="button" class="btn btn-warning">Lihat Semua Komentar</button></a>
             </div>
-            <a href="/admin/komentar/category/citizen"><button type="button" class="btn btn-primary">Lihat Semua</button></a>
         </div>
     </div>
-</div>
-@endsection
+    @endsection

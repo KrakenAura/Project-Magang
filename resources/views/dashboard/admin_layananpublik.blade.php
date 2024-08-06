@@ -36,109 +36,13 @@
                 @endforeach
 
             </div>
-            <a href="{{route('admin.layananpublik_tambah')}}"><button type="button" class="btn btn-success">+ Tambah Berita</button></a>
-            <button type="button" class="btn btn-primary">Lihat Semua</button>
-        </div>
-        <div class="card mt-3">
-            <div class="card-header">
-                <h3 class="card-title">Komentar Terbaru</h3>
+            <div class="action-button mt-3">
+                <a href="{{route('admin.layananpublik_tambah')}}"><button type="button" class="btn btn-success">+ Tambah Berita</button></a>
+                <a href="/admin/berita/category/layananpublik">
+                    <button type="button" class="btn btn-primary">Lihat Semua</button>
+                </a>
+                <a href="/admin/komentar/category/layananpublik"><button type="button" class="btn btn-warning">Lihat Semua Komentar</button></a>
             </div>
-            <div class="card-body p-0 comment-section">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a>User 1
-                                <span class="comment-on">comment on ...</span>
-                                <span class="product-description">
-                                    Menyala
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <a href="/admin/komentar/category/layananpublik"><button type="button" class="btn btn-primary">Lihat Semua</button></a>
         </div>
     </div>
 </div>
