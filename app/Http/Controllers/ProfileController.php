@@ -3,48 +3,48 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Profile;
+use App\Http\Resources\ProfileResource;
 
 class ProfileController extends Controller
 {
     public function index()
     {
-        $social = Social::all();
-        return SocialResource::collection($social);
+        $profile = Profile::all();
+        return ProfileResource::collection($profile);
     }
 
     public function view_dashboard()
     {
-        $socials = Social::all();
-        return view('dashboard.admin_linktv', compact('socials'));
+        $profiles = Profile::all();
+        return view('dashboard.admin_linktv', compact('Profiles'));
     }
 
     public function show($id)
     {
-        $social = Social::find($id);
-        return new SocialResource($social);
+        $profile = Profile::find($id);
+        return new ProfileResource($profile);
     }
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama_tv' => 'required|max:255',
-            'logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'link_web' => 'required',
-            'link_insta' => 'required',
-            'link_yt' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'sejarah' => 'required',
+            'struktur_organisasi' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($request->hasFile('logo')) {
-            $imagePath = $request->file('logo')->store('Social_images', 'public');
+            $imagePath = $request->file('logo')->store('Profile_images', 'public');
             $validatedData['logo'] = $imagePath;
         }
 
-        $social = Social::create($validatedData);
-        return new SocialResource($social);
+        $profile = Profile::create($validatedData);
+        return new ProfileResource($profile);
     }
 
     public function update(Request $request, $id)
     {
-        $social = Social::findOrFail($id);
+        $profile = Profile::findOrFail($id);
         // dd($request->all());
         $validatedData =
             $request->validate([
@@ -56,18 +56,18 @@ class ProfileController extends Controller
             ]);
 
         if ($request->hasFile('logo')) {
-            $imagePath = $request->file('logo')->store('Social_images', 'public');
+            $imagePath = $request->file('logo')->store('Profile_images', 'public');
             $validatedData['logo'] = $imagePath;
         }
 
-        $social->update($validatedData);
-        return new SocialResource($social);
+        $profile->update($validatedData);
+        return new ProfileResource($profile);
     }
 
     public function destroy($id)
     {
-        $social = Social::findOrFail($id);
-        $social->delete();
+        $profile = Profile::findOrFail($id);
+        $profile->delete();
         return response()->json(null, 204);
     }
 }

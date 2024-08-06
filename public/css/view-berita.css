@@ -345,7 +345,6 @@ button:hover {
   color: black;
 }
 
-
 .reply-toggle {
   display: none;
 }
@@ -362,13 +361,13 @@ button:hover {
 .reply-form textarea {
   width: 100%;
   max-width: 1800px;
-  height: 100px; 
+  height: 100px;
   max-height: 300px;
-  padding: 10px; 
-  border: 1px solid #ddd; 
-  border-radius: 4px; 
-  resize: both; 
-  box-sizing: border-box; 
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: both;
+  box-sizing: border-box;
 }
 
 .reply-form button {
@@ -380,3 +379,38 @@ button:hover {
   border: none;
   padding: 0;
 }
+
+.social-share {
+  margin-top: 10px;
+}
+
+.share-button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.whatsapp {
+  background-color: #25d366;
+}
+
+.share-button i {
+  margin-right: 5px;
+}
+
+.copy-link {
+    background-color: #6c757d;
+}
+

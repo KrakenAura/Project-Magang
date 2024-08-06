@@ -35,7 +35,6 @@
             <div class="berita-content">
                 <h3>TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</h3>
                 <div class="berita-text">
-                    <!-- Berita text goes here -->
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </div>
                 <p class="berita-date">12th July, 2024</p>
