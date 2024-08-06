@@ -1,6 +1,7 @@
 @extends('dashboard/adminlayouts')
 
 @section('css')
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/admin_kotaterkini.css') }}">
 @endsection
 
@@ -49,7 +50,41 @@
         </div>
         @endforeach
     </div>
-    {{ $beritas->links() }}
+    <div id="app" class="container">
+        @if ($beritas->hasPages())
+        <ul class="page">
+            {{-- Previous Page Link --}}
+            @if ($beritas->onFirstPage())
+            <li class="page__btn"><span class="material-icons">chevron_left</span></li>
+
+            @else
+            <li class="page__btn active">
+                <a href="{{ $beritas->previousPageUrl() }}" rel="prev"><span class="material-icons">chevron_left</span></a>
+            </li>
+            @endif
+
+            {{-- Pagination Elements --}}
+            @foreach ($beritas->getUrlRange(1, $beritas->lastPage()) as $page => $url)
+            @if ($page == $beritas->currentPage())
+            <li class="page__numbers active">{{ $page }}</li>
+            @elseif ($page == 1 || $page == $beritas->lastPage() || abs($page - $beritas->currentPage()) <= 2) <li class="page__numbers"><a href="{{ $url }}">{{ $page }}</a></li>
+                @elseif (abs($page - $beritas->currentPage()) == 3)
+                <li class="page__dots">...</li>
+                @endif
+                @endforeach
+
+                {{-- Next Page Link --}}
+                @if ($beritas->hasMorePages())
+                <li class="page__btn active">
+                    <a href="{{ $beritas->nextPageUrl() }}" rel="next"><span class="material-icons">chevron_right</span></a>
+                </li>
+                @else
+                <li class="page__btn"><span class="material-icons">chevron_right</span></li>
+                @endif
+        </ul>
+        @endif
+    </div>
+
 </div>
 @section('scripts')
 <script>

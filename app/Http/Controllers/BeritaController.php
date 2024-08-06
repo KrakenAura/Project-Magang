@@ -109,10 +109,11 @@ class BeritaController extends Controller
             });
         }
 
-        $beritas = $query->orderBy('created_at', 'desc')->paginate(10);
+        $beritas = $query->orderBy('created_at', 'desc')->paginate(5); // Increased to 15 items per page
 
         return view('dashboard.admin_' . strtolower($category) . '_lihatsemua', compact('beritas', 'category'));
     }
+
 
 
 
