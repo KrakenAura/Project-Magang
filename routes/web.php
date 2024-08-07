@@ -15,6 +15,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/library', [LibraryController::class, 'index']);
 
+Route::get('/contactus', [SocialController::class, 'view_landing']);
+
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
 Route::get('/kotaterkini', [BeritaController::class, 'view_landing_kotaterkini'])->name('kotaterkini.landing');
 
@@ -44,9 +46,6 @@ Route::get('/tentang-kami', function () {
 
 Route::get('/tautan', function () {
     return view('tautan');
-});
-Route::get('/contactus', function () {
-    return view('contactus');
 });
 Route::get('/profil', function () {
     return view('profil');
