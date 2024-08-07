@@ -16,11 +16,20 @@ class HomeController extends Controller
     {
         $slideshows = Slideshow::all();
         $livestreams = Livestream::all();
-        $socials = Social::all();
 
         $footer = Footer::first();
 
-        return view('dashboard.admin_beranda', compact('slideshows', 'livestreams', 'socials', 'footer'));
+        return view('dashboard.admin_beranda', compact('slideshows', 'livestreams', 'footer'));
+    }
+
+    public function view_landing()
+    {
+        $slideshows = Slideshow::all();
+        $livestreams = Livestream::all();
+
+        $footer = Footer::first();
+
+        return view('home0', compact('slideshows', 'livestreams', 'footer'));
     }
 
     public function view_landing()
@@ -45,6 +54,18 @@ class HomeController extends Controller
         ]);
 
         $footer->update($validatedData);
+        return redirect('/admin/beranda')->with('success', 'Berita updated successfully');
+    }
+
+    public function updateLiveStream(Request $request, $id)
+    {
+        $livestream = Livestream::findOrFail($id);
+        // dd($request->all());
+        $validatedData = $request->validate([
+            'stream_url' => 'required',
+        ]);
+
+        $livestream->update($validatedData);
         return redirect('/admin/beranda')->with('success', 'Berita updated successfully');
     }
 }
