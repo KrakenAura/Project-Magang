@@ -23,6 +23,17 @@ class HomeController extends Controller
         return view('dashboard.admin_beranda', compact('slideshows', 'livestreams', 'socials', 'footer'));
     }
 
+    public function view_landing()
+    {
+        $slideshows = Slideshow::all();
+        $livestreams = Livestream::all();
+        $socials = Social::all();
+
+        $footer = Footer::first();
+
+        return view('home0', compact('slideshows', 'livestreams', 'socials', 'footer'));
+    }
+
     //Footer
     public function updateFooter(Request $request, $id)
     {

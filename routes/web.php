@@ -12,7 +12,7 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\HomeController;
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'view_landing'])->name('home');
 Route::get('/library', [LibraryController::class, 'index']);
 
 Route::get('/contactus', [SocialController::class, 'view_landing']);
@@ -28,7 +28,7 @@ Route::get('/warga-bicara', function () {
 Route::get('/programtv', [OutlookController::class, 'view_landing'])->name('programtv.landing');
 
 Route::get('/kerja', function () {
-    return view('dashboard/admin_layananpublik_lihatsemua');
+    return view('dashboard/admin_profil');
 });
 
 Route::get('/kabarbalaikota', [BeritaController::class, 'view_landing_kabarbalaikota'])->name('kabarbalaikota.landing');
