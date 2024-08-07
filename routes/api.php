@@ -14,6 +14,7 @@ use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\OutlookController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\HomeController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -76,6 +77,9 @@ Route::get('/profile', [ProfileController::class, 'index']);
 Route::post('/profile/create', [ProfileController::class, 'store']);
 Route::put('/profile/update/{id}', [ProfileController::class, 'update']);
 Route::delete('/profile/delete/{id}', [ProfileController::class, 'destroy']);
+
+//Beranda
+Route::put('/beranda/footer/update/{id}', [HomeController::class, 'updateFooter'])->name('footer.update');
 
 
 

@@ -78,9 +78,7 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
     Route::get('/berita/category/{category}', [BeritaController::class, 'view_by_category'])->name('berita.by_category');
 
     //Beranda
-    Route::get('/beranda', function () {
-        return view('dashboard/admin_beranda');
-    })->name('admin.beranda');
+    Route::get('/beranda', [HomeController::class, 'view_dashboard'])->name('admin.beranda');
 
     //Kota Terkini
     Route::get('/kotaterkini', [BeritaController::class, 'view_dashboard_kotaterkini'])->name('admin.kotaterkini');
