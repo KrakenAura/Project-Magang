@@ -124,6 +124,30 @@
             </table>
             <button type="button" class="btn btn-success">Tambah</button>
         </div>
+        <div class="footer-content">
+        </div>
+        <h2>Footer</h2>
+        <div class="footer-edit">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a>Deskripsi 1</a></td>
+                        <td><a>Alamat</a></td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-success">Tambah</button>
+        </div>
     </div>
 </div>
 @endsection

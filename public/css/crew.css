@@ -1,3 +1,7 @@
+.crew .subheadingText {
+    text-align: center;
+}
+
 .team-container {
     display: flex;
     flex-wrap: wrap;
@@ -6,23 +10,64 @@
 }
 
 .team-member {
+    width: 300px;
+    height: 400px;
     text-align: center;
     margin: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+}
+
+.team-member .text-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.team-member .text-content p.text-blk:first-child {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+}
+
+.team-member:hover .text-content {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .text-blk {
     font-size: 16px;
     font-weight: bold;
+    margin: 5px 0;
 }
 
 .description {
     font-size: 14px;
-    color: #666;
+    color: #ccc;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+}
+
+.team-member:hover .description {
+    opacity: 1;
+    margin-top: 20px;
 }
