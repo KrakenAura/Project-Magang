@@ -52,19 +52,32 @@
         <hr>
         <div class="team-container">
             <div class="team-member">
-                <img src="{{asset('images/team1.jpg')}}" alt="Team Member 1">
-                <p class="text-blk">John Doe</p>
-                <p class="text-blk description">CEO</p>
+                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                <div class="text-content">
+                    <p class="text-blk">John Doe</p>
+                    <p class="text-blk description">CEO</p>
+                </div>
             </div>
             <div class="team-member">
-                <img src="{{asset('images/team2.jpg')}}" alt="Team Member 2">
-                <p class="text-blk">Jane Smith</p>
-                <p class="text-blk description">CTO</p>
+                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 2">
+                <div class="text-content">
+                    <p class="text-blk">Jane Smith</p>
+                    <p class="text-blk description">CTO</p>
+                </div>
             </div>
             <div class="team-member">
-                <img src="{{asset('images/team3.jpg')}}" alt="Team Member 3">
-                <p class="text-blk">Alice Johnson</p>
-                <p class="text-blk description">COO</p>
+                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 3">
+                <div class="text-content">
+                    <p class="text-blk">Alice Johnson</p>
+                    <p class="text-blk description">COO</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 3">
+                <div class="text-content">
+                    <p class="text-blk">Alice Johnson</p>
+                    <p class="text-blk description">COO</p>
+                </div>
             </div>
             <!-- Add more team members as needed -->
         </div>
