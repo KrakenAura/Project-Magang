@@ -23,7 +23,7 @@ class SocialController extends Controller
     public function view_landing()
     {
         $socials = Social::all();
-        return view('linktv', compact('socials'));
+        return view('contactus', compact('socials'));
     }
     public function show($id)
     {
@@ -46,7 +46,7 @@ class SocialController extends Controller
         }
 
         $social = Social::create($validatedData);
-        return new SocialResource($social);
+        return redirect('/admin/contactus')->with('success', 'Berita created successfully');
     }
 
     public function update(Request $request, $id)
@@ -68,13 +68,13 @@ class SocialController extends Controller
         }
 
         $social->update($validatedData);
-        return new SocialResource($social);
+        return redirect('/admin/contactus')->with('success', 'Berita updated successfully');
     }
 
     public function destroy($id)
     {
         $social = Social::findOrFail($id);
         $social->delete();
-        return response()->json(null, 204);
+        return redirect('/admin/contactus')->with('success', 'Berita deleted successfully');
     }
 }

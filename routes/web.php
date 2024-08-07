@@ -9,12 +9,12 @@ use App\Http\Controllers\OutlookController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('home0');
-})->name('home');
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/library', [LibraryController::class, 'index']);
+
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
 Route::get('/kotaterkini', [BeritaController::class, 'view_landing_kotaterkini'])->name('kotaterkini.landing');
 

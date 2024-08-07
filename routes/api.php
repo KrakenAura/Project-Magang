@@ -59,16 +59,16 @@ Route::delete('/wargabicara/delete/{id}', [ComplaintController::class, 'destroy'
 //Link TV
 Route::get('/social', [SocialController::class, 'index']);
 Route::get('/social/{id}', [SocialController::class, 'show']);
-Route::post('/social/create', [SocialController::class, 'store']);
-Route::put('/social/update/{id}', [SocialController::class, 'update']);
-Route::delete('/social/delete/{id}', [SocialController::class, 'destroy']);
+Route::post('/social/create', [SocialController::class, 'store'])->name('socials.store');
+Route::put('/social/update/{id}', [SocialController::class, 'update'])->name('socials.update');
+Route::delete('/social/delete/{id}', [SocialController::class, 'destroy'])->name('socials.destroy');
 
 //Library
 Route::get('/library', [LibraryController::class, 'index']);
 Route::get('/library/{id}', [LibraryController::class, 'show']);
-Route::post('/library/create', [LibraryController::class, 'store']);
-Route::put('/library/update/{id}', [LibraryController::class, 'update']);
-Route::delete('/library/delete/{id}', [LibraryController::class, 'destroy']);
+Route::post('/library/create', [LibraryController::class, 'store'])->name('library.store');
+Route::put('/library/update/{id}', [LibraryController::class, 'update'])->name('library.update');
+Route::delete('/library/delete/{id}', [LibraryController::class, 'destroy'])->name('library.delete');
 
 
 //Profile

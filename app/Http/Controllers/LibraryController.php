@@ -40,7 +40,7 @@ class LibraryController extends Controller
         }
 
         $library = Library::create($validatedData);
-        return new LibraryResource($library);
+        return redirect('/admin/library')->with('success', 'Berita created successfully');
     }
 
     public function update(Request $request, $id)
@@ -61,13 +61,13 @@ class LibraryController extends Controller
         // dd($validatedData);
 
         $library->update($validatedData);
-        return new LibraryResource($library);
+        return redirect('/admin/library')->with('success', 'Berita updated successfully');
     }
 
     public function destroy($id)
     {
         $library = Library::findOrFail($id);
         $library->delete();
-        return response()->json(null, 204);
+        return redirect('/admin/library')->with('success', 'Berita deleted successfully');
     }
 }

@@ -64,7 +64,7 @@
 
     <!--Modal -->
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalTambah">+ Tambah Library</button>
-    <!-- <div class="modal fade" id="modalUpdate{{$galeri->id}}" tabindex="-1" role="dialog" aria-labelledby="modalUpdate" aria-hidden="true">
+    <div class="modal fade" id="modalUpdate{{$galeri->id}}" tabindex="-1" role="dialog" aria-labelledby="modalUpdate" aria-hidden="true">
         <form action="{{ route('UpdateGaleri', $galeri->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </form>
-    </div> -->
+    </div>
 
     <div class="modal fade" id="modalTambah" tabindex="-1" role="dialog" aria-labelledby="modalUpdate" aria-hidden="true">
         <form action="{{ route('CreateGaleri') }}" method="POST" enctype="multipart/form-data">

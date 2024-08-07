@@ -11,14 +11,11 @@
 <section class="carousel-container">
     <div class="slider-wrapper">
         <div class="slider">
-            <img id="slide-1" src="{{asset('images/slide1.png')}}" alt="">
-            <img id="slide-2" src="{{asset('images/slide1.png')}}" alt="">
-            <img id="slide-3" src="{{asset('images/slide1.png')}}" alt="">
-        </div>
-        <div class="slider-nav">
-            <a href="#slide-1"></a>
-            <a href="#slide-2"></a>
-            <a href="#slide-3"></a>
+            @foreach ( $slideshows as $slideshow )
+
+            <img id="slide" src="{{ asset('storage/' . $berita->image) }}" alt="">
+
+            @endforeach
         </div>
     </div>
 </section>
