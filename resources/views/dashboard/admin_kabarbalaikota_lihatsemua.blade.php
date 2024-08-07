@@ -40,8 +40,12 @@
                 <p class="berita-date">{{$berita->created_at->format('d F, Y')}}</p>
                 <p class="berita-author">{{$berita->author}}</p>
                 <div class="berita-actions">
-                    <button class="btn btn-primary">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <a href="{{ route('admin.kabarbalaikota_edit', $berita->id) }}"><button class="btn btn-primary">Edit</button></a>
+                    <form action="{{ route('berita.delete', $berita->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>

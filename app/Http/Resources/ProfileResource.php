@@ -17,8 +17,8 @@ class ProfileResource extends JsonResource
     {
         return [
             'image' => $this->image,
-            'sejarah' => $this->title,
-            'struktur_organisasi' => $this->link,
+            'sejarah' => $this->sejarah,
+            'struktur_organisasi' => $this->struktur_organisasi,
         ];
     }
 }
