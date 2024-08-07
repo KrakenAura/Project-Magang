@@ -12,7 +12,7 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\HomeController;
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'view_landing'])->name('home');
 Route::get('/library', [LibraryController::class, 'index']);
 
 Route::get('/contactus', [SocialController::class, 'view_landing']);
