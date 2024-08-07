@@ -5,3 +5,9 @@
 
     gap: 10px;
 }
+
+.library-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
