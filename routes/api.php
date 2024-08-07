@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\VisitorController;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfileController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,13 @@ Route::get('/library/{id}', [LibraryController::class, 'show']);
 Route::post('/library/create', [LibraryController::class, 'store']);
 Route::put('/library/update/{id}', [LibraryController::class, 'update']);
 Route::delete('/library/delete/{id}', [LibraryController::class, 'destroy']);
+
+
+//Profile
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::post('/profile/create', [ProfileController::class, 'store']);
+Route::put('/profile/update/{id}', [ProfileController::class, 'update']);
+Route::delete('/profile/delete/{id}', [ProfileController::class, 'destroy']);
 
 
 

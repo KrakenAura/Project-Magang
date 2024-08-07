@@ -6,12 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Http\Resources\ProfileResource;
 
+use Illuminate\Support\Facades\Log;
+
 class ProfileController extends Controller
 {
     public function index()
     {
-        $profile = Profile::all();
-        return ProfileResource::collection($profile);
+        $profile = Profile::first();
+        if ($profile) {
+            return new ProfileResource($profile);
+        } else {
+            return response()->json(['message' => 'No profile found'], 404);
+        }
     }
 
     public function view_dashboard()
@@ -37,6 +43,10 @@ class ProfileController extends Controller
             $imagePath = $request->file('image')->store('Profile_images', 'public');
             $validatedData['image'] = $imagePath;
         }
+        if ($request->hasFile('struktur_organisasi')) {
+            $imagePathStruktur = $request->file('struktur_organisasi')->store('Profile_images', 'public');
+            $validatedData['struktur_organisasi'] = $imagePathStruktur;
+        }
 
         $profile = Profile::create($validatedData);
         return redirect('/admin/profile')->with('success', 'Berita created successfully');
@@ -45,7 +55,7 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         $profile = Profile::findOrFail($id);
-        // dd($request->all());
+        Log::info('Request data:', $request->all());
         $validatedData = $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'sejarah' => 'required',
@@ -56,7 +66,12 @@ class ProfileController extends Controller
             $imagePath = $request->file('image')->store('Profile_images', 'public');
             $validatedData['image'] = $imagePath;
         }
+        if ($request->hasFile('struktur_organisasi')) {
+            $imagePathStruktur = $request->file('struktur_organisasi')->store('Profile_images', 'public');
+            $validatedData['struktur_organisasi'] = $imagePathStruktur;
+        }
 
+        Log::info('Validated data:', $validatedData);
         $profile->update($validatedData);
         return redirect('/admin/profile')->with('success', 'Berita updated successfully');
     }
