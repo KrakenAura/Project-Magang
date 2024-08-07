@@ -50,36 +50,60 @@
     <div class="crew">
         <p class="text-blk subHeadingText">Our Team</p>
         <hr>
-        <div class="team-container">
-            <div class="team-member">
-                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                <div class="text-content">
-                    <p class="text-blk">John Doe</p>
-                    <p class="text-blk description">CEO</p>
+        <div class="team-container-wrapper">
+            <div class="team-container">
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
                 </div>
-            </div>
-            <div class="team-member">
-                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 2">
-                <div class="text-content">
-                    <p class="text-blk">Jane Smith</p>
-                    <p class="text-blk description">CTO</p>
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
                 </div>
-            </div>
-            <div class="team-member">
-                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 3">
-                <div class="text-content">
-                    <p class="text-blk">Alice Johnson</p>
-                    <p class="text-blk description">COO</p>
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
                 </div>
-            </div>
-            <div class="team-member">
-                <img src="{{asset('images/banner1.jpg')}}" alt="Team Member 3">
-                <div class="text-content">
-                    <p class="text-blk">Alice Johnson</p>
-                    <p class="text-blk description">COO</p>
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
                 </div>
+
+                <!-- Duplicated 4 team members -->
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
+                </div>
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
+                </div>
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
+                </div>
+                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
+                    <div class="text-content">
+                        <p class="text-blk">John Doe</p>
+                        <p class="text-blk description">CEO</p>
+                    </div>
+                </div>
+
             </div>
-            <!-- Add more team members as needed -->
         </div>
     </div>
 </body>

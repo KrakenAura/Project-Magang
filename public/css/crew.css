@@ -71,3 +71,35 @@
     opacity: 1;
     margin-top: 20px;
 }
+.team-container-wrapper {
+    width: 1360px; /* Adjust based on your layout, this accommodates 4 team members plus margins */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.team-container {
+    display: flex;
+    width: 2720px; /* Double the wrapper width */
+    animation: slideRight 20s linear infinite;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-1360px); /* Negative half of the container width */
+    }
+}
+
+.team-member {
+    flex: 0 0 300px;
+    height: 400px;
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Rest of the existing CSS remains the same */
+
