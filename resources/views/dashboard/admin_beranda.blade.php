@@ -60,9 +60,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><img src="{{ asset('storage/' . $social->logo) }}" alt="{{ $social->nama_tv }}"></td>
+                            <td><img src="{{ asset('storage/' . $social->logo) }}" alt="{{ $social->nama_tv }}" class="logo-tv"></td>
                             <td>TV Desa 1</td>
-                            <td><a href="{{ $social->link_web }}" target="_blank">{{ $social->link_web }}</a></td>
+                            <td><a href="{{ $social->link_yt }}" target="_blank">{{ $social->link_yt }}</a></td>
                             <td>
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editTV">Edit</button>
                                 <button type="button" class="btn btn-danger btn-sm">Delete</button>

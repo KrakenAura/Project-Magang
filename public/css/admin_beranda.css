@@ -100,3 +100,9 @@ h2{
     border: 1px solid #ddd;
     padding: 7px;
 }
+
+.logo-tv{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
