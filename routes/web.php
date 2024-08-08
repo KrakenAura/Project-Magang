@@ -22,9 +22,7 @@ Route::get('/kotaterkini', [BeritaController::class, 'view_landing_kotaterkini']
 
 Route::get('/layananpublik', [BeritaController::class, 'view_landing_layananpublik'])->name('layananpublik.landing');
 
-Route::get('/warga-bicara', function () {
-    return view('pengaduan');
-})->name('wargabicara');
+Route::get('/warga-bicara', [ComplaintController::class, 'view_landing'])->name('complaint.landing');
 Route::get('/programtv', [OutlookController::class, 'view_landing'])->name('programtv.landing');
 
 Route::get('/kerja', function () {

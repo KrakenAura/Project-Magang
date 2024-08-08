@@ -74,7 +74,7 @@
                             <div class="form-group">
                                 <label for="newImage" class="col-form-label">Pilih Gambar</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="newImage" name="image" accept="image/*">
+                                    <input type="file" class="custom-file-input" id="newImage" name="image_path" accept="image/*">
                                     <label class="custom-file-label" for="newImage">Choose file</label>
                                 </div>
                             </div>

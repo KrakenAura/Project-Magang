@@ -14,6 +14,16 @@ class ComplaintController extends Controller
         return ComplaintResource::collection($complaint);
     }
 
+    public function view_landing()
+    {
+        $date = now()->format('Ymd');
+        $lastComplaint = Complaint::latest()->first();
+        $id = $lastComplaint ? $lastComplaint->id + 1 : 1;
+        $nomor_pengaduan = "WB-{$date}-{$id}";
+
+        return view('pengaduan', compact('nomor_pengaduan'));
+    }
+
     public function view_dashboard()
     {
         $complaints = Complaint::all();
