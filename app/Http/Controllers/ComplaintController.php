@@ -38,20 +38,21 @@ class ComplaintController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'nomor_pengaduan' => 'required',
             'nama' => 'required',
             'nomor_telepon' => 'required',
             'email' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'required',
             'status' => 'required',
         ]);
 
         $validatedData['tanggal'] = now();
 
-        $date = now()->format('Ymd');
-        $lastComplaint = Complaint::latest()->first();
-        $id = $lastComplaint ? $lastComplaint->id + 1 : 1;
-        $validatedData['nomor_pengaduan'] = "WB-{$date}-{$id}";
+        // $date = now()->format('Ymd');
+        // $lastComplaint = Complaint::latest()->first();
+        // $id = $lastComplaint ? $lastComplaint->id + 1 : 1;
+        // $validatedData['nomor_pengaduan'] = "WB-{$date}-{$id}";
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('WargaBicara_images', 'public');
@@ -59,7 +60,7 @@ class ComplaintController extends Controller
         }
 
         $complaint = Complaint::create($validatedData);
-        return redirect()->route('wargabicara')->with('success', 'Complaint created successfully');
+        return redirect()->route('complaint.landing')->with('success', 'Complaint created successfully');
     }
 
     public function update(Request $request, $id)
