@@ -14,4 +14,6 @@ class Crew extends Model
         'jabatan',
         'foto'
     ];
+
+    protected $table = 'crew';
 }

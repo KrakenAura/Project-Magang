@@ -15,6 +15,7 @@ use App\Http\Controllers\OutlookController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CrewController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -77,6 +78,12 @@ Route::get('/profile', [ProfileController::class, 'index']);
 Route::post('/profile/create', [ProfileController::class, 'store']);
 Route::put('/profile/update/{id}', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile/delete/{id}', [ProfileController::class, 'destroy']);
+
+//Crew
+Route::get('/crew', [CrewController::class, 'index']);
+Route::post('/crew/create', [CrewController::class, 'store'])->name('crew.create');
+Route::put('/crew/update/{id}', [CrewController::class, 'update'])->name('crew.update');
+Route::delete('/crew/delete/{id}', [CrewController::class, 'destroy'])->name('cew.delete');
 
 //Beranda
 
