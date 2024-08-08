@@ -59,15 +59,16 @@
             <div class="card card-tv">
                 <p><span class="low-highlight"><strong>TV Desa</strong> Kota Batu&nbsp; &nbsp;</span></p>
                 @foreach ($socials as $social)
-                <div class="container">
-                    <a href="{{ $social->link_yt }}" target="_blank"> <img src="{{ asset('storage/' . $social->logo) }}">
-                        <p>{{$social->nama_tv}}</p>
+                <div class="tv-desa">
+                    <a href="{{ $social->link_yt }}" target="_blank">
+                        <img src="{{ asset('storage/' . $social->logo) }}" alt="{{ $social->nama_tv }}">
                     </a>
+                    <p>{{$social->nama_tv}}</p>
                 </div>
                 @endforeach
             </div>
-
         </div>
+
     </div>
 </div>
 @endsection
