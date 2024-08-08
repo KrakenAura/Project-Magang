@@ -79,10 +79,11 @@ Route::put('/profile/update/{id}', [ProfileController::class, 'update']);
 Route::delete('/profile/delete/{id}', [ProfileController::class, 'destroy']);
 
 //Beranda
-Route::post('/beranda/slideshow/store', [ProfileController::class, 'store'])->name('slideshow.store');
 
 Route::put('/beranda/footer/update/{id}', [HomeController::class, 'updateFooter'])->name('footer.update');
 Route::put('/beranda/livestream/update/{id}', [HomeController::class, 'updateFooter'])->name('livestream.update');
+Route::post('/beranda/slideshow/store', [HomeController::class, 'storeSlideShow'])->name('slideshow.store');
+Route::put('/beranda/slideshow/update/{id}', [HomeController::class, 'updateSlideShow'])->name('slideshow.update');
 
 
 
