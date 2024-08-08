@@ -69,10 +69,12 @@ button:hover {
   width: 30%;
   padding: 20px;
   margin-right: 100px;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
 }
 
 .image-section {
   display: flex;
+  flex-direction: column; /* Stack items vertically */
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -81,4 +83,9 @@ button:hover {
 .image-section img {
   max-width: 100%;
   border-radius: 4px;
+  margin-bottom: 20px; /* Add space between the image and the button */
+}
+
+.image-section button {
+  display: block; /* Ensure the button takes full width available */
 }

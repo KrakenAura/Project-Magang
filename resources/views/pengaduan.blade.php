@@ -31,7 +31,6 @@
                 <input type="file" id="image" name="image">
 
                 <input type="hidden" name="status" value="Belum ditangani">
-
                 <button type="submit">Kirim Pengaduan</button>
             </form>
         </div>
@@ -39,6 +38,7 @@
     <div class="side-section">
         <div class="image-section">
             <img src="{{ asset('images/wargabicara.png') }}" alt="Descriptive Image">
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Cek Status Pengaduan</button>
         </div>
     </div>
 </main>
