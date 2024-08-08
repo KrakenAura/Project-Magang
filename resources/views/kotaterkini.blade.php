@@ -81,7 +81,7 @@
             @endforeach
         </div>
     </div>
-    <div id="app" class="container">
+    <div id="app" class="container page-container">
         <ul class="page">
             {{-- Previous Page Link --}}
             @if ($olderBeritas->onFirstPage())
