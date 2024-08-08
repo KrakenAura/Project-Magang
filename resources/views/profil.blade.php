@@ -52,29 +52,13 @@
     <div class="crew">
         <div class="container">
             <div class="row">
+                @foreach ($crews as $crew)
                 <div class="team-item">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Manuella Nevoresky">
-                    <h5>Manuella Nevoresky</h5>
-                    <span>CEO - Founder</span>
+                    <img src="{{ asset('storage/'.$crew->foto) }}">
+                    <h5>{{$crew->nama}}</h5>
+                    <span>{{$crew->jabatan}}</span>
                 </div>
-
-                <div class="team-item">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Samuel Hardy">
-                    <h5>Samuel Hardy</h5>
-                    <span>CEO - Founder</span>
-                </div>
-
-                <div class="team-item">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="Tom Sunderland">
-                    <h5>Tom Sunderland</h5>
-                    <span>CEO - Founder</span>
-                </div>
-
-                <div class="team-item">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="John Tarly">
-                    <h5>John Tarly</h5>
-                    <span>CEO - Founder</span>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
