@@ -115,6 +115,7 @@ body {
 
 .secondary-column {
   flex: 0 0 20%;
+  border: 2px solid red;
 }
 
 .low-highlight {
@@ -132,22 +133,26 @@ body {
   background-color: #f6fdff;
 }
 
-.container {
+.tv-desa {
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertically centers items within the container */
+  justify-content: center; /* Horizontally centers items within the container */
   margin: 10px 50px 20px 0px;
+  gap: 0.8rem; /* Adds space between the image and paragraph */
 }
 
-.container p {
-  margin: 1rem 0 auto 0.8rem;
+.tv-desa p {
+  font-size: 18px;
+  margin: 0; /* Resets margin to ensure proper centering */
   flex: 1;
 }
 
-.container img {
+.tv-desa img {
   max-width: 3rem;
   max-height: 3rem;
   flex-grow: 0;
 }
+
 
 .sec-banner {
   margin-top: 3rem;
