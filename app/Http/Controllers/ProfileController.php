@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Http\Resources\ProfileResource;
+use App\Models\Crew;
 
 use Illuminate\Support\Facades\Log;
 
@@ -23,12 +24,14 @@ class ProfileController extends Controller
     public function view_dashboard()
     {
         $profiles = Profile::first();
-        return view('dashboard.admin_profil', compact('profiles'));
+        $crews = Crew::all();
+        return view('dashboard.admin_profil', compact('profiles', 'crews'));
     }
     public function view_landing()
     {
         $profiles = Profile::first();
-        return view('profil', compact('profiles'));
+        $crews = Crew::all();
+        return view('profil', compact('profiles', 'crews'));
     }
 
     public function show($id)
