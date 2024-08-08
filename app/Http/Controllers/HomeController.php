@@ -11,6 +11,7 @@ use App\Models\Address;
 use App\Models\Livestream;
 use App\Models\social;
 use App\Models\Footer;
+use App\Models\Outlook;
 use App\Models\berita;
 
 class HomeController extends Controller
@@ -21,7 +22,7 @@ class HomeController extends Controller
         $livestreams = Livestream::all();
 
         $footer = Footer::first();
-        
+
 
         return view('dashboard.admin_beranda', compact('slideshows', 'livestreams', 'footer'));
     }
@@ -29,13 +30,15 @@ class HomeController extends Controller
     public function view_landing()
     {
         $slideshows = Slideshow::all();
+        $socials = social::all();
         $livestreams = Livestream::all();
         $latestNews = Berita::orderBy('created_at', 'asc')->take(2)->get();
+        $outlooks = Outlook::orderBy('created_at', 'asc')->take(6)->get();
 
 
         $footer = Footer::first();
 
-        return view('home0', compact('slideshows', 'livestreams', 'footer'));
+        return view('home0', compact('slideshows', 'livestreams', 'footer', 'latestNews', 'outlooks', 'socials'));
     }
 
     //Footer
