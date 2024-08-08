@@ -31,6 +31,7 @@
         @endforeach
     </div>
 </div>
+
 <!-- Content -->
 <div class="main-container">
     <div class="content">
