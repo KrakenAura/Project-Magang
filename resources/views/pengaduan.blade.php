@@ -5,17 +5,15 @@
 @endsection
 
 @section('content')
-<header>
-    <h1>Warga Bicara</h1>
-</header>
-<main><?
+<main>
     <div class="content">
         <div class="form-section">
+            <h1>Warga Bicara</h1>
             <form action="{{ route('complaints.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <label for="nomor_pengaduan">Nomor Pengaduan</label>
-                <input type="text" id="nomor_pengaduan" name="nomor_pengaduan" readonly>
+                <input type="text" id="nomor_pengaduan" name="nomor_pengaduan" value="{{$nomor_pengaduan}}" readonly>
 
                 <label for="nama">Nama</label>
                 <input type="text" id="nama" name="nama" required>
@@ -32,7 +30,7 @@
                 <label for="image">Unggah Bukti (opsional)</label>
                 <input type="file" id="image" name="image">
 
-                <input type="hidden" name="status" value="Pending">
+                <input type="hidden" name="status" value="Belum ditangani">
 
                 <button type="submit">Kirim Pengaduan</button>
             </form>
