@@ -71,26 +71,16 @@ class HomeController extends Controller
     public function storeSlideShow(Request $request)
     {
         $validatedData = $request->validate([
-            'image_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        try {
-            if ($request->hasFile('image_path')) {
-                $image = $request->file('image_path');
-                $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $imagePath = $image->storeAs('Home_images', $imageName, 'public');
-                $validatedData['image_path'] = $imagePath;
-            }
-
-            Slideshow::create($validatedData);
-
-            return redirect('/admin/beranda')->with('success', 'Slideshow image added successfully');
-        } catch (\Exception $e) {
-            // Log the error for debugging:
-            Log::error('Error adding slideshow image: ' . $e->getMessage());
-
-            return redirect('/')->with('error', 'An error occurred while uploading the image.');
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('Home_images', 'public');
+            $validatedData['image_path'] = $imagePath;
         }
+
+        $slideshow = Slideshow::create($validatedData);
+        return redirect()->route('admin.beranda')->with('success', 'Outlook created successfully');
     }
     public function updateSlideShow(Request $request, $slideshowId)
     {

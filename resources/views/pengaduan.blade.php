@@ -8,32 +8,35 @@
 <header>
     <h1>Warga Bicara</h1>
 </header>
-<main>
+<main><?
     <div class="content">
         <div class="form-section">
-            <form action="#" method="post">
-                <label for="complaint_number">Nomor Pengaduan</label>
-                <input type="text" id="complaint_number" name="complaint_number" value="PN-12345678" readonly>
+            <form action="{{ route('complaints.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
 
-                <label for="name">Nama</label>
-                <input type="text" id="name" name="name" required>
+                <label for="nomor_pengaduan">Nomor Pengaduan</label>
+                <input type="text" id="nomor_pengaduan" name="nomor_pengaduan" readonly>
+
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" required>
 
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="phone">Nomor Telepon</label>
-                <input type="tel" id="phone" name="phone" required>
+                <label for="nomor_telepon">Nomor Telepon</label>
+                <input type="tel" id="nomor_telepon" name="nomor_telepon" required>
 
-                <label for="complaint">Deskripsi Pengaduan</label>
-                <textarea id="complaint" name="complaint" rows="5" required></textarea>
+                <label for="deskripsi">Deskripsi Pengaduan</label>
+                <textarea id="deskripsi" name="deskripsi" rows="5" required></textarea>
 
-                <label for="file">Unggah Bukti (opsional)</label>
-                <input type="file" id="file" name="file">
+                <label for="image">Unggah Bukti (opsional)</label>
+                <input type="file" id="image" name="image">
+
+                <input type="hidden" name="status" value="Pending">
 
                 <button type="submit">Kirim Pengaduan</button>
             </form>
         </div>
-
     </div>
     <div class="side-section">
         <div class="image-section">
