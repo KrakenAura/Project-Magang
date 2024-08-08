@@ -2,7 +2,6 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('/css/admin_profil.css')}}">
-
 @endsection
 
 @section('content')
@@ -29,10 +28,55 @@
                 </td>
             </tr>
         </tbody>
-
     </table>
 
-    <!-- Modal -->
+    <h1>Crew</h1>
+    <div class="crew">
+        <div class="team-item">
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Manuella Nevoresky">
+            <h5>Manuella Nevoresky</h5>
+            <span>CEO - Founder</span>
+            <div class="admin-buttons">
+                <button class="btn btn-edit" data-toggle="modal" data-target="#editCrew">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+
+        <div class="team-item">
+            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Samuel Hardy">
+            <h5>Samuel Hardy</h5>
+            <span>CEO - Founder</span>
+            <div class="admin-buttons">
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+
+        <div class="team-item">
+            <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="Tom Sunderland">
+            <h5>Tom Sunderland</h5>
+            <span>CEO - Founder</span>
+            <div class="admin-buttons">
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+
+        <div class="team-item">
+            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="John Tarly">
+            <h5>John Tarly</h5>
+            <span>CEO - Founder</span>
+            <div class="admin-buttons">
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+
+        <!-- Add more team-item divs as needed -->
+    </div>
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addCrew">Tambah</button>
+
+    <!-- Modal edit data profil -->
     <div class="modal fade" id="editProfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -71,6 +115,72 @@
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal edit crew     -->
+    <div class="modal fade" id="editCrew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Photo</label>
+                        <input class="form-control" type="file" id="image" name="image">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="nama" class="form-control" id="inputName" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Jabatan</label>
+                        <input type="jabatan" class="form-control" id="inputJabatan" placeholder="Jabatan Anda">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal add crew     -->
+    <div class="modal fade" id="addCrew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Photo</label>
+                        <input class="form-control" type="file" id="image" name="image">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="nama" class="form-control" id="inputName" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Jabatan</label>
+                        <input type="jabatan" class="form-control" id="inputJabatan" placeholder="Jabatan Anda">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
