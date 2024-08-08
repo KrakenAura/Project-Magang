@@ -7,6 +7,7 @@ body {
 .content {
   display: flex;
   margin: 3rem;
+  flex-wrap: wrap; /* Ensure cards wrap to the next line if there's not enough space */
 }
 
 h1 {
@@ -19,12 +20,15 @@ h1 {
 .card {
   position: relative;
   overflow: hidden;
-  margin: 2rem;
-  max-width: 30%;
+  margin: 1rem;
+  width: 500px; /* Fixed width */
+  height: 300px; /* Fixed height */
 }
 
 .card .card-image img {
-  max-width: 100%; /* Ensure the image fits within the card */
+  width: 100%; /* Ensure the image fits within the card */
+  height: 100%; /* Ensure the image fits within the card */
+  object-fit: cover; /* Cover the entire area without distortion */
   border-radius: 25px;
 }
 
@@ -34,8 +38,6 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   transition: opacity 0.5s ease;
   background: linear-gradient(

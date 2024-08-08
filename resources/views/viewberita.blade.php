@@ -124,58 +124,61 @@
 
 </div>
 <div class="news-baru">
-    <p class="kategori">Berita Lainya</p>
-    <div class="news-baru-list">
+    <div class="berita-lainnya">
+        <p class="kategori">Berita Lainya</p>
         <div class="news-baru-list">
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}" alt="News Image">
+            <div class="news-baru-list">
+                <div class="card">
+                    <div class="image-section">
+                        <img src="{{asset('images/news 1.png')}}" alt="News Image">
+                    </div>
+                    <div class="news-footer">
+                        <span>Admin</span>
+                        <span> . 12th July, 2024</span>
+                    </div>
+                    <div class="article">
+                        <h4>Tim Volly Desa Pesanggrahan Lolos ke Final Kapolres Cup</h4>
+                    </div>
                 </div>
-                <div class="news-footer">
-                    <span>Admin</span>
-                    <span> . 12th July, 2024</span>
+                <div class="card">
+                    <div class="image-section">
+                        <img src="{{asset('images/news 1.png')}}" alt="News Image">
+                    </div>
+                    <div class="news-footer">
+                        <span>Admin</span>
+                        <span> . 12th July, 2024</span>
+                    </div>
+                    <div class="article">
+                        <h4>Tim Volly Desa Pesanggrahan Lolos ke Final Kapolres Cup</h4>
+                    </div>
                 </div>
-                <div class="article">
-                    <h4>Tim Volly Desa Pesanggrahan Lolos ke Final Kapolres Cup</h4>
+                <div class="card">
+                    <div class="image-section">
+                        <img src="{{asset('images/news 1.png')}}" alt="News Image">
+                    </div>
+                    <div class="news-footer">
+                        <span>Admin</span>
+                        <span> . 12th July, 2024</span>
+                    </div>
+                    <div class="article">
+                        <h4>Kerja Bakti Gugur Gunung Susuk Wangan Serentak Di Desa Pesanggrahan</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}" alt="News Image">
-                </div>
-                <div class="news-footer">
-                    <span>Admin</span>
-                    <span> . 12th July, 2024</span>
-                </div>
-                <div class="article">
-                    <h4>Tim Volly Desa Pesanggrahan Lolos ke Final Kapolres Cup</h4>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}" alt="News Image">
-                </div>
-                <div class="news-footer">
-                    <span>Admin</span>
-                    <span> . 12th July, 2024</span>
-                </div>
-                <div class="article">
-                    <h4>Kerja Bakti Gugur Gunung Susuk Wangan Serentak Di Desa Pesanggrahan</h4>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-section">
-                    <img src="{{asset('images/news 1.png')}}" alt="News Image">
-                </div>
-                <div class="news-footer">
-                    <span>Admin</span>
-                    <span> . 12th July, 2024</span>
-                </div>
-                <div class="article">
-                    <h4>Kerja Bakti Gugur Gunung Susuk Wangan Serentak Di Desa Pesanggrahan</h4>
+                <div class="card">
+                    <div class="image-section">
+                        <img src="{{asset('images/news 1.png')}}" alt="News Image">
+                    </div>
+                    <div class="news-footer">
+                        <span>Admin</span>
+                        <span> . 12th July, 2024</span>
+                    </div>
+                    <div class="article">
+                        <h4>Kerja Bakti Gugur Gunung Susuk Wangan Serentak Di Desa Pesanggrahan</h4>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
     <hr>
 </div>
