@@ -13,7 +13,7 @@
         <div class="slider">
             @foreach ( $slideshows as $slideshow )
 
-            <img id="slide" src="{{ asset('storage/' . $berita->image) }}" alt="">
+            <img id="slide" src="{{ asset('storage/' . $slideshow->image_path) }}" alt="">
 
             @endforeach
         </div>
@@ -22,36 +22,13 @@
 
 <div class="banner">
     <div class="banner-tv">
+        @foreach ($outlooks as $outlook)
         <div class="banner-tv-content">
             <div class="image-section">
-                <img src="{{asset('images/banner1.jpg')}}">
+                <a href="{{ $outlook->link }}" target="_blank"><img src="{{ asset('storage/' . $outlook->image) }}"></a>
             </div>
         </div>
-        <div class="banner-tv-content">
-            <div class="image-section">
-                <img src="{{asset('images/banner2.jpg')}}">
-            </div>
-        </div>
-        <div class="banner-tv-content">
-            <div class="image-section">
-                <img src="{{asset('images/banner3.jpg')}}">
-            </div>
-        </div>
-        <div class="banner-tv-content">
-            <div class="image-section">
-                <img src="{{asset('images/banner4.jpg')}}">
-            </div>
-        </div>
-        <div class="banner-tv-content">
-            <div class="image-section">
-                <img src="{{asset('images/banner5.jpeg')}}">
-            </div>
-        </div>
-        <div class="banner-tv-content">
-            <div class="image-section">
-                <img src="{{asset('images/banner6.jpg')}}">
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!-- Content -->
@@ -59,15 +36,17 @@
     <div class="content">
         <div class="column primary-column">
             <p><span class="low-highlight">Berita Terbaru &nbsp; &nbsp;</span></p>
+            @foreach ($latestNews as $berita)
             <div class="news">
                 <img src="{{asset('images/slide1.png')}}" alt="">
-                <h2>Tim Volly Desa Pesanggrahan Lolos ke Babak Semi Final Kapolres Cup 2023</h2>
+                <h2>{{$berita->title}}</h2>
                 <p>{{$berita->teaser}}</p>
             </div>
             <div class="news-view">
-                <a href="#" class="button">Selengkapnya</a>
+                <a href="{{ route('berita.view', $berita->id) }}" class="button">Selengkapnya</a>
             </div>
             <hr>
+            @endforeach
 
             <p><span class="low-highlight">Live Stream Terbaru &nbsp; &nbsp;</span></p>
             <div class="iframe-container">
@@ -79,104 +58,13 @@
         <div class="column secondary-column">
             <div class="card card-tv">
                 <p><span class="low-highlight"><strong>TV Desa</strong> Kota Batu&nbsp; &nbsp;</span></p>
+                @foreach ($socials as $social)
                 <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Oro-Oro Ombo</p>
+                    <a href="{{ $social->link_yt }}" target="_blank"> <img src="{{ asset('storage/' . $social->logo) }}">
+                        <p>{{$social->nama_tv}}</p>
+                    </a>
                 </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Pesanggrahan</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Sidomulyo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Sumberjo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Bulukerto</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Bumiaji</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Giripurno</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Gunungsari</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Pandanrejo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Punten</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Sumber Brantas</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Sumbergondo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Tulungrejo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Beji</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Junrejo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Mojorejo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Pendem</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Tlekung</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Torongrejo</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Ngaglik</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Sisir</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Songgokerto</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Temas</p>
-                </div>
-                <div class="container">
-                    <img src="{{ asset('images/logo tvd.png') }}" alt="">
-                    <p>TV Dadaprejo</p>
-                </div>
-
-
+                @endforeach
             </div>
 
         </div>
