@@ -27,9 +27,8 @@
                     <p class="text-blk subHeadingText">
                         Apa itu KIM?
                     </p>
-                    <p class="text-blk description">
-                        KIM adalah Komunitas yang dibentuk oleh masyarakat, dari masyarakat dan untuk masyarakat serta secara mandiri dan kreatif melakukan aktivitas pengelolaan informasi dan pemberdayaan guna memberikan nilai tambah bagi masyarakat itu sendiri. </p>
-                    <p class="text-blk description">
+                    <p class="profil-desc">
+                        KIM adalah Komunitas yang dibentuk oleh masyarakat, dari masyarakat dan untuk masyarakat serta secara mandiri dan kreatif melakukan aktivitas pengelolaan informasi dan pemberdayaan guna memberikan nilai tambah bagi masyarakat itu sendiri.
                         Berdasarkan Permenkominfo No. 8 Tahun 2019 tentang Penyelenggaraan Urusan Pemerintahan Konkuren Bidang Komunikasi dan Informatika, bahwa Dinas melaksanakan kemitraan dengan pemangku kepentingan, salah satunya adalah Komunitas Informasi Masyarakat, sebagaimana dimaksud dalam Pasal 16 ayat (2) huruf a.
                     </p>
 
@@ -47,62 +46,36 @@
         <hr>
         <img class="struktur-img" src="{{asset('images/struktur.png')}}" alt="image">
     </div>
+
+    <br>
+    <p class="text-blk crewHeading" style="font-size: 32px;">Our Crew</p>
+    <hr>
     <div class="crew">
-        <p class="text-blk subHeadingText">Our Team</p>
-        <hr>
-        <div class="team-container-wrapper">
-            <div class="team-container">
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
-                </div>
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
-                </div>
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
-                </div>
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="team-item">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Manuella Nevoresky">
+                    <h5>Manuella Nevoresky</h5>
+                    <span>CEO - Founder</span>
                 </div>
 
-                <!-- Duplicated 4 team members -->
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
-                </div>
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
-                </div>
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
-                </div>
-                <div class="team-member"><img src="{{asset('images/banner1.jpg')}}" alt="Team Member 1">
-                    <div class="text-content">
-                        <p class="text-blk">John Doe</p>
-                        <p class="text-blk description">CEO</p>
-                    </div>
+                <div class="team-item">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Samuel Hardy">
+                    <h5>Samuel Hardy</h5>
+                    <span>CEO - Founder</span>
                 </div>
 
+                <div class="team-item">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="Tom Sunderland">
+                    <h5>Tom Sunderland</h5>
+                    <span>CEO - Founder</span>
+                </div>
+
+                <div class="team-item">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="John Tarly">
+                    <h5>John Tarly</h5>
+                    <span>CEO - Founder</span>
+                </div>
             </div>
         </div>
     </div>
