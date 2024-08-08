@@ -9,6 +9,7 @@ use App\Http\Controllers\OutlookController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 
 
@@ -16,6 +17,9 @@ Route::get('/', [HomeController::class, 'view_landing'])->name('home');
 Route::get('/library', [LibraryController::class, 'index']);
 
 Route::get('/contactus', [SocialController::class, 'view_landing']);
+
+Route::get('/profil', [ProfileController::class, 'view_landing']);
+
 
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
 Route::get('/kotaterkini', [BeritaController::class, 'view_landing_kotaterkini'])->name('kotaterkini.landing');
@@ -38,34 +42,13 @@ Route::get('/citizen/tulis', function () {
 
 Route::get('/galeri', [GaleryController::class, 'view_landing'])->name('galeri.landing');
 
-Route::get('/tentang-kami', function () {
-    return view('tentang_kami');
-});
-
-Route::get('/tautan', function () {
-    return view('tautan');
-});
-Route::get('/profil', function () {
-    return view('profil');
-});
-
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-
-Route::get('/test-session', function () {
-    session(['key' => 'value']);
-    return session('key');
-});
-
 Route::get('/adminlogin', function () {
     return view('adminlogin');
 })->name('adminlogin');
-
-// Route::get('/admin/dashboard', function () {
-//     return view('admin');
-// })->name('dashboard');
 
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
@@ -116,6 +99,9 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
 
     //Link TV Desa
     Route::get('/contactus', [SocialController::class, 'view_dashboard'])->name('admin.contacus');
+
+    //Profile
+    Route::get('/profil', [ProfileController::class, 'view_dashboard'])->name('admin.profile');
 });
 
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');

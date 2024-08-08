@@ -22,8 +22,13 @@ class ProfileController extends Controller
 
     public function view_dashboard()
     {
-        $profiles = Profile::all();
-        return view('dashboard.admin_profile', compact('Profiles'));
+        $profiles = Profile::first();
+        return view('dashboard.admin_profil', compact('profiles'));
+    }
+    public function view_landing()
+    {
+        $profiles = Profile::first();
+        return view('profil', compact('profiles'));
     }
 
     public function show($id)
@@ -36,6 +41,7 @@ class ProfileController extends Controller
         $validatedData = $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'sejarah' => 'required',
+            'deskripsi' => 'required',
             'struktur_organisasi' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -55,10 +61,10 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         $profile = Profile::findOrFail($id);
-        Log::info('Request data:', $request->all());
         $validatedData = $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'sejarah' => 'required',
+            'deskripsi' => 'required',
             'struktur_organisasi' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -71,9 +77,8 @@ class ProfileController extends Controller
             $validatedData['struktur_organisasi'] = $imagePathStruktur;
         }
 
-        Log::info('Validated data:', $validatedData);
         $profile->update($validatedData);
-        return redirect('/admin/profile')->with('success', 'Berita updated successfully');
+        return redirect('/admin/profil')->with('success', 'Berita updated successfully');
     }
 
     public function destroy($id)

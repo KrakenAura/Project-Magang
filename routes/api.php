@@ -75,7 +75,7 @@ Route::delete('/library/delete/{id}', [LibraryController::class, 'destroy'])->na
 //Profile
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::post('/profile/create', [ProfileController::class, 'store']);
-Route::put('/profile/update/{id}', [ProfileController::class, 'update']);
+Route::put('/profile/update/{id}', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile/delete/{id}', [ProfileController::class, 'destroy']);
 
 //Beranda

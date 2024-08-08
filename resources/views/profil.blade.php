@@ -13,7 +13,7 @@
         <div class="overlay"></div>
         <div class="aboutus-content">
             <h1 class="text-blk subHeadingText">Tentang Kami</h1>
-            <p>Komunitas Informasi Masyarakat (KIM) adalah suatu lembaga layanan publik yang dibentuk dan dikelola dari, oleh dan untuk masyarakat yang secara khusus berorientasi pada layanan informasi dan pemberdayaan masyarakat sesuai dengan kebutuhannya.</p>
+            <p>{{$profiles->deskripsi}}</p>
         </div>
     </div>
     <div class="apa-kim">
@@ -25,16 +25,15 @@
                         Profil
                     </p>
                     <p class="text-blk subHeadingText">
-                        Apa itu KIM?
+                        Sejarah TV Desa Kota Batu
                     </p>
                     <p class="profil-desc">
-                        KIM adalah Komunitas yang dibentuk oleh masyarakat, dari masyarakat dan untuk masyarakat serta secara mandiri dan kreatif melakukan aktivitas pengelolaan informasi dan pemberdayaan guna memberikan nilai tambah bagi masyarakat itu sendiri.
-                        Berdasarkan Permenkominfo No. 8 Tahun 2019 tentang Penyelenggaraan Urusan Pemerintahan Konkuren Bidang Komunikasi dan Informatika, bahwa Dinas melaksanakan kemitraan dengan pemangku kepentingan, salah satunya adalah Komunitas Informasi Masyarakat, sebagaimana dimaksud dalam Pasal 16 ayat (2) huruf a.
+                        {{$profiles->sejarah}}
                     </p>
 
                 </div>
                 <div class="videoContainer">
-                    <img class="mainVideo" src="{{asset('images/banner6.jpg')}}" alt="Image">
+                    <img class="mainVideo" src="{{ asset('storage/' . $profiles->image) }}">
                     <img class="dotsImg image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/cw3.svg">
                 </div>
             </div>
@@ -44,7 +43,7 @@
         <br>
         <p class="text-blk subHeadingText">Struktur Organisasi</p>
         <hr>
-        <img class="struktur-img" src="{{asset('images/struktur.png')}}" alt="image">
+        <img class="struktur-img" src="{{ asset('storage/' . $profiles->struktur_organisasi) }}">
     </div>
 
     <br>
