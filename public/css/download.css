@@ -7,9 +7,9 @@
   }
 }
 
-*,
-*::before,
-*::after {
+.wrapper,
+.wrapper::before,
+.wrapper::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,7 +18,7 @@
   outline: none;
   appearance: none;
   border-style: none;
-  color: #ffffff;
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -137,7 +137,15 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  z-index: 2; /* Ensure the button is above the image */
+  z-index: 2;
+}
+
+.container-contact .card .sci a {
+  color: white;
+}
+
+.container-contact .card .sci a:hover {
+  color: lightgray;
 }
 
 .container-contact .card .sci li {
@@ -158,6 +166,10 @@ p {
 
 .container-contact .card:hover .img img {
   opacity: 1; /* Keep image opacity unchanged on hover */
+}
+
+.wrapper .sci {
+  color: white;
 }
 
 span {
