@@ -6,6 +6,7 @@ main {
 }
 
 .content {
+  flex-direction: column;
   display: flex;
   width: 90%;
   max-width: 1200px;
@@ -84,4 +85,56 @@ button:hover {
 
 .image-section button {
   display: block; /* Ensure the button takes full width available */
+}
+
+.form-section p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Hide the image on smaller screens */
+@media (max-width: 768px) {
+  .image-section img {
+    display: none;
+  }
+
+  .form-section {
+    margin-left: 0;
+    width: 100%; /* Make the form take full width on smaller screens */
+  }
+
+  .side-section {
+    display: none;
+    width: 100%;
+  }
+
+  .form-section p {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .image-section img {
+    display: none;
+  }
+
+  .form-section {
+    margin-left: 0;
+    width: 100%; /* Make the form take full width on smaller screens */
+  }
+
+  .side-section {
+    display: none;
+    width: 100%;
+  }
+
+  .form-section p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 18px;
+  }
 }

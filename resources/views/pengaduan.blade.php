@@ -9,6 +9,8 @@
     <div class="content">
         <div class="form-section">
             <h1>Warga Bicara</h1>
+            <p>Ayo, berperan aktif dalam menciptakan lingkungan yang lebih baik dengan menyampaikan aduan melalui *Warga Bicara*. Suara Anda penting untuk perubahan positif di sekitar kita. Laporkan masalah atau pelanggaran yang Anda temui dan jadilah bagian dari solusi!</p>
+
             <form action="{{ route('complaints.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
