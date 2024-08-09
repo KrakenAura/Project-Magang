@@ -82,7 +82,7 @@
         </div>
     </div>
     <div id="app" class="container page-container">
-        <ul class="page">
+        <ul class="page custom-ul">
             {{-- Previous Page Link --}}
             @if ($olderBeritas->onFirstPage())
             <li class="page__btn"><span class="material-icons">chevron_left</span></li>
