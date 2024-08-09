@@ -21,43 +21,7 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <!-- <nav id="hamburger-nav">
-        <img class="logo" src="{{ asset('images/logo tvd.png') }}" alt="">
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <span class="menu-text" onclick="toggleMenu()">Menu</span>
-            <div class="menu-links">
-    <li><a href="/berita" onclick="toggleMenu()">Berita</a></li>
-    <li><a href="/galeri" onclick="toggleMenu()">Galeri</a></li>
-    <li><a href="/tentang-kami" onclick="toggleMenu()">Tentang Kami</a></li>
-    <li><a href="/tautan" onclick="toggleMenu()">Tautan</a></li>
-    <li><a href="/download" onclick="toggleMenu()">Download</a></li>
-    @if(Auth::check())
-    <li>
-        <span>Hi, {{ Auth::user()->name }}</span>
-    </li>
-    <li>
-        <a href="{{ route('visitor.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-    </li>
-    <form id="logout-form" action="{{ route('visitor.logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
-    @else
-    <li><a href="{{ route('login') }}" data-feather="log-in">Login</a></li>
-    @endif
-    <li><a href="/berita" onclick="toggleMenu()">Berita</a></li>
-    <li><a href="/galeri" onclick="toggleMenu()">Galeri</a></li>
-    <li><a href="/tentang-kami" onclick="toggleMenu()">Tentang Kami</a></li>
-    <li><a href="/tautan" onclick="toggleMenu()">Tautan</a></li>
-    <li><a href="/download" onclick="toggleMenu()">Download</a></li>
-    </div>
-    </div>
-    </nav> -->
+
     <header class="header">
         <nav class="nav container">
             <div class="nav__data">

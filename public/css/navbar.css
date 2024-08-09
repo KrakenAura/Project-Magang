@@ -394,3 +394,21 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 1024px) {
+  .header h2 {
+    font-size: 1rem; /* Slightly smaller font size for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 1rem; /* Smaller font size for tablets and small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 1rem; /* Smallest font size for mobile devices */
+    text-align: center; /* Center align text for better appearance on small screens */
+  }
+}

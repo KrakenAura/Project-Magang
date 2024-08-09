@@ -45,26 +45,35 @@
     <div class="column column-right">
         <div class="news-card">
             <div class="news-card-content">
-                <p class="kategori">Berita Lainya</p>
-                <img src="{{asset('images/news 1.png')}}" alt="News Image" class="news-card-image">
-                <div class="news-footer">
-                    <span>Admin</span>
-                    <span> . 12th July, 2024</span>
+                <div class="news-card-image-wrapper">
+                    <img src="{{asset('images/news 1.png')}}" alt="News Image" class="news-card-image">
                 </div>
-                <a href="#" class="news-card-title">TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</a>
+                <div class="news-card-text-wrapper">
+
+                    <a href="#" class="news-card-title">TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</a>
+                    <div class="news-footer">
+                        <span>Admin</span>
+                        <span> . 12th July, 2024</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="news-card">
             <div class="news-card-content">
-                <img src="{{asset('images/news 3.png')}}" alt="News Image" class="news-card-image">
-                <div class="news-footer">
-                    <span>Admin</span>
-                    <span> . 12th July, 2024</span>
+                <div class="news-card-image-wrapper">
+                    <img src="{{asset('images/news 3.png')}}" alt="News Image" class="news-card-image">
                 </div>
-                <a href="#" class="news-card-title">KERJA BAKTI GUGUR GUNUNG SUSUK WANGAN SERENTAK DI DESA PESANGGRAHAN</a>
+                <div class="news-card-text-wrapper">
+                    <a href="#" class="news-card-title">KERJA BAKTI GUGUR GUNUNG SUSUK WANGAN SERENTAK DI DESA PESANGGRAHAN</a>
+                    <div class="news-footer">
+                        <span>Admin</span>
+                        <span> . 12th July, 2024</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 
     <!-- Cody -->
     <div class="comment-section">
