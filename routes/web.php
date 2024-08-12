@@ -11,6 +11,7 @@ use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 
 
 Route::get('/', [HomeController::class, 'view_landing'])->name('home');
@@ -50,7 +51,7 @@ Route::get('/adminlogin', function () {
     return view('adminlogin');
 })->name('adminlogin');
 
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
 

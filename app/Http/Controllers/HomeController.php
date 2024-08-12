@@ -32,7 +32,7 @@ class HomeController extends Controller
         $slideshows = Slideshow::all();
         $socials = social::all();
         $livestreams = Livestream::all();
-        $latestNews = Berita::orderBy('created_at', 'asc')->take(2)->get();
+        $latestNews = Berita::orderBy('created_at', 'desc')->take(2)->get();
         $outlooks = Outlook::orderBy('created_at', 'asc')->take(6)->get();
 
 

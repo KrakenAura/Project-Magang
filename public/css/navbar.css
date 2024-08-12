@@ -2,10 +2,10 @@
 
 :root {
   --header-height: 3.5rem;
-  --black-color: #161618;
+  --black-color: #151556;
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
-  --white-color: #5fc9f3;
+  --white-color: #fbfeff;
   --body-color: hsl(220, 100%, 97%);
 
   /*========== Font and typography ==========*/
@@ -355,39 +355,38 @@ a {
   float: left;
 }
 
-.logout-div .logout{
-  font-family: 'Poppins', sans-serif;
+.logout-div .logout {
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   color: #5fc9f3;
   margin-top: 22px;
-  font-size: .8em;
-	position: relative;
+  font-size: 0.8em;
+  position: relative;
   right: -18px;
   bottom: -4px;
   overflow: hidden;
   letter-spacing: 3px;
   opacity: 0;
-  transition: opacity .45s;
-  -webkit-transition: opacity .35s;
-  
+  transition: opacity 0.45s;
+  -webkit-transition: opacity 0.35s;
 }
 
 .logout-div .button-logout {
-	text-decoration: none;
-	float: right;   
+  text-decoration: none;
+  float: right;
   color: white;
   width: 50px;
-  transition: width .35s;
-  -webkit-transition: width .35s;
-  overflow: hidden
+  transition: width 0.35s;
+  -webkit-transition: width 0.35s;
+  overflow: hidden;
 }
 
 .logout-div a:hover {
   width: 120px;
 }
 
-.logout-div a:hover .logout{
-  opacity: .9;
+.logout-div a:hover .logout {
+  opacity: 0.9;
 }
 
 .logout-div a {

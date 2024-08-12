@@ -61,7 +61,7 @@ body {
 /* Content */
 .content {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   padding: 1rem;
   gap: 2rem;
 }
@@ -71,7 +71,7 @@ body {
 }
 
 .primary-column {
-  flex: 0 0 75%;
+  flex: 0 0 70%;
 }
 .iframe-container {
   position: relative;
@@ -115,11 +115,17 @@ body {
 
 .secondary-column {
   flex: 0 0 20%;
-
 }
 
-.low-highlight {
-  background: linear-gradient(180deg, transparent 80%, #5fc9f3 60%);
+.header-content {
+  background: #151556;
+  padding: 0.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.content-title {
+  margin-left: 2rem;
+  color: white;
 }
 
 .secondary-column p {
@@ -128,7 +134,6 @@ body {
   color: #081f37;
 }
 .card {
-  margin-top: 4.8rem;
   padding: 20px;
   background-color: #f6fdff;
 }
@@ -152,7 +157,6 @@ body {
   max-height: 3rem;
   flex-grow: 0;
 }
-
 
 .sec-banner {
   margin-top: 3rem;
@@ -195,14 +199,17 @@ hr {
 }
 
 .banner-tv-content {
-
-  min-width: 235px; 
-  height: 280px; 
+  min-width: 235px;
+  height: 280px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
+}
+
+.news-card1-image {
+  max-width: 100%;
 }
 
 .image-section {
@@ -273,7 +280,7 @@ hr {
 
 @media (max-width: 480px) {
   .primary-column p {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
   }
   .banner-tv-content {
     max-height: 220px;

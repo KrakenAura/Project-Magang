@@ -36,10 +36,13 @@
 <div class="main-container">
     <div class="content">
         <div class="column primary-column">
-            <p><span class="low-highlight">Berita Terbaru &nbsp; &nbsp;</span></p>
+            <div class="header-content">
+                <p><span class="content-title">Berita Terbaru</span></p>
+            </div>
+
             @foreach ($latestNews as $berita)
             <div class="news">
-                <img src="{{asset('images/slide1.png')}}" alt="">
+                <img src="{{ asset('storage/' . $berita->image) }}" alt="News Image" class="news-card1-image">
                 <h2>{{$berita->title}}</h2>
                 <p>{{$berita->teaser}}</p>
             </div>
@@ -49,7 +52,9 @@
             <hr>
             @endforeach
 
-            <p><span class="low-highlight">Live Stream Terbaru &nbsp; &nbsp;</span></p>
+            <div class="header-content">
+                <p><span class="content-title">Live Stream Terbaru &nbsp; &nbsp;</span></p>
+            </div>
             <div class="iframe-container">
                 <iframe width="75%" height="35%" src="https://www.youtube.com/embed/kT_DjMT3EvE?si=YVARlxSnvEsPap58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
@@ -57,8 +62,10 @@
 
         <!-- Secondary Column -->
         <div class="column secondary-column">
+            <div class="header-content">
+                <p><span class="content-title"><strong>TV Desa</strong> Kota Batu</span></p>
+            </div>
             <div class="card card-tv">
-                <p><span class="low-highlight"><strong>TV Desa</strong> Kota Batu&nbsp; &nbsp;</span></p>
                 @foreach ($socials as $social)
                 <div class="tv-desa">
                     <a href="{{ $social->link_yt }}" target="_blank">
