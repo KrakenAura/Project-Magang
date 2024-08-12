@@ -231,5 +231,80 @@
 </div>
 @endif
 
+<h2>Banner Section</h2>
+<div class="banner-section">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Banner Horizontal</th>
+                <th>Banner Vertical</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="image-ads2">
+                        <img src="{{ asset('images/banner.png') }}" alt="">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editbanner2">Edit</button>
+                </td>
+                <td>
+                    <div class="image-ads1">
+                        <img src="{{ asset('images/banner1.jpg') }}" alt="">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editbanner1">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!-- edit banner -->
+<div class="modal fade" id="editbanner2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ganti banner</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="newImage" name="image_path" accept="image/*">
+                    <label class="custom-file-label" for="newImage">Choose file</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editbanner1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ganti banner</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="newImage" name="image_path" accept="image/*">
+                    <label class="custom-file-label" for="newImage">Choose file</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
