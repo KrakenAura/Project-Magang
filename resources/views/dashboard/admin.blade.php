@@ -37,24 +37,16 @@
             <!-- Main content -->
             <h1>Website Analytics</h1>
 
-            <div style="width: 50%; float: left;">
-                <canvas id="barChart" width="400" height="400"></canvas>
+            <div style="width: 33.33%; float: left;">
+                <canvas id="barChartToday" width="400" height="400"></canvas>
             </div>
-            <div style="width: 50%; float: left;">
-                <canvas id="lineChart" width="400" height="400"></canvas>
+            <div style="width: 33.33%; float: left;">
+                <canvas id="barChartWeekly" width="400" height="400"></canvas>
             </div>
-            <div style="width: 50%; float: left;">
-                <canvas id="pieChart" width="400" height="400"></canvas>
+            <div style="width: 33.33%; float: left;">
+                <canvas id="barChartMonthly" width="400" height="400"></canvas>
             </div>
-            <div style="width: 50%; float: left;">
-                <canvas id="graphChart" width="400" height="400"></canvas>
-            </div>
-            <div style="width: 50%; float: left;">
-                <canvas id="areaChart" width="400" height="400"></canvas>
-            </div>
-            <div style="width: 50%; float: left;">
-                <canvas id="columnChart" width="400" height="400"></canvas>
-            </div>
+
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -106,9 +98,9 @@
         var lastWeekData = <?php echo json_encode($lastWeekPageViews); ?>;
         var lastMonthData = <?php echo json_encode($lastMonthPageViews); ?>;
 
-        // Bar Chart
-        var ctxBar = document.getElementById('barChart').getContext('2d');
-        var barChart = new Chart(ctxBar, {
+        // Bar Chart for Today
+        var ctxBarToday = document.getElementById('barChartToday').getContext('2d');
+        var barChartToday = new Chart(ctxBarToday, {
             type: 'bar',
             data: {
                 labels: data.map(item => item.page),
@@ -131,10 +123,10 @@
             }
         });
 
-        // Line Chart
-        var ctxLine = document.getElementById('lineChart').getContext('2d');
-        var lineChart = new Chart(ctxLine, {
-            type: 'line',
+        // Bar Chart for Weekly
+        var ctxBarWeekly = document.getElementById('barChartWeekly').getContext('2d');
+        var barChartWeekly = new Chart(ctxBarWeekly, {
+            type: 'bar',
             data: {
                 labels: lastWeekData.map(item => item.page),
                 datasets: [{
@@ -156,52 +148,15 @@
             }
         });
 
-        // Pie Chart
-        var ctxPie = document.getElementById('pieChart').getContext('2d');
-        var pieChart = new Chart(ctxPie, {
-            type: 'pie',
+        // Bar Chart for Monthly
+        var ctxBarMonthly = document.getElementById('barChartMonthly').getContext('2d');
+        var barChartMonthly = new Chart(ctxBarMonthly, {
+            type: 'bar',
             data: {
-                labels: lastMonthData.length > 0 ? lastMonthData.map(item => item.page) : [],
+                labels: lastMonthData.map(item => item.page),
                 datasets: [{
                     label: 'Last Month\'s Page Views',
-                    data: lastMonthData.length > 0 ? lastMonthData.map(item => item.total_views) : [],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-
-        // Graph Chart (not a standard chart type in Chart.js, using line chart for demonstration)
-        var ctxGraph = document.getElementById('graphChart').getContext('2d');
-        var graphChart = new Chart(ctxGraph, {
-            type: 'line',
-            data: {
-                labels: data.map(item => item.label),
-                datasets: [{
-                    label: 'Graph Chart',
-                    data: data.map(item => item.value),
+                    data: lastMonthData.map(item => item.total_views),
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1
@@ -217,57 +172,8 @@
                 }
             }
         });
-
-        // Area Chart
-        var ctxArea = document.getElementById('areaChart').getContext('2d');
-        var areaChart = new Chart(ctxArea, {
-            type: 'line',
-            data: {
-                labels: data.map(item => item.label),
-                datasets: [{
-                    label: 'Area Chart',
-                    data: data.map(item => item.value),
-                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-
-        // Column Chart
-        var ctxColumn = document.getElementById('columnChart').getContext('2d');
-        var columnChart = new Chart(ctxColumn, {
-            type: 'bar',
-            data: {
-                labels: data.map(item => item.label),
-                datasets: [{
-                    label: 'Column Chart',
-                    data: data.map(item => item.value),
-                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
-                    borderColor: 'rgba(255, 159, 64, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
     </script>
+
 
 
     @endsection
