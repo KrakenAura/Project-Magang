@@ -62,6 +62,7 @@ class HomeController extends Controller
         $validatedData = $request->validate([
             'stream_url' => 'required',
         ]);
+        $validatedData['stream_url'] = str_replace('/live/', '/embed/', $validatedData['stream_url']);
 
         $livestream->update($validatedData);
         return redirect('/admin/beranda')->with('success', 'Berita updated successfully');
