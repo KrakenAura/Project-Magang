@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Livestream extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'stream_url',
+    ];
 }
