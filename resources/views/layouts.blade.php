@@ -141,6 +141,31 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/auth.js') }}" defer></script>
     <script src=" {{asset('js/script.js')}}"></script>
+    <script>
+        (function() {
+            const pagePath = window.location.pathname;
+
+            let pageViews = localStorage.getItem(`pageViews_${pagePath}`) || 0;
+            pageViews++;
+
+            localStorage.setItem(`pageViews_${pagePath}`, pageViews);
+
+            fetch('/track-page-view', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    page: pagePath,
+                    pageViews: pageViews
+                })
+            });
+
+            console.log(`Page views for ${pagePath}: ${pageViews}`);
+        })();
+    </script>
+
     @yield('script')
 </body>
 

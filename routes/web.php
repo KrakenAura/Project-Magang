@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
+Route::post('/track-page-view', [DashboardController::class, 'trackPageView']);
 
 Route::get('/', [HomeController::class, 'view_landing'])->name('home');
 Route::get('/library', [LibraryController::class, 'index']);
