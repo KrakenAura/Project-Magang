@@ -31,14 +31,14 @@ class HomeController extends Controller
     {
         $slideshows = Slideshow::all();
         $socials = social::all();
-        $livestreams = Livestream::all();
+        $livestream = Livestream::first();
         $latestNews = Berita::orderBy('created_at', 'desc')->take(2)->get();
         $outlooks = Outlook::orderBy('created_at', 'asc')->take(6)->get();
 
 
         $footer = Footer::first();
 
-        return view('home0', compact('slideshows', 'livestreams', 'footer', 'latestNews', 'outlooks', 'socials'));
+        return view('home0', compact('slideshows', 'livestream', 'footer', 'latestNews', 'outlooks', 'socials'));
     }
 
     //Footer
