@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
 .logo {
   max-width: 3.9375rem; 
 }
-
+f
 .hamburger-menu {
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #151556; /* Assuming a background color for the footer */
+  background-color: #192d50; /* Assuming a background color for the footer */
 }
 
 footer .column {

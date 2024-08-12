@@ -2,7 +2,7 @@
 
 :root {
   --header-height: 3.5rem;
-  --black-color: #151556;
+  --black-color: #192d50;
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fbfeff;
@@ -344,7 +344,7 @@ a {
 .logout-div i {
   font-size: 20px; /* Adjust the size of the icon */
   margin-top: 20px;
-  color: #5fc9f3; /* Icon color */
+  color: white; /* Icon color */
   float: left;
 }
 
@@ -358,7 +358,7 @@ a {
 .logout-div .logout {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  color: #5fc9f3;
+  color: white;
   margin-top: 22px;
   font-size: 0.8em;
   position: relative;

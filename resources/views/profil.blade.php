@@ -34,7 +34,6 @@
                 </div>
                 <div class="videoContainer">
                     <img class="mainVideo" src="{{ asset('storage/' . $profiles->image) }}">
-                    <img class="dotsImg image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/cw3.svg">
                 </div>
             </div>
         </div>
