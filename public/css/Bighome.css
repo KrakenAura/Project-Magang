@@ -21,6 +21,8 @@ body {
 .slider {
   display: flex;
   aspect-ratio: 16/9;
+  max-height: 565px;
+  width: 100%;
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;

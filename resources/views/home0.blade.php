@@ -39,7 +39,7 @@
             <p><span class="low-highlight">Berita Terbaru &nbsp; &nbsp;</span></p>
             @foreach ($latestNews as $berita)
             <div class="news">
-                <img src="{{asset('images/slide1.png')}}" alt="">
+                <img src="{{ asset('storage/' . $berita->image) }}" alt="">
                 <h2>{{$berita->title}}</h2>
                 <p>{{$berita->teaser}}</p>
             </div>

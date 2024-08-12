@@ -25,20 +25,28 @@ h2{
     margin-top: 10px;
 }
 
-.slideshow-img {
+.slideshow-container {
     display: flex;
-    gap: 10px;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    gap: 20px;
+    padding: 20px 0;
 }
 
-.change-img {
-    position: relative;
-    min-width: 600px; /* Adjust as needed */
-    height: auto;
+.slideshow-img {
+    flex: 0 0 auto;
+    width: 860px;
+    min-height: 500px;
+    padding: 10px;
+    border-radius: 5px;        
+}
+
+.tambah-img{
+    padding: 200px 0;
+    text-align: center;
+}
+
+.change-img {   
+    width: 100%; /* Set a specific width for each image container */
 }
 
 .change-img img {
@@ -47,7 +55,6 @@ h2{
     display: block;
     border-radius: 5px;
 }
-
 
 .slideshow-img::-webkit-scrollbar {
     height: 10px;
@@ -62,6 +69,7 @@ h2{
     background: grey;
     border-radius: 10px;
 }
+
 
 .table {
     width: 100%;
@@ -105,4 +113,16 @@ h2{
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+.table-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.link-live {
+    border: 1px solid #ddd;
+    padding: 7px;
 }
