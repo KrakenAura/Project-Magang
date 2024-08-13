@@ -91,6 +91,7 @@ Route::put('/beranda/footer/update/{id}', [HomeController::class, 'updateFooter'
 Route::put('/beranda/livestream/update/{id}', [HomeController::class, 'updateLiveStream'])->name('livestream.update');
 Route::post('/beranda/slideshow/store', [HomeController::class, 'storeSlideShow'])->name('slideshow.store');
 Route::put('/beranda/slideshow/update/{id}', [HomeController::class, 'updateSlideShow'])->name('slideshow.update');
+Route::put('/beranda/banner/update/{id}', [HomeController::class, 'updateBanner'])->name('banner.update');
 
 
 
