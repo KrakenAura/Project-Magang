@@ -1,6 +1,7 @@
 @extends('dashboard/adminlayouts')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
 @endsection
 
@@ -25,19 +26,23 @@
         </div>
     </div>
     <div class="popular-news">
+        <h3>Most Popular News</h3>
         @foreach ($categories as $category)
         <h2>{{ $category }}</h2>
-        <h3>Most Popular News</h3>
-        <ul>
+        <div class="container">
             @foreach ($popularNews[$category] as $news)
-            <li>
-                <h4>{{ $news->title }}</h4>
-                <p>Author: {{ $news->author }}</p>
-                <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
-                <p>Views: {{ $news->views }}</p>
-            </li>
-            @endforeach
-        </ul>
+            <div class="card galery-card">
+                <div class="card-image">
+                    <img src="{{ asset('storage/'.$news->image) }}">
+                </div>
+                <div class="card-desc">
+                    <h4>{{ $news->title }}</h4>
+                    <p>Penulis: {{ $news->author }}</p>
+                    <p>Dilihat: {{ $news->views }} kali</p>
+                </div>
+            </div>
+        </div>
+        @endforeach
         @endforeach
 
     </div>
