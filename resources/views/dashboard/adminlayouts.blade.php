@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/admin_logout.css') }}">
     @yield('css')
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

@@ -53,7 +53,11 @@
             @endforeach
             <div class="ads-banner2">
                 <div class="image-ads2">
-                    <img src="{{ asset('images/banner.png') }}" alt="">
+                    @if ($banners->count() > 0 && $banners->find(1))
+                    <img src="{{ asset('storage/' . $banners->find(1)->banner) }}" alt="Banner Horizontal">
+                    @else
+                    <img src="{{ asset('images/default-banner.png') }}" alt="Default Banner">
+                    @endif
                 </div>
             </div>
             <div class="header-content">
@@ -82,41 +86,33 @@
             </div>
             <div class="ads-banner1">
                 <div class="image-ads1">
-                    <img src="{{ asset('images/banner1.jpg') }}" alt="">
+                    @if ($banners->count() > 0 && $banners->find(2))
+                    <img src="{{ asset('storage/' . $banners->find(2)->banner) }}" alt="Banner Vertical">
+                    @else
+                    <img src="{{ asset('images/default-banner.png') }}" alt="Default Banner">
+                    @endif
                 </div>
             </div>
             <div class="header-content">
                 <p><span class="content-title">Berita Lainya</span></p>
             </div>
+            @foreach ($othersNews as $otherNews)
             <div class="news-card">
                 <div class="news-card-content">
                     <div class="news-card-image-wrapper">
-                        <img src="{{asset('images/news 1.png')}}" alt="News Image" class="news-card-image">
+                        <img src="{{ asset('storage/' . $otherNews->image) }}" alt="News Image" class="news-card-image">
                     </div>
                     <div class="news-card-text-wrapper">
 
-                        <a href="#" class="news-card-title">TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</a>
+                        <a href="{{ route('berita.view', $otherNews->id) }}" class="news-card-title">{{$otherNews->title}}</a>
                         <div class="news-footer">
-                            <span>Admin</span>
-                            <span> . 12th July, 2024</span>
+                            <span>{{$otherNews->author}}, &nbsp;</span>
+                            <span>{{$otherNews->date->format('jS F, Y')}}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="news-card">
-                <div class="news-card-content">
-                    <div class="news-card-image-wrapper">
-                        <img src="{{asset('images/news 3.png')}}" alt="News Image" class="news-card-image">
-                    </div>
-                    <div class="news-card-text-wrapper">
-                        <a href="#" class="news-card-title">KERJA BAKTI GUGUR GUNUNG SUSUK WANGAN SERENTAK DI DESA PESANGGRAHAN</a>
-                        <div class="news-footer">
-                            <span>Admin</span>
-                            <span> . 12th July, 2024</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

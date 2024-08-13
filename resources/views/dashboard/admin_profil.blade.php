@@ -29,60 +29,6 @@
             </tr>
         </tbody>
     </table>
-
-    <h1>Crew</h1>
-    <div class="crew">
-        @foreach ($crews as $crew)
-        <div class="team-item">
-            <img src="{{ asset('storage/'.$crew->foto) }}">
-            <h5>{{$crew->nama}}</h5>
-            <span>{{$crew->jabatan}}</span>
-            <div class="admin-buttons">
-                <button class="btn btn-edit" data-toggle="modal" data-target="#editCrew">Edit</button>
-                <button class="btn btn-delete">Delete</button>
-            </div>
-        </div>
-        <!-- Modal edit crew -->
-        <div class="modal fade" id="editCrew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Crew Member</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="editCrewForm" action="{{  route('crew.update', $crew->id)}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @method('PUT')
-                            <div class="mb-3">
-                                <label for="image" class="form-label">Photo</label>
-                                <input class="form-control" type="file" id="image" name="foto">
-                            </div>
-                            <div class="form-group">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="editNama" name="nama" placeholder="Enter name" required value="{{$crew->nama}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="jabatan">Jabatan</label>
-                                <input type="text" class="form-control" id="editJabatan" name="jabatan" placeholder="Jabatan Anda" required value="{{$crew->jabatan}}">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-
-        <!-- Add more team-item divs as needed -->
-    </div>
-    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addCrew">Tambah</button>
-
     <!-- Modal edit data profil -->
     <div class="modal fade" id="editProfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -126,6 +72,64 @@
         </div>
     </div>
 
+    <h1>Crew</h1>
+    <div class="crew">
+        @foreach ($crews as $crew)
+        <div class="team-item">
+            <img src="{{ asset('storage/'.$crew->foto) }}">
+            <h5>{{$crew->nama}}</h5>
+            <span>{{$crew->jabatan}}</span>
+            <div class="admin-buttons">
+                <button class="btn btn-edit" data-toggle="modal" data-target="#editCrew">Edit</button>
+                <form action="{{ route('crew.delete', $crew->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal edit crew -->
+        <div class="modal fade" id="editCrew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Crew Member</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editCrewForm" action="{{  route('crew.update', $crew->id)}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Photo</label>
+                                <input class="form-control" type="file" id="image" name="foto">
+                            </div>
+                            <div class="form-group">
+                                <label for="nama">Nama</label>
+                                <input type="text" class="form-control" id="editNama" name="nama" placeholder="Enter name" required value="{{$crew->nama}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="jabatan">Jabatan</label>
+                                <input type="text" class="form-control" id="editJabatan" name="jabatan" placeholder="Jabatan Anda" required value="{{$crew->jabatan}}">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+
+        <!-- Add more team-item divs as needed -->
+    </div>
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addCrew">Tambah</button>
+
+
 
     <!-- Modal add crew     -->
     <div class="modal fade" id="addCrew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -161,8 +165,8 @@
             </div>
         </div>
     </div>
-
-
 </div>
+
+
 
 @endsection
