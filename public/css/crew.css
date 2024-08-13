@@ -1,105 +1,82 @@
-.crew .subheadingText {
-    text-align: center;
-}
-
-.team-container {
+.crew {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.team-member {
-    width: 300px;
-    height: 400px;
     text-align: center;
-    margin: 20px;
-    position: relative;
-    overflow: hidden;
+    padding: 50px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
 }
 
-.team-member img {
+.crew::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.crew .container {
+    padding: 0 15px;
+}
+
+.crew .row {
+    display: inline-flex;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.team-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.team-item:hover {
+    transform: translateY(-10px);
+}
+
+.team-item img {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
 }
 
-.team-member .text-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.team-member .text-content p.text-blk:first-child {
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    text-align: center;
-    padding: 5px 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-}
-
-.team-member:hover .text-content {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.text-blk {
-    font-size: 16px;
+.team-item h5 {
+    font-size: 20px;
     font-weight: bold;
-    margin: 5px 0;
+    color: #083F37;
+    margin: 20px 0 5px;
 }
 
-.description {
-    font-size: 14px;
-    color: #ccc;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-
+.team-item span {
+    font-size: 16px;
+    color: #777;
+    display: block;
+    margin-bottom: 20px;
 }
 
-.team-member:hover .description {
-    opacity: 1;
-    margin-top: 20px;
-}
-.team-container-wrapper {
-    width: 1360px; /* Adjust based on your layout, this accommodates 4 team members plus margins */
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.team-container {
-    display: flex;
-    width: 2720px; /* Double the wrapper width */
-    animation: slideRight 20s linear infinite;
-}
-
-@keyframes slideRight {
-    0% {
-        transform: translateX(0);
+@media (max-width: 768px) {
+    .team-item {
+        width: 220px;
     }
-    100% {
-        transform: translateX(-1360px); /* Negative half of the container width */
+
+    .team-item img {
+        height: 220px;
     }
 }
 
-.team-member {
-    flex: 0 0 300px;
-    height: 400px;
-    text-align: center;
-    margin: 20px;
-    position: relative;
-    overflow: hidden;
+@media (max-width: 500px) {
+    .crew {
+        padding: 30px 0;
+    }
+
+    .team-item {
+        width: 180px;
+    }
+
+    .team-item img {
+        height: 180px;
+    }
 }
-
-/* Rest of the existing CSS remains the same */
-

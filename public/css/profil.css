@@ -1,681 +1,243 @@
 * {
-    font-family: Nunito, sans-serif;
-  }
-  
-  .responsive-container-block {
-    min-height: 75px;
-    height: fit-content;
-    width: 90%;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    justify-content: flex-start;
-  }
-  
-  .text-blk {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    line-height: 25px;
-  }
-  
-  .responsive-container-block.bigContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
-    padding-right: 50px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-  }
-  
-  .text-blk.headingText {
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 28px;
-    color: #5fc9f3;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 10px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-  }
-  
-  .allText {
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    width: 50%;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-  }
-  
-  .text-blk.subHeadingText {
-    color: whitesmoke;
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 700;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 15px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-  }
-  
-  .text-blk.description {
-    font-size: 18px;
-    line-height: 28px;
-    color: white;
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 40px;
-    margin-left: 0px;
-  }
-  
-  .explore {
-    font-size: 18px;
-    line-height: 28px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(244, 152, 146);
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
-    border-left-width: 0px;
-    border-top-style: outset;
-    border-right-style: outset;
-    border-bottom-style: outset;
-    border-left-style: outset;
-    border-top-color: rgb(244, 152, 146);
-    border-right-color: rgb(244, 152, 146);
-    border-bottom-color: rgb(244, 152, 146);
-    border-left-color: rgb(244, 152, 146);
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    cursor: pointer;
-    box-shadow: rgba(244, 152, 146, 0.25) 0px 10px 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding-top: 9px;
-    padding-right: 45px;
-    padding-bottom: 9px;
-    padding-left: 45px;
-  }
-  
-  .explore:hover {
-    background-image: initial;
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: rgb(255, 235, 234);
-    color: rgb(244, 152, 146);
-  }
-  
-  .responsive-container-block.Container {
-    margin-top: 80px;
-    margin-right: auto;
-    margin-bottom: 50px;
-    margin-left: auto;
-    justify-content: center;
-    align-items: center;
-    max-width: 1320px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-  }
-  
-  .responsive-container-block.Container.bottomContainer {
-    flex-direction: row;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-bottom: 50px;
-    margin-left: auto;
-  }
-  
-  .allText.aboveText {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 40px;
-  }
-  
-  .allText.bottomText {
-    margin-top: 0px;
-    margin-right: 10px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-  }
-  
-  .mainVideo {
-    width: 85%;
-    height: 450px;
-    margin-top: -30px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  
-  .videoContainer {
-    width: 46%;
-    height: 600px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-  }
-  
-  .mainVideo {
-    z-index: 10;
-  }
-  
-
-  
-  @media (max-width: 1024px) {
-    .responsive-container-block.Container {
-      max-width: 850px;
-    }
-  
-    .text-blk.description {
-      font-size: 18px;
-    }
-  
-    .allText {
-      width: 40%;
-      margin-top: 0px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-      margin-left: 20px;
-    }
-  
-    .responsive-container-block.bigContainer {
-      padding-top: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-      padding-left: 10px;
-    }
-  
-    .text-blk.subHeadingText {
-      font-size: 30px;
-    }
-  
-    .responsive-container-block.Container.bottomContainer {
-      margin-top: 80px;
-      margin-right: auto;
-      margin-bottom: 50px;
-      margin-left: auto;
-    }
-  
-    .responsive-container-block.Container {
-      max-width: 830px;
-    }
-  
-    .allText.aboveText {
-      margin-top: 30px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-      margin-left: 40px;
-    }
-  
-    .allText.bottomText {
-      margin-top: 30px;
-      margin-right: 40px;
-      margin-bottom: 0px;
-      margin-left: 0px;
-    }
-  
-    .allText.bottomText {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
-      margin-right: 0px;
-      margin-bottom: 30px;
-      margin-left: 0px;
-    }
-  
-    .responsive-container-block.Container.bottomContainer {
-      flex-direction: column;
-    }
-  
-    .text-blk.headingText {
-      text-align: center;
-      font-size: 22px;
-    }
-  
-    .text-blk.subHeadingText {
-      text-align: center;
-    }
-  
-    .text-blk.description {
-      text-align: center;
-    }
-  
-    .explore {
-      margin-top: 0px;
-      margin-right: auto;
-      margin-bottom: 0px;
-      margin-left: auto;
-    }
-  
-    #inc0s {
-      margin-top: 0px;
-      margin-right: auto;
-      margin-bottom: 0px;
-      margin-left: auto;
-    }
-  
-    .videoContainer {
-      width: 100%;
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-    }
-  
-    .mainVideo {
-      width: 100%;
-    }
-  
-    .allText.bottomText {
-      margin-top: 30px;
-      margin-right: 0px;
-      margin-bottom: 60px;
-      margin-left: 0px;
-    }
-  
-    .text-blk.description {
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-    }
-  
-    .text-blk.headingText {
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-    }
-  
-    .text-blk.subHeadingText {
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-    }
-  
-    .mainVideo {
-      margin-top: 0px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-      margin-left: 0px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .allText {
-      width: 100%;
-      margin-top: 0px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-      margin-left: 0px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-    }
-  
-    .responsive-container-block.Container {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .text-blk.headingText {
-      text-align: center;
-    }
-  
-    .text-blk.subHeadingText {
-      text-align: center;
-      font-size: 28px;
-      line-height: 38px;
-    }
-  
-    .text-blk.description {
-      text-align: center;
-      font-size: 18px;
-      line-height: 27px;
-    }
-  
-    .allText {
-      margin-top: 40px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-      margin-left: 0px;
-    }
-  
-    .allText.aboveText {
-      margin-top: 40px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-      margin-left: 0px;
-    }
-  
-    .responsive-container-block.Container {
-      margin-top: 80px;
-      margin-right: auto;
-      margin-bottom: 50px;
-      margin-left: auto;
-    }
-  
-    .responsive-container-block.Container.bottomContainer {
-      margin-top: 50px;
-      margin-right: auto;
-      margin-bottom: 50px;
-      margin-left: auto;
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 10px;
-    }
-  
-    .allText.bottomText {
-      margin-top: 40px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-      margin-left: 0px;
-    }
-  
-    .allText.bottomText {
-      margin-top: 40px;
-      margin-right: 0px;
-      margin-bottom: 60px;
-      margin-left: 0px;
-    }
-  
-    .mainVideo {
-      height: 400px;
-    }
-  
-    .videoContainer {
-      height: 550px;
-    }
-  
-    .explore {
-      font-size: 16px;
-      padding-top: 8px;
-      padding-right: 40px;
-      padding-bottom: 8px;
-      padding-left: 40px;
-    }
-  
-    .responsive-container-block.bigContainer {
-      padding-top: 0px;
-      padding-right: 50px;
-      padding-bottom: 0px;
-      padding-left: 50px;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .responsive-container-block.Container {
-      padding-top: 10px;
-      padding-right: 0px;
-      padding-bottom: 10px;
-      padding-left: 0px;
-      width: 100%;
-      max-width: 100%;
-    }
-  
-    .responsive-container-block.bigContainer {
-      padding-top: 10px;
-      padding-right: 25px;
-      padding-bottom: 10px;
-      padding-left: 25px;
-    }
-  
-    .allText {
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-      width: 100%;
-    }
-  
-    .responsive-container-block.bigContainer {
-      padding-top: 10px;
-      padding-right: 20px;
-      padding-bottom: 10px;
-      padding-left: 20px;
-    }
-  
-    .explore {
-      font-size: 16px;
-      line-height: 25px;
-      padding: 8px 35px 8px 35px;
-    }   
-
-    .mainVideo {
-      height: 260px;
-    }
-  
-    .videoContainer {
-      height: 320px;
-    }
-  
-    .responsive-container-block.Container.bottomContainer {
-      padding: 0 0 0 0;
-    }
-  
-    .text-blk.description {
-      font-size: 16px;
-      line-height: 23px;
-      margin: 0 0 30px 0;
-    }
-  
-    .text-blk.subHeadingText {
-      font-size: 24px;
-    }
-  }
-
-  .aboutus {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    margin: 0 auto;
-    height: 40vh;
-    color: white; /* Ensure text is visible against the overlay */
-}
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://thumb.viva.id/vivamalang/1265x711/2023/11/27/656467c770d14-balai-kota-among-tani-kota-batu_malang.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-}
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(8, 31, 55, 0.8); /* Adjust the color and opacity as needed */
-    z-index: 2;
-}
-.aboutus-content {
-    position: relative;
-    z-index: 3;
-}
-/* .headingText{
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 28px;
-} */
-.aboutus p {
-    font-size: 18px;
-    line-height: 28px;
-    max-width: 800px; /* Adjust the max-width as needed */
-}
-.struktur {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    margin: 0 auto;
-    background-color:  rgba(8, 31, 55, 1);
-    padding: 20px;
+  font-family: Nunito, sans-serif;
 }
 
-.struktur-img {
-    margin-top: 20px;
-    width: 800px; /* Set the desired width */
-    height: 600px; /* Set the desired height */
-    object-fit: cover; /* Adjust the image to fit within the specified dimensions */
-}
-
-hr{
-    size: 2px;
-    width: 20%;
-}
-
-.img-thumbnail {
-  padding: .25rem;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
-  border-radius: .25rem;
-  max-width: 100%;
-  height: auto;
-}
-
-.social-link {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  border-radius: 50%;
-  transition: all 0.3s;
-  font-size: 0.9rem;
-}
-
-.row {
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
-.team-item {
-  background: #fff;
-  border-radius: 0.25rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 15px;
-  padding: 30px;
-  text-align: center;
-  flex: 1 1 300px;
-  max-width: 300px;
-}
-.team-item img {
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px;
-  width: 100px;
-}
-.team-item h5 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-.team-item span {
-  color: #6c757d;
-  font-size: 0.875rem;
-  text-transform: uppercase;
+  margin: 0 auto;
+  justify-content: flex-start;
 }
 
-.crewHeading{
-  text-align: center;
+.text-blk {
+  padding: 10px;
+  line-height: 25px;
+}
+
+.responsive-container-block.bigContainer {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 50px;
+}
+
+.text-blk.headingText {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #5fc9f3;
+}
+
+.allText {
+  width: 50%;
+}
+
+.text-blk.subHeadingText {
   color: whitesmoke;
   font-size: 32px;
   line-height: 40px;
   font-weight: 700;
-  margin-top: 0px;
-  margin-right: 0px;
   margin-bottom: 15px;
-  margin-left: 0px;
-  padding-top: 0px;
-  padding-right: 10px;
-  padding-bottom: 0px;
-  padding-left: 0px;
+}
+
+.responsive-container-block.Container {
+  justify-content: center;
+  align-items: center;
+  max-width: 1320px;
+  padding: 10px;
+  margin: 80px auto 50px;
+}
+
+.responsive-container-block.Container.bottomContainer {
+  flex-direction: row;
+  margin: 50px auto;
+}
+
+.allText.bottomText {
+  margin: 0;
+}
+
+.mainVideo {
+  width: 85%;
+  height: 450px;
+  border-radius: 10px;
+  margin-top: -30px;
+}
+
+.videoContainer {
+  width: 46%;
+  height: 600px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  position: relative;
+}
+
+.crewheading {
+  color: whitesmoke;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .profil-desc{
   font-size: 18px;
-  line-height: 28px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+@media (max-width: 1024px) {
+  .responsive-container-block.Container {
+      max-width: 850px;
+  }
+
+  .allText {
+      width: 40%;
+      margin-left: 20px;
+  }
+
+  .responsive-container-block.Container.bottomContainer {
+      margin-top: 80px;
+  }
+
+  .allText.bottomText {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .responsive-container-block.Container.bottomContainer {
+      flex-direction: column;
+  }
+
+  .mainVideo {
+      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .allText {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .responsive-container-block.Container {
+      flex-direction: column;
+  }
+
+  .text-blk.subHeadingText {
+      font-size: 28px;
+      line-height: 38px;
+  }
+
+  .responsive-container-block.Container.bottomContainer {
+      padding-left: 10px;
+  }
+
+  .mainVideo {
+      height: 400px;
+  }
+
+  .videoContainer {
+      height: 550px;
+  }
+}
+
+@media (max-width: 500px) {
+  .responsive-container-block.Container {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px 0;
+  }
+
+  .responsive-container-block.bigContainer {
+      padding: 10px 20px;
+  }
+
+  .mainVideo {
+      height: 260px;
+  }
+
+  .videoContainer {
+      height: 320px;
+  }
+}
+
+.aboutus {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  height: 40vh;
   color: white;
-  padding-top: 0px;
-  padding-right: 20px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  margin-top: 0px;
-  margin-right: 10px;
-  margin-bottom: 40px;
-  margin-left: 0px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://thumb.viva.id/vivamalang/1265x711/2023/11/27/656467c770d14-balai-kota-among-tani-kota-batu_malang.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 31, 55, 0.8);
+  z-index: 2;
+}
+
+.aboutus-content {
+  position: relative;
+  z-index: 3;
+}
+
+.aboutus p {
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 800px;
+}
+
+.struktur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: rgba(8, 31, 55, 1);
+}
+
+.struktur-img {
+  margin-top: 20px;
+  width: 800px;
+  height: 600px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+hr {
+  width: 150px;
 }
