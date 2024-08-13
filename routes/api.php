@@ -83,7 +83,7 @@ Route::delete('/profile/delete/{id}', [ProfileController::class, 'destroy']);
 Route::get('/crew', [CrewController::class, 'index']);
 Route::post('/crew/create', [CrewController::class, 'store'])->name('crew.store');
 Route::put('/crew/update/{id}', [CrewController::class, 'update'])->name('crew.update');
-Route::delete('/crew/delete/{id}', [CrewController::class, 'destroy'])->name('cew.delete');
+Route::delete('/crew/delete/{id}', [CrewController::class, 'destroy'])->name('crew.delete');
 
 //Beranda
 

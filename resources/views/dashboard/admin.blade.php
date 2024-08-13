@@ -13,15 +13,33 @@
     </div>
 
     <h1>Website Analytics</h1>
+    <div class="chart-section">
+        <div style="width: 33.33%; float: left;">
+            <canvas id="barChartToday" width="400" height="400"></canvas>
+        </div>
+        <div style="width: 33.33%; float: left;">
+            <canvas id="barChartWeekly" width="400" height="400"></canvas>
+        </div>
+        <div style="width: 33.33%; float: left;">
+            <canvas id="barChartMonthly" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <div class="popular-news">
+        @foreach ($categories as $category)
+        <h2>{{ $category }}</h2>
+        <h3>Most Popular News</h3>
+        <ul>
+            @foreach ($popularNews[$category] as $news)
+            <li>
+                <h4>{{ $news->title }}</h4>
+                <p>Author: {{ $news->author }}</p>
+                <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
+                <p>Views: {{ $news->views }}</p>
+            </li>
+            @endforeach
+        </ul>
+        @endforeach
 
-    <div style="width: 33.33%; float: left;">
-        <canvas id="barChartToday" width="400" height="400"></canvas>
-    </div>
-    <div style="width: 33.33%; float: left;">
-        <canvas id="barChartWeekly" width="400" height="400"></canvas>
-    </div>
-    <div style="width: 33.33%; float: left;">
-        <canvas id="barChartMonthly" width="400" height="400"></canvas>
     </div>
 
     <aside class="control-sidebar control-sidebar-dark">

@@ -81,7 +81,11 @@
             <span>{{$crew->jabatan}}</span>
             <div class="admin-buttons">
                 <button class="btn btn-edit" data-toggle="modal" data-target="#editCrew">Edit</button>
-                <button class="btn btn-delete">Delete</button>
+                <form action="{{ route('crew.delete', $crew->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </div>
         </div>
         <!-- Modal edit crew -->
