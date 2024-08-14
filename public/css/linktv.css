@@ -154,16 +154,16 @@ p {
 }
 
 .container-contact .card:hover .content .cardContent h3 {
-  opacity: 1; /* Ensure text is fully visible */
+  opacity: 1; 
 }
 
 .container-contact .card:hover .sci li {
-  transform: translateY(0px); /* Move button to its position */
-  opacity: 1; /* Ensure button is fully visible */
+  transform: translateY(0px); 
+  opacity: 1;
 }
 
 .container-contact .card:hover .img img {
-  opacity: 1; /* Keep image opacity unchanged on hover */
+  opacity: 1; 
 }
 
 span {

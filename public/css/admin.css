@@ -1,4 +1,31 @@
+.popular-news .news-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.popular-news .card.galery-card {
+  flex: 0 0 auto;
+  margin-right: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.popular-news .card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.popular-news .card-desc {
+  padding: 10px;
+}
+
 .popular-news{
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.chart-section .chart{
+margin-bottom: 30px;
 }

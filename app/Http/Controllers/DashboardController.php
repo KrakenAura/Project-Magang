@@ -26,21 +26,30 @@ class DashboardController extends Controller
                 ->get();
         }
 
-        //Statistik Halaman
+        // Statistik Halaman
         $todayPageViews = DB::table('page_views')
             ->whereDate('view_date', today())
+            ->where('page', 'not like', '/berita/%') // Exclude '/berita/{id}' routes
             ->select('page', DB::raw('COUNT(*) as total_views'))
             ->groupBy('page')
             ->get();
 
         $lastWeekPageViews = DB::table('page_views')
-            ->whereBetween('view_date', [now()->subWeek(), now()])
+            ->whereBetween(
+                'view_date',
+                [now()->subWeek(), now()]
+            )
+            ->where('page', 'not like', '/berita/%') // Exclude '/berita/{id}' routes
             ->select('page', DB::raw('COUNT(*) as total_views'))
             ->groupBy('page')
             ->get();
 
         $lastMonthPageViews = DB::table('page_views')
-            ->whereBetween('view_date', [now()->subMonth(), now()])
+            ->whereBetween(
+                'view_date',
+                [now()->subMonth(), now()]
+            )
+            ->where('page', 'not like', '/berita/%') // Exclude '/berita/{id}' routes
             ->select('page', DB::raw('COUNT(*) as total_views'))
             ->groupBy('page')
             ->get();

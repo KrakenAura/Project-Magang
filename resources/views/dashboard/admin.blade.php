@@ -15,13 +15,13 @@
 
     <h1>Website Analytics</h1>
     <div class="chart-section">
-        <div style="width: 33.33%; float: left;">
+        <div style="width: 33.33%; float: left;" class="chart">
             <canvas id="barChartToday" width="400" height="400"></canvas>
         </div>
-        <div style="width: 33.33%; float: left;">
+        <div style="width: 33.33%; float: left;" class="chart">
             <canvas id="barChartWeekly" width="400" height="400"></canvas>
         </div>
-        <div style="width: 33.33%; float: left;">
+        <div style="width: 33.33%; float: left;" class="chart">
             <canvas id="barChartMonthly" width="400" height="400"></canvas>
         </div>
     </div>
@@ -29,7 +29,7 @@
         <h3>Most Popular News</h3>
         @foreach ($categories as $category)
         <h2>{{ $category }}</h2>
-        <div class="container">
+        <div class="news-container">
             @foreach ($popularNews[$category] as $news)
             <div class="card galery-card">
                 <div class="card-image">
@@ -41,11 +41,11 @@
                     <p>Dilihat: {{ $news->views }} kali</p>
                 </div>
             </div>
+            @endforeach
         </div>
         @endforeach
-        @endforeach
-
     </div>
+
 
     <aside class="control-sidebar control-sidebar-dark">
     </aside>
