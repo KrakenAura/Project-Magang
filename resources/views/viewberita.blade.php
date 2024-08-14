@@ -64,8 +64,6 @@
         @endforeach
     </div>
 
-
-    <!-- Cody -->
     <div class="comment-section">
         @auth
         <div class="comment-form">
@@ -83,8 +81,6 @@
         @else
         <p>Please <a href="{{ route('login') }}">login</a> to leave a comment.</p>
         @endauth
-
-
 
         <div class="comment-list">
             @foreach($comments as $comment)
@@ -109,9 +105,11 @@
                         <button type="submit">Submit Reply</button>
                     </form>
                 </div>
+
+                <!-- Nested Replies -->
                 @foreach($comment->replies as $reply)
                 <div class="reply">
-                    <div class="comment-author">{{ $reply->author }}</div>
+                    <div class="comment-author">{{ $reply->user->name }}</div>
                     <div class="comment-date">{{ $reply->created_at->format('d M, Y') }}</div>
                     <div class="comment-content">{{ $reply->content }}</div>
                 </div>
@@ -120,6 +118,7 @@
             @endforeach
         </div>
     </div>
+
 
 </div>
 <div class="news-baru">
