@@ -14,19 +14,18 @@
 
 <body>
     <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="{{ route('visitor.register') }}" method="POST">
+        <div class="form-container sign-up-container" id="RegisForm">
+            <form id="regist-form" action="{{ route('visitor.register') }}" method="POST">
                 @csrf
-
-
                 <h1>Sign up</h1>
                 <span>use your email for registration</span>
-                <input type="text" placeholder="Name" id="name" name="name" />
-                <input type="email" placeholder="Email" id="email-regis" name="email-regis" required />
-                <input type="password" placeholder="Password" id="password-regis" name="password-regis" required />
+                <input type="text" placeholder="Name" name="name" required />
+                <input type="email" placeholder="Email" name="email" required />
+                <input type="password" placeholder="Password" name="password" required />
                 <button type="submit">Sign Up</button>
             </form>
         </div>
+
         <div class="form-container sign-in-container" id="loginForm">
             <form id="login-form" action="{{ route('visitor.login') }}" method="POST">
                 @csrf
