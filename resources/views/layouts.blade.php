@@ -123,10 +123,7 @@
             </div>
         </div>
         <div class="column center-column">
-            <div class="mid-card">
-                <h3>Another Section</h3>
-                <p>Additional content for the center column. You can put any information or links here.</p>
-            </div>
+
         </div>
         <div class="column right-column">
             <div class="right-card">
