@@ -24,7 +24,7 @@ class BeritaController extends Controller
     {
         $berita = Berita::findOrFail($id);
         $latestNews = Berita::orderBy('created_at', 'desc')->take(2)->get();
-        $comments = Comment::where('news_id', $id)->with('replies')->get();
+        $comments = Comment::where('news_id', $id)->whereNull('parent_id')->with('replies')->get();
         return view('viewberita', compact('berita', 'comments', 'latestNews'));
     }
 
@@ -56,9 +56,7 @@ class BeritaController extends Controller
             $validatedData['image'] = $imagePath;
         }
 
-        // dd($validatedData);
         $berita = Berita::create($validatedData);
-        // return new BeritaResource($berita);
         if (strtolower($validatedData['category']) === 'CitizenJournalist') {
             $redirectUrl = '/citizen';
         } else {
@@ -85,7 +83,6 @@ class BeritaController extends Controller
         }
 
         $berita->update($validatedData);
-        // return new BeritaResource($berita);
         $redirectUrl = '/admin/' . strtolower($validatedData['category']);
 
         return redirect($redirectUrl)->with('success', 'Berita created successfully');
@@ -101,7 +98,6 @@ class BeritaController extends Controller
         $redirectUrl = '/admin/' . $categoryPath;
 
         return redirect($redirectUrl)->with('success', 'Berita deleted successfully');
-        // return response()->json(null, 204);
     }
     public function view_by_category(Request $request, $category)
     {
