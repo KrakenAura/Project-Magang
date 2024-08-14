@@ -30,7 +30,6 @@ class LibraryController extends Controller
         $validatedData = $request->validate([
             'judul' => 'required|max:255',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'deskripsi' => 'required',
             'link' => 'required',
         ]);
 
@@ -50,7 +49,6 @@ class LibraryController extends Controller
         $validatedData = $request->validate([
             'judul' => 'required|max:255',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'deskripsi' => 'required',
             'link' => 'required',
         ]);
 

@@ -11,11 +11,10 @@
     <table class="table">
         <thead>
             <tr>
-                <th style="width: 22%">Gambar</th>
-                <th style="width: 22%">Nama</th>
-                <th style="width: 22%">Deskripsi</th>
-                <th style="width: 22%">Link</th>
-                <th style="width: 12%">Action</th>
+                <th style="width: 28%">Gambar</th>
+                <th style="width: 28%">Nama</th>
+                <th style="width: 28%">Link</th>
+                <th style="width: 16%">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +22,6 @@
             <tr>
                 <td><img src="{{ asset('storage/' . $library->image) }}" alt="{{ $library->judul }}" class="library-image"></td>
                 <td>{{ $library->judul }}</td>
-                <td>{{ $library->deskripsi }}</td>
                 <td><a href="{{ $library->link }}" target="_blank">{{ $library->link }}</a></td>
                 <td>
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#EditModal{{ $library->id }}">Edit</button>
@@ -53,10 +51,7 @@
                                     <label for="judul{{ $library->id }}" class="col-form-label">Nama</label>
                                     <input type="text" class="form-control" id="judul{{ $library->id }}" name="judul" value="{{ $library->judul }}">
                                 </div>
-                                <div class="form-group">
-                                    <label for="deskripsi{{ $library->id }}" class="col-form-label">Deskripsi</label>
-                                    <textarea class="form-control" id="deskripsi{{ $library->id }}" name="deskripsi">{{ $library->deskripsi }}</textarea>
-                                </div>
+
                                 <div class="form-group">
                                     <label for="link{{ $library->id }}" class="col-form-label">Link</label>
                                     <input type="text" class="form-control" id="link{{ $library->id }}" name="link" value="{{ $library->link }}">
@@ -99,10 +94,6 @@
                     <div class="form-group">
                         <label for="judul" class="col-form-label">Nama</label>
                         <input type="text" class="form-control" id="judul" name="judul">
-                    </div>
-                    <div class="form-group">
-                        <label for="deskripsi" class="col-form-label">Deskripsi</label>
-                        <textarea class="form-control" id="deskripsi" name="deskripsi"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="link" class="col-form-label">Link</label>
