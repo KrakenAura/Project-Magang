@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{asset('css/view-berita.css')}}">
 @endsection
 
+
+
 @section('content')
 
 <div class="news-img">
@@ -43,35 +45,23 @@
         </section>
     </div>
     <div class="column column-right">
+        @foreach ($latestNews as $news)
         <div class="news-card">
             <div class="news-card-content">
                 <div class="news-card-image-wrapper">
-                    <img src="{{asset('images/news 1.png')}}" alt="News Image" class="news-card-image">
+                    <img src="{{ asset('storage/' . $news->image) }}" alt="{{$news->title}}" class="news-card-image">
                 </div>
                 <div class="news-card-text-wrapper">
 
-                    <a href="#" class="news-card-title">TIM VOLLY DESA PESANGGRAHAN LOLOS KE BABAK SEMIFINAL KAPOLRES CUP 2024</a>
+                    <a href="{{ route('berita.view', $berita->id) }}" class="news-card-title">{{ $berita->title }}</a>
                     <div class="news-footer">
-                        <span>Admin</span>
-                        <span> . 12th July, 2024</span>
+                        <span>{{$news->author}}</span>
+                        <span> . {{ $news->date->format('jS F, Y') }}</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="news-card">
-            <div class="news-card-content">
-                <div class="news-card-image-wrapper">
-                    <img src="{{asset('images/news 3.png')}}" alt="News Image" class="news-card-image">
-                </div>
-                <div class="news-card-text-wrapper">
-                    <a href="#" class="news-card-title">KERJA BAKTI GUGUR GUNUNG SUSUK WANGAN SERENTAK DI DESA PESANGGRAHAN</a>
-                    <div class="news-footer">
-                        <span>Admin</span>
-                        <span> . 12th July, 2024</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 
 

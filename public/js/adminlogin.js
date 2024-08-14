@@ -1,40 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Login functionality
-  // document
-  //   .querySelector(".login form")
-  //   .addEventListener("submit", async function (event) {
-  //     event.preventDefault();
-
-  //     const email = document.getElementById("email").value;
-  //     const password = document.getElementById("password").value;
-  //     const token = document
-  //       .querySelector('meta[name="csrf-token"]')
-  //       .getAttribute("content");
-  //     console.log(email, password, token);
-  //     try {
-  //       const response = await fetch("/api/admin/login", {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "X-CSRF-TOKEN": token,
-  //         },
-  //         body: JSON.stringify({ email, password }),
-  //       });
-  //       console.log(response);
-
-  //       if (response.ok) {
-  //         alert("Login successful!");
-  //         window.location.href = "/";
-  //       } else {
-  //         const errorData = await response.json();
-  //         alert("Login failed: " + errorData.message);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error during login:", error);
-  //       alert("An error occurred. Please try again.");
-  //     }
-  //   });
-
   document
     .getElementById("login-form")
     .addEventListener("submit", async function (event) {
@@ -98,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (response.ok) {
           alert("Registration successful!");
-          // window.location.href = "/dashboard";
         } else {
           const errorData = await response.json();
           alert("Registration failed: " + errorData.message);
