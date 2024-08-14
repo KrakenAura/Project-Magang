@@ -50,7 +50,6 @@ class VisitorController extends \App\Http\Controllers\Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return
-            redirect('/');
+        return redirect('/');
     }
 }
