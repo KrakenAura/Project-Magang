@@ -17,7 +17,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
-    text-transform: uppercase   ;
+    text-transform: uppercase;
 }
 
 .custom-editor .ck-editor__editable {
@@ -82,8 +82,7 @@
 .teaser-section {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .teaser-label {
@@ -104,13 +103,10 @@
 .current-image {
     margin-left: 15px;
     border-radius: 5px;
-    width: 400px;          
-    height: 200px;          
+    width: 400px;
+    height: 200px;
     border: 1px solid #ccc;
-    padding: 5px;           
-    box-sizing: border-box; 
-    object-fit: cover;      
+    padding: 5px;
+    box-sizing: border-box;
+    object-fit: cover;
 }
-
-
-

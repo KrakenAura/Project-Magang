@@ -13,7 +13,6 @@
   }
 }
 
-/* Responsive Adjustments  Content*/
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -25,7 +24,7 @@
   }
 
   .primary-column p {
-    font-size: 2rem; /* Smaller font size for smaller screens */
+    font-size: 2rem;
   }
 
   .hamburger-icon {

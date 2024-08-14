@@ -70,8 +70,8 @@ p {
   border: solid 2px transparent;
   background-clip: padding-box;
   box-shadow: 0px 10px 10px rgba(46, 54, 68, 0.03);
-  overflow: hidden; /* Ensure content is contained */
-  transition: 0.5s; /* Smooth transition effect */
+  overflow: hidden;
+  transition: 0.5s;
 }
 
 .container-contact .card .content {
@@ -92,7 +92,7 @@ p {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 1; /* Image behind text */
+  z-index: 1;
 }
 
 .container-contact .card .content .img img {
@@ -100,12 +100,12 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.5s; /* Optional: Smooth image transition */
+  transition: opacity 0.5s;
 }
 
 .container-contact .card .content .cardContent {
   position: relative;
-  z-index: 2; /* Ensure text is above image */
+  z-index: 2;
   text-align: center;
 }
 
@@ -117,9 +117,9 @@ p {
   font-size: 18px;
   margin: 20px 0 10px;
   line-height: 1.1em;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  padding: 10px 30px; /* Space around text */
-  border-radius: 5px; /* Rounded corners */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+  border-radius: 5px;
   transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 }
 
@@ -128,6 +128,7 @@ p {
   font-weight: 300;
   text-transform: initial;
 }
+
 .container-contact .card .sci a {
   color: white;
 }
@@ -143,7 +144,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  z-index: 2; /* Ensure the button is above the image */
+  z-index: 2;
 }
 
 .container-contact .card .sci li {
@@ -154,16 +155,16 @@ p {
 }
 
 .container-contact .card:hover .content .cardContent h3 {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .container-contact .card:hover .sci li {
-  transform: translateY(0px); 
+  transform: translateY(0px);
   opacity: 1;
 }
 
 .container-contact .card:hover .img img {
-  opacity: 1; 
+  opacity: 1;
 }
 
 span {

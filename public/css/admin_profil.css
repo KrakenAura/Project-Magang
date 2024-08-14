@@ -1,8 +1,4 @@
-.profil-img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
+.profil-img,
 .struktur-img {
     width: 200px;
     height: 200px;
@@ -34,7 +30,6 @@
 .team-item:hover {
     transform: scale(1.05);
 }
-
 
 .team-item img {
     width: 100px;

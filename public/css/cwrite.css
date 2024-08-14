@@ -6,37 +6,37 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+  }
+  
+  h1 {
     padding: 50px;
     text-align: center;
     color: #fff;
-}
-
-.title-section {
+  }
+  
+  .title-section {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.title-label {
+  }
+  
+  .title-label {
     margin-right: 10px;
     font-size: 18px;
     font-weight: bold;
     color: #333;
-}
-
-.title-input {
+  }
+  
+  .title-input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
-    text-transform: uppercase   ;
-}
-
-.custom-editor .ck-editor__editable {
+    text-transform: uppercase;
+  }
+  
+  .custom-editor .ck-editor__editable {
     width: 100%;
     height: 500px;
     padding: 10px;
@@ -46,14 +46,14 @@ h1 {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #333;
-}
-
-.custom-editor .ck-toolbar {
+  }
+  
+  .custom-editor .ck-toolbar {
     background-color: #eee;
     border-bottom: 2px solid #ccc;
-}
-
-.save-button {
+  }
+  
+  .save-button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -65,27 +65,26 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     text-align: center;
-}
-
-.save-button:hover {
+  }
+  
+  .save-button:hover {
     background-color: #081F37;
-}
-
-.cover {
+  }
+  
+  .cover {
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.banner-label {
+    margin: 20px 0;
+  }
+  
+  .banner-label {
     font-weight: bold;
     margin-right: 10px;
     font-size: 16px;
     color: #333;
-}
-
-.banner-input {
+  }
+  
+  .banner-input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
@@ -93,27 +92,26 @@ h1 {
     font-size: 16px;
     color: #333;
     background-color: #fff;
-}
-
-.teaser-section {
+  }
+  
+  .teaser-section {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.teaser-label {
+    margin: 20px 0;
+  }
+  
+  .teaser-label {
     margin-right: 10px;
     font-size: 18px;
     font-weight: bold;
     color: #333;
-}
-
-.teaser-input {
+  }
+  
+  .teaser-input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
-}
-
+  }
+  

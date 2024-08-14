@@ -1,11 +1,13 @@
 .change-img {
     position: relative;
-    width: 50%;
+    width: 100%;
 }
 
 .change-img img {
     width: 100%;
     height: auto;
+    display: block;
+    border-radius: 5px;
 }
 
 .change-img .btn {
@@ -21,7 +23,7 @@
     border-radius: 5px;
 }
 
-h2{
+h2 {
     margin-top: 10px;
 }
 
@@ -37,22 +39,6 @@ h2{
     width: 860px;
     min-height: 500px;
     padding: 10px;
-    border-radius: 5px;        
-}
-
-.tambah-img{
-    padding: 200px 0;
-    text-align: center;
-}
-
-.change-img {   
-    width: 100%; /* Set a specific width for each image container */
-}
-
-.change-img img {
-    width: 100%;
-    height: auto;
-    display: block;
     border-radius: 5px;
 }
 
@@ -70,6 +56,10 @@ h2{
     border-radius: 10px;
 }
 
+.tambah-img {
+    padding: 200px 0;
+    text-align: center;
+}
 
 .table {
     width: 100%;
@@ -92,24 +82,12 @@ h2{
     height: auto;
 }
 
-.link-tv{
-    border: 1px solid #ddd;
-    padding: 7px;
-}
-.table-container {
-    max-height: 300px; /* Adjust height as needed */
-    overflow-y: auto; /* Enables vertical scrolling */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-
-}
-
-.link-live{
+.link-tv, .link-live {
     border: 1px solid #ddd;
     padding: 7px;
 }
 
-.logo-tv{
+.logo-tv {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -122,23 +100,16 @@ h2{
     border-radius: 5px;
 }
 
-.link-live {
-    border: 1px solid #ddd;
-    padding: 7px;
-}
-
-.image-ads2 img {
-    width: 100%;   
-    height: 120px; 
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-  
 .image-ads1 img {
-    width: 100%;   
+    width: 100%;
     height: 350px;
     object-fit: cover;
     margin-bottom: 10px;
 }
-  
+
+.image-ads2 img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}

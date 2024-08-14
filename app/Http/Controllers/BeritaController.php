@@ -21,9 +21,10 @@ class BeritaController extends Controller
     {
         $berita = Berita::findOrFail($id);
         $latestNews
-        = Berita::orderBy('created_at', 'desc')->take(2)->get();
+            = Berita::orderBy('created_at', 'desc')->take(2)->get();
         $comments = Comment::where('news_id', $id)->with('replies')->get();
-        return view('viewberita', compact('berita', 'comments'));
+
+        return view('viewberita', compact('berita', 'comments', 'latestNews'));
     }
 
     public function show($id)

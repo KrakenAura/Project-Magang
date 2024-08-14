@@ -1,5 +1,3 @@
-
-
 .kota-terkini {
     padding: 20px;
 }
@@ -26,7 +24,6 @@
     display: flex;
     width: 100%;
 }
-
 
 .berita-content {
     display: flex;
@@ -113,7 +110,7 @@
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.all-berita{
+.all-berita {
     border: 2px solid #f1f1f1;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -122,34 +119,32 @@
     padding: 10px;
 }
 
-.viewall-berita{
+.viewall-berita {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.comments-list h1{
+.comments-list h1 {
     margin-bottom: 10px;
 }
 
 .berita-image {
     width: 200px;
     margin-right: 20px;
-    border-radius: 5px;       /* Fixed width */
-    height: 150px;          /* Fixed height */
-    border: 1px solid #ccc; /* Border around the image */
-    padding: 5px;           /* Optional padding inside the border */
-    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
-    object-fit: cover;      /* Ensure the image covers the area without distortion */
+    border-radius: 5px;
+    height: 150px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    object-fit: cover;
 }
 
 .item {
     display: flex;
     justify-content: space-between;
-
     border-bottom: 1px solid #ddd;
 }
-
 
 .user-info {
     flex-grow: 1;
@@ -194,9 +189,9 @@
     --height: 3rem;
     --btn-width: 4rem;
     --bez: cubic-bezier(0, 0, 0.43, 1.49);
-  }
-  
-  .page {
+}
+
+.page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,57 +200,56 @@
     border-radius: 0.6rem;
     background: #ffffff;
     box-shadow: 0 0.8rem 2rem rgba(90, 97, 129, 0.05);
-  }
-  
-  .page__numbers,
-  .page__btn,
-  .page__dots {
+}
+
+.page__numbers,
+.page__btn,
+.page__dots {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0.8rem;
     font-size: 1.4rem;
     cursor: pointer;
-  }
-  
-  .page__dots {
+}
+
+.page__dots {
     width: 2.6rem;
     height: 2.6rem;
     color: var(--greyLight);
     cursor: initial;
-  }
-  
-  .page__numbers {
+}
+
+.page__numbers {
     width: 2.6rem;
     height: 2.6rem;
     border-radius: 0.4rem;
-  }
-  
-  .page__numbers:hover {
+}
+
+.page__numbers:hover {
     color: var(--primary);
-  }
-  
-  .page__numbers.active {
+}
+
+.page__numbers.active {
     color: #ffffff;
     background: var(--primary);
     font-weight: 600;
     border: 1px solid var(--primary);
-  }
-  
-  .page__btn {
+}
+
+.page__btn {
     color: var(--greyLight);
     pointer-events: none;
-  }
-  
-  .page__btn.active {
+}
+
+.page__btn.active {
     color: var(--greyDark);
     pointer-events: initial;
-  }
-  
-  .page__btn.active:hover {
-    color: var(--primary);
-  }
+}
 
+.page__btn.active:hover {
+    color: var(--primary);
+}
 
 .search-form {
     position: relative;

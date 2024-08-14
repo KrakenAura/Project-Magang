@@ -8,57 +8,34 @@
   --white-color: #fbfeff;
   --body-color: hsl(220, 100%, 97%);
 
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
   --normal-font-size: 0.938rem;
-
-  /*========== Font weight ==========*/
   --font-regular: 400;
   --font-semi-bold: 600;
 
-  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-/*========== Responsive typography ==========*/
 @media screen and (min-width: 1024px) {
   :root {
     --normal-font-size: 1rem;
   }
 }
 
-/*=============== BASE ===============*/
-/* * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-} */
-
 ul {
   list-style: none;
-  /* Color highlighting when pressed on mobile devices */
-  /*-webkit-tap-highlight-color: transparent;*/
 }
 
 a {
   text-decoration: none;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1800px;
   margin-inline: 1.5rem;
 }
 
-/*=============== HEADER ===============*/
 .header {
   position: fixed;
   top: 0;
@@ -77,7 +54,6 @@ a {
   margin-left: 2rem;
 }
 
-/*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
 }
@@ -100,8 +76,6 @@ a {
   align-items: center;
   column-gap: 0.25rem;
   font-weight: var(--font-semi-bold);
-  /* Color highlighting when pressed on mobile devices */
-  /*-webkit-tap-highlight-color: transparent;*/
 }
 
 .nav__logo i {
@@ -131,7 +105,6 @@ a {
   opacity: 0;
 }
 
-/* Navigation for mobile devices */
 @media screen and (max-width: 1118px) {
   .nav__menu {
     position: absolute;
@@ -168,28 +141,28 @@ a {
   background-color: var(--black-color-light);
 }
 
-/* Show menu */
 .show-menu {
   opacity: 1;
   top: 3.5rem;
   pointer-events: initial;
 }
+
 .logo {
   width: 50px;
   height: auto;
   margin-right: 20px;
 }
-/* Show icon */
+
 .show-icon .nav__burger {
   opacity: 0;
   transform: rotate(90deg);
 }
+
 .show-icon .nav__close {
   opacity: 1;
   transform: rotate(90deg);
 }
 
-/*=============== DROPDOWN ===============*/
 .dropdown__item {
   cursor: pointer;
 }
@@ -230,19 +203,16 @@ a {
   transition: max-height 0.4s ease-out;
 }
 
-/* Show dropdown menu & submenu */
 .dropdown__item:hover .dropdown__menu,
 .dropdown__subitem:hover > .dropdown__submenu {
   max-height: 1000px;
   transition: max-height 0.4s ease-in;
 }
 
-/* Rotate dropdown icon */
 .dropdown__item:hover .dropdown__arrow {
   transform: rotate(180deg);
 }
 
-/*=============== DROPDOWN SUBMENU ===============*/
 .dropdown__add {
   margin-left: auto;
 }
@@ -251,8 +221,6 @@ a {
   background-color: var(--black-color-lighten);
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
 @media screen and (max-width: 340px) {
   .container {
     margin-inline: 1rem;
@@ -263,7 +231,6 @@ a {
   }
 }
 
-/* For large devices */
 @media screen and (min-width: 1118px) {
   .container {
     margin-inline: auto;
@@ -324,7 +291,6 @@ a {
     top: 0.5rem;
   }
 
-  /* Show dropdown menu */
   .dropdown__item:hover .dropdown__menu {
     opacity: 1;
     top: 4rem;
@@ -332,7 +298,6 @@ a {
     transition: top 0.3s;
   }
 
-  /* Show dropdown submenu */
   .dropdown__subitem:hover > .dropdown__submenu {
     opacity: 1;
     top: 0;
@@ -342,9 +307,9 @@ a {
 }
 
 .logout-div i {
-  font-size: 20px; /* Adjust the size of the icon */
+  font-size: 20px;
   margin-top: 20px;
-  color: white; /* Icon color */
+  color: white;
   float: left;
 }
 
@@ -368,7 +333,6 @@ a {
   letter-spacing: 3px;
   opacity: 0;
   transition: opacity 0.45s;
-  -webkit-transition: opacity 0.35s;
 }
 
 .logout-div .button-logout {
@@ -377,7 +341,6 @@ a {
   color: white;
   width: 50px;
   transition: width 0.35s;
-  -webkit-transition: width 0.35s;
   overflow: hidden;
 }
 
@@ -395,19 +358,19 @@ a {
 
 @media (max-width: 1024px) {
   .header h2 {
-    font-size: 1rem; /* Slightly smaller font size for medium screens */
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .header h2 {
-    font-size: 1rem; /* Smaller font size for tablets and small screens */
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .header h2 {
-    font-size: 1rem; /* Smallest font size for mobile devices */
-    text-align: center; /* Center align text for better appearance on small screens */
+    font-size: 1rem;
+    text-align: center;
   }
 }
