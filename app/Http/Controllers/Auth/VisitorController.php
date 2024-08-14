@@ -7,17 +7,22 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
+//Controller used for Visitor Authentication
 class VisitorController extends \App\Http\Controllers\Controller
 {
+    // Register Function
+    //@param : Request from view (name, email, password)
     public function register(Request $request)
     {
         try {
+            // Validate the request
             $validatedData = $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:8',
             ]);
 
+            // Create a new user
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -25,9 +30,11 @@ class VisitorController extends \App\Http\Controllers\Controller
                 'role' => 'visitor',
             ]);
 
+            // Log the user in
             Auth::login($user);
-
             return redirect()->route('home');
+
+
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }

@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Berita;
 use Illuminate\Support\Facades\DB;
 
+//Controller used for Analytics
 class DashboardController extends Controller
 {
+    //Function to show Website Analytics
     public function index()
     {
         //Statistik Berita
@@ -56,6 +58,8 @@ class DashboardController extends Controller
 
         return view('dashboard.admin', compact('todayPageViews', 'lastWeekPageViews', 'lastMonthPageViews', 'popularNews', 'categories'));
     }
+
+    //Function to Storing How many views every page has
     public function trackPageView(Request $request)
     {
         $pagePath = $request->input('page');

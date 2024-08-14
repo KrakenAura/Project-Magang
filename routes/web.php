@@ -15,35 +15,43 @@ use App\Http\Controllers\DashboardController;
 
 Route::post('/track-page-view', [DashboardController::class, 'trackPageView']);
 
+//Home Route
 Route::get('/', [HomeController::class, 'view_landing'])->name('home');
+
+//Library Route
 Route::get('/library', [LibraryController::class, 'index']);
+
+//Contact Us Route
 
 Route::get('/contactus', [SocialController::class, 'view_landing']);
 
+//Profile Route
 Route::get('/profil', [ProfileController::class, 'view_landing']);
 
-
+//Berita Route
 Route::get('/berita/{id}', [BeritaController::class, 'view_berita'])->name('berita.view');
 Route::get('/kotaterkini', [BeritaController::class, 'view_landing_kotaterkini'])->name('kotaterkini.landing');
-
 Route::get('/layananpublik', [BeritaController::class, 'view_landing_layananpublik'])->name('layananpublik.landing');
-
-Route::get('/warga-bicara', [ComplaintController::class, 'view_landing'])->name('complaint.landing');
-Route::get('/programtv', [OutlookController::class, 'view_landing'])->name('programtv.landing');
-
-Route::get('/kerja', function () {
-    return view('dashboard/admin_profil');
-});
-
-Route::get('/kabarbalaikota', [BeritaController::class, 'view_landing_kabarbalaikota'])->name('kabarbalaikota.landing');
-
 Route::get('/citizen', [BeritaController::class, 'view_landing_citizen'])->name('citizen.landing');
 Route::get('/citizen/tulis', function () {
     return view('citizenwrite');
 });
+Route::get('/kabarbalaikota', [BeritaController::class, 'view_landing_kabarbalaikota'])->name('kabarbalaikota.landing');
 
+//Route for Comments
+Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
+Route::post('/comments/{comment}/reply', [CommentController::class, 'reply'])->middleware('auth')->name('comments.reply');
+
+//Warga Bicara (Pengaduan) Route
+Route::get('/warga-bicara', [ComplaintController::class, 'view_landing'])->name('complaint.landing');
+
+//Program TV Route
+Route::get('/programtv', [OutlookController::class, 'view_landing'])->name('programtv.landing');
+
+//Galery Route
 Route::get('/galeri', [GaleryController::class, 'view_landing'])->name('galeri.landing');
 
+//Auth Route
 Route::get('/login', function () {
     return view('login');
 })->name('login');
@@ -52,12 +60,14 @@ Route::get('/adminlogin', function () {
     return view('adminlogin');
 })->name('adminlogin');
 
+//Dashboard Route
+
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
 
+    //See all Komentar and Berita by Category Route
     Route::get('/komentar/category/{category}', [CommentController::class, 'view_komentar_by_category'])->name('komentar.by_category');
-
     Route::get('/berita/category/{category}', [BeritaController::class, 'view_by_category'])->name('berita.by_category');
 
     //Beranda
@@ -105,6 +115,3 @@ Route::prefix('/admin')->middleware(['admin'])->group(function () {
     //Profile
     Route::get('/profil', [ProfileController::class, 'view_dashboard'])->name('admin.profile');
 });
-
-Route::post('/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
-Route::post('/comments/{comment}/reply', [CommentController::class, 'reply'])->middleware('auth')->name('comments.reply');

@@ -6,19 +6,24 @@ use App\Http\Resources\GaleriResource;
 use App\Models\Galery;
 use Illuminate\Http\Request;
 
+//Controller used for Galeri
 class GaleryController extends Controller
 {
+    //Function to check API for return all Galeri
     public function index()
     {
         $galeri = Galery::all();
         return GaleriResource::collection($galeri);
     }
 
+    //Function to check API for return Galeri by ID
     public function show($id)
     {
         $galeri = Galery::find($id);
         return new GaleriResource($galeri);
     }
+
+    //Function to Storing Galeru
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -37,6 +42,7 @@ class GaleryController extends Controller
         return redirect('/admin/galeri')->with('success', 'Berita created successfully');
     }
 
+    //Function to Update Galeri
     public function update(Request $request, $id)
     {
         $galeri = Galery::findOrFail($id);
@@ -55,6 +61,7 @@ class GaleryController extends Controller
         return redirect('/admin/galeri')->with('success', 'Berita updated successfully');
     }
 
+    //Function to Delete Galeri
     public function destroy($id)
     {
         $galeri = Galery::findOrFail($id);
@@ -62,11 +69,14 @@ class GaleryController extends Controller
         return redirect('/admin/galeri')->with('success', 'Berita deleted successfully');
     }
 
+    //Function to view Galeri Dashboard with parsed data
     public function view_dashboard()
     {
         $galeries = Galery::all();
         return view('dashboard.admin_galeri', compact('galeries'));
     }
+
+    //Function to view Galeri Landing Page with parsed data
     public function view_landing()
     {
         $galeries = Galery::all();

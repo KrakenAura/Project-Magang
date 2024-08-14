@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-
+    //Function for view komentar by category in Dashboard
     public function view_komentar_by_category($category)
     {
 
@@ -17,9 +17,11 @@ class CommentController extends Controller
         return view('dashboard.admin_' . strtolower($category) . '_lihatkomen', compact('beritas'));
     }
 
-
+    //Function for Storing Comments
+    //@Param: Request from view (news_id, user_id,and comment content) 
     public function store(Request $request)
     {
+
         $comment = new Comment();
         $comment->news_id = $request->news_id;
         $comment->user_id = auth()->id();
@@ -29,6 +31,8 @@ class CommentController extends Controller
         return back();
     }
 
+    //Function for Relying Comments
+    //@Param: Request from view (news_id, user_id,replied comment_id,and comment content) 
     public function reply(Request $request, $commentId)
     {
         $reply = new Comment();
@@ -41,6 +45,8 @@ class CommentController extends Controller
         return back();
     }
 
+    //Function for Deleting Comments
+    //@Param: deleted comment id
     public function destroy($id)
     {
         $comment = Comment::findOrFail($id);
