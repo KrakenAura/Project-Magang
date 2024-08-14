@@ -10,27 +10,32 @@ use Illuminate\Support\Facades\Auth;
 
 class BeritaController extends Controller
 {
-    //General use
+    //General use for all category
+
+    //Function to return all Berita
     public function index()
     {
         $berita = Berita::all();
         return BeritaResource::collection($berita);
     }
 
+    //Function to return Berita by ID
     public function view_berita($id)
     {
         $berita = Berita::findOrFail($id);
-        $latestNews
-        = Berita::orderBy('created_at', 'desc')->take(2)->get();
+        $latestNews = Berita::orderBy('created_at', 'desc')->take(2)->get();
         $comments = Comment::where('news_id', $id)->with('replies')->get();
-        return view('viewberita', compact('berita', 'comments'));
+        return view('viewberita', compact('berita', 'comments', 'latestNews'));
     }
 
+    //Function to return Berita by ID
     public function show($id)
     {
         $berita = Berita::find($id);
         return new BeritaResource($berita);
     }
+
+
     public function store(Request $request)
     {
         \Illuminate\Support\Facades\Log::info('Store method called');
@@ -54,7 +59,7 @@ class BeritaController extends Controller
         // dd($validatedData);
         $berita = Berita::create($validatedData);
         // return new BeritaResource($berita);
-        if (strtolower($validatedData['category']) === 'citizen') {
+        if (strtolower($validatedData['category']) === 'CitizenJournalist') {
             $redirectUrl = '/citizen';
         } else {
             $redirectUrl = '/admin/' . strtolower($validatedData['category']);
@@ -211,11 +216,11 @@ class BeritaController extends Controller
     //Citizen Journalist
     public function view_landing_citizen()
     {
-        $latestBeritas = Berita::where('category', 'citizen')
+        $latestBeritas = Berita::where('category', 'CitizenJournalist')
             ->orderBy('id', 'desc')
             ->take(3)
             ->get();
-        $olderBeritas = Berita::where('category', 'citizen')
+        $olderBeritas = Berita::where('category', 'CitizenJournalist')
             ->orderBy('id', 'desc')
             ->skip(3)
             ->paginate(6);
@@ -224,7 +229,7 @@ class BeritaController extends Controller
 
     public function view_dashboard_citizen()
     {
-        $beritas = Berita::where('category', 'citizen')->get();
+        $beritas = Berita::where('category', 'CitizenJournalist')->get();
         return view('dashboard.admin_citizen', compact('beritas'));
     }
 

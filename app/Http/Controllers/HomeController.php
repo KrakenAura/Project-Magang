@@ -15,8 +15,10 @@ use App\Models\Outlook;
 use App\Models\berita;
 use App\Models\Banner;
 
+//Function used to Modify Home Content
 class HomeController extends Controller
 {
+    //Function to view Dashboard
     public function view_dashboard()
     {
         $slideshows = Slideshow::all();
@@ -29,6 +31,7 @@ class HomeController extends Controller
         return view('dashboard.admin_beranda', compact('slideshows', 'livestreams', 'footer', 'banners'));
     }
 
+    //Function to view Landing Page
     public function view_landing()
     {
         $slideshows = Slideshow::all();
@@ -44,10 +47,10 @@ class HomeController extends Controller
     }
 
     //Footer
+    //Function used for Update Footer
     public function updateFooter(Request $request, $id)
     {
         $footer = Footer::findOrFail($id);
-        // dd($request->all());
         $validatedData = $request->validate([
             'description' => 'required',
             'address' => 'required',
@@ -57,13 +60,16 @@ class HomeController extends Controller
         return redirect('/admin/beranda')->with('success', 'Berita updated successfully');
     }
 
+    //Livestream
+    //Function used for Update Livestream
     public function updateLiveStream(Request $request, $id)
     {
         $livestream = Livestream::findOrFail($id);
-        // dd($request->all());
         $validatedData = $request->validate([
             'stream_url' => 'required',
         ]);
+
+        //Used to rename the shared live link to embed link
         $validatedData['stream_url'] = str_replace('/live/', '/embed/', $validatedData['stream_url']);
 
         $livestream->update($validatedData);
@@ -71,6 +77,8 @@ class HomeController extends Controller
     }
 
 
+    //Slideshow
+    //Function used for Storing Slideshow
     public function storeSlideShow(Request $request)
     {
         $validatedData = $request->validate([
@@ -85,16 +93,17 @@ class HomeController extends Controller
         $slideshow = Slideshow::create($validatedData);
         return redirect()->route('admin.beranda')->with('success', 'Outlook created successfully');
     }
+
+    //Function used for Update Slideshow
     public function updateSlideShow(Request $request, $slideshowId)
     {
         $slideshow = Slideshow::findOrFail($slideshowId);
 
         $validatedData = $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation as needed
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
-            // Delete the old image if it exists
             if ($slideshow->image_path) {
                 \Illuminate\Support\Facades\Storage::disk('public')->delete($slideshow->image_path);
             }
@@ -108,6 +117,8 @@ class HomeController extends Controller
         return redirect('/admin/beranda')->with('success', 'Slideshow image updated successfully');
     }
 
+    //Banner
+    //Function used for Update Banner
     public function updateBanner(Request $request, $id)
     {
         $banner = Banner::findOrFail($id);
@@ -117,7 +128,6 @@ class HomeController extends Controller
         ]);
 
         if ($request->hasFile('banner')) {
-            // Delete the old image if it exists
             if ($banner->banner) {
                 \Illuminate\Support\Facades\Storage::disk('public')->delete($banner->banner);
             }

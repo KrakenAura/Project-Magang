@@ -36,10 +36,10 @@
 
             </div>
             <div class="action-button mt-3">
-                <a href="/admin/berita/category/citizen">
+                <a href="/admin/berita/category/CitizenJournalist">
                     <button type="button" class="btn btn-primary">Lihat Semua</button>
                 </a>
-                <a href="/admin/komentar/category/citizen"><button type="button" class="btn btn-warning">Lihat Semua Komentar</button></a>
+                <a href="/admin/komentar/category/CitizenJournalist"><button type="button" class="btn btn-warning">Lihat Semua Komentar</button></a>
             </div>
         </div>
     </div>

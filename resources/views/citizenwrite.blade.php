@@ -10,7 +10,7 @@
 <div class="container-write">
     <form action="{{ route('CreateBerita') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="hidden" name="category" value="citizen">
+        <input type="hidden" name="category" value="CitizenJournalist">
         <div class="title-section">
             <p class="title-label">Judul</p>
             <input type="text" name="title" class="title-input" placeholder="Title" required>

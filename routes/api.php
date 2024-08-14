@@ -17,15 +17,6 @@ use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CrewController;
 
-// Route::get('/user', function (Request $request) {
-//     return $request->user();
-// })->middleware('auth:sanctum');
-
-// Route::middleware('auth:sanctum')->get('/protected', function (Request $request) {
-//     return response()->json(['message' => 'You have access!']);
-// });
-
-
 //Berita Routes
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/{id}', [BeritaController::class, 'show']);
@@ -86,7 +77,6 @@ Route::put('/crew/update/{id}', [CrewController::class, 'update'])->name('crew.u
 Route::delete('/crew/delete/{id}', [CrewController::class, 'destroy'])->name('crew.delete');
 
 //Beranda
-
 Route::put('/beranda/footer/update/{id}', [HomeController::class, 'updateFooter'])->name('footer.update');
 Route::put('/beranda/livestream/update/{id}', [HomeController::class, 'updateLiveStream'])->name('livestream.update');
 Route::post('/beranda/slideshow/store', [HomeController::class, 'storeSlideShow'])->name('slideshow.store');
