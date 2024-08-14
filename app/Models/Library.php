@@ -12,7 +12,6 @@ class Library extends Model
     protected $fillable = [
         'judul',
         'image',
-        'deskripsi',
         'link'
     ];
 }
