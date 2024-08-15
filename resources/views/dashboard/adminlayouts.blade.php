@@ -37,7 +37,7 @@
             </ul>
             <div class="logout-div">
                 <a class="button" href="#" onclick="logout()">
-                    <img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+                    <img src="{{ asset('images/logo tvd.png') }}">
                     <div class="logout">LOGOUT</div>
                 </a>
             </div>
@@ -45,7 +45,7 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="/admin/dashboard" class="brand-link">
-                <img src="{{asset('images/logo tvd.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{asset('images/logo tvd.png')}}" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Dashboard TV Desa</span>
             </a>
             <div class="sidebar">
