@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{{asset('css/crew.css')}}">
 @endsection
 
+@section('title','Profile')
+
 @section('content')
 
 <body>

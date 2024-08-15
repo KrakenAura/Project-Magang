@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/browser-icon.png') }}" type="image/png">
 
 
     <title>TV Desa Batu</title>
@@ -136,7 +137,6 @@
         feather.replace();
     </script>
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/auth.js') }}" defer></script>
     <script src=" {{asset('js/script.js')}}"></script>
     <script>
         (function() {

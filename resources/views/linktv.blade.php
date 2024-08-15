@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{{asset('css/linktv.css')}}">
 @endsection
 
+@section('title','Program TV Desa')
+
 @section('content')
 <div class="wrapper">
     <h1>Program TV Desa</h1>

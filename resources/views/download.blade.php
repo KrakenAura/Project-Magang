@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{{asset('css/download.css')}}">
 @endsection
 
+@section('title','Library')
+
 @section('content')
 <div class="wrapper">
     <h1>Library</h1>

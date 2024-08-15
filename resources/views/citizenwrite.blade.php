@@ -5,6 +5,8 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js"></script>
 @endsection
 
+@section('title','Citizen Write')
+
 @section('content')
 <h1>Citizen Write</h1>
 <div class="container-write">

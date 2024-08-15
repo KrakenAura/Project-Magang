@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{ asset('css/pengaduan.css') }}">
 @endsection
 
+@section('title','Warga Bicara')
+
 @section('content')
 <main>
     <div class="content">

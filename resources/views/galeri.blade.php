@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{asset('css/galeri.css')}}">
 @endsection
 
+@section('title','Galeri')
+
 @section('content')
 
 <h1>Galeri</h1>

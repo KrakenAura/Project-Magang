@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{asset('css/view-berita.css')}}">
 @endsection
 
+@section('title',$berita->title)
+
 
 
 @section('content')

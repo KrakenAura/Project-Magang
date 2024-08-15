@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{{asset('css/contactus.css')}}">
 @endsection
 
+@section('title','Contact Us')
+
 @section('content')
 <div class="wrapper">
     <h1>Contact US</h1>

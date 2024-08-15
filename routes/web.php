@@ -61,10 +61,10 @@ Route::get('/adminlogin', function () {
 })->name('adminlogin');
 
 //Dashboard Route
-
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::prefix('/admin')->middleware(['admin'])->group(function () {
+
+    //View Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     //See all Komentar and Berita by Category Route
     Route::get('/komentar/category/{category}', [CommentController::class, 'view_komentar_by_category'])->name('komentar.by_category');
