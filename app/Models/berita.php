@@ -16,7 +16,8 @@ class berita extends Model
         'category',
         'title',
         'date',
-        'author'
+        'author',
+        'status'
     ];
 
     protected $casts = [
@@ -26,5 +27,18 @@ class berita extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class, 'news_id');
+    }
+
+    public function getStatusAttribute($value)
+    {
+        if ($value !== null) {
+            return $value;
+        }
+
+        if ($this->category === 'CitizenJournalist') {
+            return 'pending';
+        }
+
+        return 'verified';
     }
 }

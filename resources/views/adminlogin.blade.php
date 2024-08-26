@@ -20,7 +20,7 @@
                 <button>Login</button>
             </form>
         </div>
-        <div class="signup">
+        <!-- <div class="signup">
             <form>
                 <label for="chk" aria-hidden="true">Signup</label>
                 <input type="text" name="txt" placeholder="User name" required="">
@@ -28,7 +28,7 @@
                 <input type="password" name="pswd" placeholder="Password" required="">
                 <button>Sign Up</button>
             </form>
-        </div>
+        </div> -->
 
     </div>
     <script src="{{ asset('js/adminlogin.js') }}"></script>

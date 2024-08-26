@@ -38,8 +38,17 @@
                     @endif
                 </div>
                 <p class="berita-date">{{$berita->created_at->format('d F, Y')}}</p>
+                <p class="berita-status">Status: {{ $berita->status }}</p>
                 <p class="berita-author">{{$berita->author}}</p>
                 <div class="berita-actions">
+                    <form action="{{ route('berita.update.status', $berita->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" name="status" value="{{ $berita->status === 'pending' ? 'verified' : 'pending' }}">
+                        <button type="submit" class="btn btn-{{ $berita->status === 'pending' ? 'success' : 'warning' }}">
+                            {{ $berita->status === 'pending' ? 'Verify' : 'Mark as Pending' }}
+                        </button>
+                    </form>
                     <form action="{{ route('berita.delete', $berita->id) }}" method="POST" style="display: inline;">
                         @csrf
                         @method('DELETE')

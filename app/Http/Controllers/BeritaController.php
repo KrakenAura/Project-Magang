@@ -49,11 +49,18 @@ class BeritaController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'author' => 'required|max:255',
             'category' => 'required',
+            'status' => 'nullable',
         ]);
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('berita_images', 'public');
             $validatedData['image'] = $imagePath;
+        }
+
+        if ($validatedData['category'] === 'CitizenJournalist') {
+            $validatedData['status'] = 'pending';
+        } else {
+            $validatedData['status'] = 'verified';
         }
 
         $berita = Berita::create($validatedData);
@@ -86,6 +93,19 @@ class BeritaController extends Controller
         $redirectUrl = '/admin/' . strtolower($validatedData['category']);
 
         return redirect($redirectUrl)->with('success', 'Berita created successfully');
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $berita = Berita::findOrFail($id);
+        $validatedData = $request->validate([
+            'status' => 'required|in:pending,verified',
+        ]);
+
+        $berita->status = $validatedData['status'];
+        $berita->save();
+
+        return redirect()->back()->with('success', 'Berita status updated successfully');
     }
 
     public function destroy($id)
