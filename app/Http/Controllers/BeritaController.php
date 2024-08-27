@@ -23,7 +23,7 @@ class BeritaController extends Controller
     public function view_berita($id)
     {
         $berita = Berita::findOrFail($id);
-        $latestNews = Berita::orderBy('created_at', 'desc')->take(2)->get();
+        $latestNews = Berita::orderBy('created_at', 'desc')->where('status', 'verified')->take(2)->get();
         $comments = Comment::where('news_id', $id)->whereNull('parent_id')->with('replies')->get();
         return view('viewberita', compact('berita', 'comments', 'latestNews'));
     }
@@ -144,10 +144,12 @@ class BeritaController extends Controller
     public function view_landing_kotaterkini()
     {
         $latestBeritas = Berita::where('category', 'KotaTerkini')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->take(3)
             ->get();
         $olderBeritas = Berita::where('category', 'KotaTerkini')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->skip(3)
             ->paginate(6);
@@ -174,10 +176,12 @@ class BeritaController extends Controller
     public function view_landing_layananpublik()
     {
         $latestBeritas = Berita::where('category', 'LayananPublik')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->take(3)
             ->get();
         $olderBeritas = Berita::where('category', 'LayananPublik')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->skip(3)
             ->paginate(6);
@@ -203,10 +207,12 @@ class BeritaController extends Controller
     public function view_landing_kabarbalaikota()
     {
         $latestBeritas = Berita::where('category', 'KabarBalaiKota')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->take(3)
             ->get();
         $olderBeritas = Berita::where('category', 'KabarBalaiKota')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->skip(3)
             ->paginate(6);
@@ -233,10 +239,12 @@ class BeritaController extends Controller
     public function view_landing_citizen()
     {
         $latestBeritas = Berita::where('category', 'CitizenJournalist')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->take(3)
             ->get();
         $olderBeritas = Berita::where('category', 'CitizenJournalist')
+            ->where('status', 'verified')
             ->orderBy('id', 'desc')
             ->skip(3)
             ->paginate(6);

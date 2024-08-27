@@ -37,8 +37,8 @@ class HomeController extends Controller
         $slideshows = Slideshow::all();
         $socials = social::all();
         $livestream = Livestream::first();
-        $latestNews = Berita::orderBy('created_at', 'desc')->take(2)->get();
-        $othersNews = Berita::orderBy('created_at', 'desc')->take(2)->skip(2)->get();
+        $latestNews = Berita::orderBy('created_at', 'desc')->where('status', 'verified')->take(2)->get();
+        $othersNews = Berita::orderBy('created_at', 'desc')->where('status', 'verified')->take(2)->skip(2)->get();
         $outlooks = Outlook::orderBy('created_at', 'asc')->take(6)->get();
         $banners = Banner::all();
         $footer = Footer::first();

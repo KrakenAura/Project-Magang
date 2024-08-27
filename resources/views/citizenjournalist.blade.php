@@ -11,7 +11,9 @@
 
 <div class="top">
     <div class="page-title">Citizen Journalist</div>
+    @auth
     <a href="/citizen/tulis"><button class="hover-button">Mulai Nulis</button></a>
+    @endauth
 </div>
 <div class="container">
     <div class="column column-left">
