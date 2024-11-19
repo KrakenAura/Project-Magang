@@ -19,9 +19,9 @@
                 @csrf
                 <h1>Sign up</h1>
                 <span>use your email for registration</span>
-                <input type="text" placeholder="Name" name="name" required />
-                <input type="email" placeholder="Email" name="email" required />
-                <input type="password" placeholder="Password" name="password" required />
+                <input type="text" placeholder="Name" name="name" />
+                <input type="email" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
                 <button type="submit">Sign Up</button>
             </form>
         </div>
@@ -30,13 +30,6 @@
             <form id="login-form" action="{{ route('visitor.login') }}" method="POST">
                 @csrf
                 <h1>Sign in</h1>
-                @if ($errors->any())
-                <div class="validation-error">
-                    @foreach ($errors->all() as $error)
-                    {{ $error }}
-                    @endforeach
-                </div>
-                @endif
 
                 <input type="email" placeholder="Email" id="email" name="email" />
                 <input type="password" placeholder="Password" id="password" name="password" />
@@ -73,7 +66,6 @@
 </body>
 
 <body>
-    <!-- Error popup -->
     @if ($errors->any())
     <div class="error-popup" id="errorPopup">
         <p>{{ $errors->first() }}</p>
@@ -83,7 +75,6 @@
 
 
     <script>
-        // Display error popup if there are errors
         document.addEventListener("DOMContentLoaded", function() {
             const errorPopup = document.getElementById("errorPopup");
             if (errorPopup) {
