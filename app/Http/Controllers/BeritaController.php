@@ -83,6 +83,34 @@ class BeritaController extends Controller
                 ->withInput()
                 ->withErrors(['error' => 'Failed to submit news: ' . $e->getMessage()]);
         }
+        \Illuminate\Support\Facades\Log::info('Store method called');
+        \Illuminate\Support\Facades\Log::info($request->all());
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'date' => now(),
+            'description' => 'required',
+            'teaser' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'author' => 'required|max:255',
+            'category' => 'required',
+            'status' => 'nullable',
+        ]);
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('berita_images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+        if ($validatedData['category'] === 'CitizenJournalist') {
+            $validatedData['status'] = 'pending';
+        } else {
+            $validatedData['status'] = 'verified';
+        }
+        $berita = Berita::create($validatedData);
+        if (strtolower($validatedData['category']) === 'CitizenJournalist') {
+            $redirectUrl = '/citizen';
+        } else {
+            $redirectUrl = '/admin/' . strtolower($validatedData['category']);
+        }
+        return redirect($redirectUrl)->with('success', 'Berita created successfully');
     }
 
     public function update(Request $request, $id)
