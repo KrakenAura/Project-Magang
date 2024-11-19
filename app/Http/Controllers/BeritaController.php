@@ -40,7 +40,6 @@ class BeritaController extends Controller
     {
         \Illuminate\Support\Facades\Log::info('Store method called');
         \Illuminate\Support\Facades\Log::info($request->all());
-
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'date' => now(),
@@ -51,25 +50,21 @@ class BeritaController extends Controller
             'category' => 'required',
             'status' => 'nullable',
         ]);
-
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('berita_images', 'public');
             $validatedData['image'] = $imagePath;
         }
-
         if ($validatedData['category'] === 'CitizenJournalist') {
             $validatedData['status'] = 'pending';
         } else {
             $validatedData['status'] = 'verified';
         }
-
         $berita = Berita::create($validatedData);
         if (strtolower($validatedData['category']) === 'CitizenJournalist') {
             $redirectUrl = '/citizen';
         } else {
             $redirectUrl = '/admin/' . strtolower($validatedData['category']);
         }
-
         return redirect($redirectUrl)->with('success', 'Berita created successfully');
     }
 
