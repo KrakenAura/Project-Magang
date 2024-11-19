@@ -38,39 +38,51 @@ class BeritaController extends Controller
 
     public function store(Request $request)
     {
-        \Illuminate\Support\Facades\Log::info('Store method called');
-        \Illuminate\Support\Facades\Log::info($request->all());
+        try {
+            $validatedData = $request->validate([
+                'title' => 'required|string|max:255',
+                'description' => 'required|string|min:50',
+                'teaser' => 'required|string|max:255|min:10',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'author' => 'required|string|max:255',
+                'category' => 'required|string',
+            ], [
+                'title.required' => 'News title is required',
+                'title.max' => 'Title cannot exceed 255 characters',
+                'description.required' => 'News content is required',
+                'description.min' => 'News content must be at least 50 characters',
+                'teaser.required' => 'Teaser is required',
+                'teaser.max' => 'Teaser cannot exceed 255 characters',
+                'teaser.min' => 'Teaser must be at least 10 characters',
+                'image.required' => 'Cover image is required',
+                'image.image' => 'File must be an image',
+                'image.mimes' => 'Image must be jpeg, png, jpg, or gif format',
+                'image.max' => 'Image size cannot exceed 2MB',
+                'author.required' => 'Author name is required',
+                'author.max' => 'Author name cannot exceed 255 characters',
+                'category.required' => 'News category is required'
+            ]);
 
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'date' => now(),
-            'description' => 'required',
-            'teaser' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'author' => 'required|max:255',
-            'category' => 'required',
-            'status' => 'nullable',
-        ]);
+            if ($request->hasFile('image')) {
+                $imagePath = $request->file('image')->store('berita_images', 'public');
+                $validatedData['image'] = $imagePath;
+            }
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('berita_images', 'public');
-            $validatedData['image'] = $imagePath;
+            if ($validatedData['category'] === 'CitizenJournalist') {
+                $validatedData['status'] = 'pending';
+            } else {
+                $validatedData['status'] = 'verified';
+            }
+
+            $berita = Berita::create($validatedData);
+        
+            return redirect('/citizen')->with('success', 'Your news has been submitted successfully and is pending review');
+        
+        } catch (\Exception $e) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors(['error' => 'Failed to submit news: ' . $e->getMessage()]);
         }
-
-        if ($validatedData['category'] === 'CitizenJournalist') {
-            $validatedData['status'] = 'pending';
-        } else {
-            $validatedData['status'] = 'verified';
-        }
-
-        $berita = Berita::create($validatedData);
-        if (strtolower($validatedData['category']) === 'CitizenJournalist') {
-            $redirectUrl = '/citizen';
-        } else {
-            $redirectUrl = '/admin/' . strtolower($validatedData['category']);
-        }
-
-        return redirect($redirectUrl)->with('success', 'Berita created successfully');
     }
 
     public function update(Request $request, $id)

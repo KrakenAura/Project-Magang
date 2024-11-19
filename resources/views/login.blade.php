@@ -29,7 +29,7 @@
         <div class="form-container sign-in-container" id="loginForm">
             <form id="login-form" action="{{ route('visitor.login') }}" method="POST">
                 @csrf
-                <h1>Sign in</h1>
+                <h1>Sign ina</h1>
 
                 <input type="email" placeholder="Email" id="email" name="email" />
                 <input type="password" placeholder="Password" id="password" name="password" />
@@ -72,6 +72,7 @@
         <button onclick="closePopup()">Close</button>
     </div>
     @endif
+
 
 
     <script>

@@ -16,6 +16,15 @@ class VisitorController extends \App\Http\Controllers\Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:8',
+            ], [
+                'name.required' => 'Name is required',
+                'name.max' => 'Name cannot exceed 255 characters',
+                'email.required' => 'Email is required',
+                'email.email' => 'Please enter a valid email address',
+                'email.max' => 'Email cannot exceed 255 characters',
+                'email.unique' => 'This email is already registered',
+                'password.required' => 'Password is required',
+                'password.min' => 'Password must be at least 8 characters'
             ]);
 
             $user = User::create([
@@ -30,22 +39,36 @@ class VisitorController extends \App\Http\Controllers\Controller
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
+
     public function login(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => 'string|email',
-            'password' => 'string',
-        ], ['email.required' => 'Email field cannot be empty']);
+        try {
+            $validatedData = $request->validate([
+                'email' => 'required|string|email|max:255',
+                'password' => 'required|string|min:8',
+            ], [
+                'email.required' => 'Email is required',
+                'email.email' => 'Please enter a valid email address',
+                'email.max' => 'Email cannot exceed 255 characters',
+                'password.required' => 'Password is required',
+                'password.min' => 'Password must be at least 8 characters'
+            ]);
 
-        if (Auth::attempt(array_merge($credentials, ['role' => 'visitor']))) {
-            $request->session()->regenerate();
-            return redirect()->route('home');
+            if (Auth::attempt(array_merge($validatedData, ['role' => 'visitor']))) {
+                $request->session()->regenerate();
+                return redirect()->route('home');
+            }
+
+            return redirect()->back()->withErrors([
+                'error' => 'Invalid email or password. Please check your credentials.'
+            ]);
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
     }
+
+
+
 
 
 
