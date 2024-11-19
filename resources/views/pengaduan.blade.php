@@ -23,7 +23,7 @@
                 <input type="text" id="nama" name="nama" required>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="text" id="email" name="email" required>
 
                 <label for="nomor_telepon">Nomor Telepon</label>
                 <input type="tel" id="nomor_telepon" name="nomor_telepon" required>

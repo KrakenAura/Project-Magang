@@ -30,8 +30,16 @@
             <form id="login-form" action="{{ route('visitor.login') }}" method="POST">
                 @csrf
                 <h1>Sign in</h1>
-                <input type="email" placeholder="Email" id="email" name="email" required />
-                <input type="password" placeholder="Password" id="password" name="password" required />
+                @if ($errors->any())
+                <div class="validation-error">
+                    @foreach ($errors->all() as $error)
+                    {{ $error }}
+                    @endforeach
+                </div>
+                @endif
+
+                <input type="email" placeholder="Email" id="email" name="email" />
+                <input type="password" placeholder="Password" id="password" name="password" />
                 <a href="#">Forgot your password?</a>
                 <button type="submit">Sign In</button>
             </form>
@@ -53,7 +61,65 @@
         </div>
     </div>
 
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+
     <script src="{{ asset('js/login.js') }}"></script>
+</body>
+
+<body>
+    <!-- Error popup -->
+    @if ($errors->any())
+    <div class="error-popup" id="errorPopup">
+        <p>{{ $errors->first() }}</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    @endif
+
+
+    <script>
+        // Display error popup if there are errors
+        document.addEventListener("DOMContentLoaded", function() {
+            const errorPopup = document.getElementById("errorPopup");
+            if (errorPopup) {
+                errorPopup.style.display = "block";
+            }
+        });
+
+        function closePopup() {
+            document.getElementById("errorPopup").style.display = "none";
+        }
+    </script>
+
+    <style>
+        .error-popup {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .error-popup button {
+            background-color: #721c24;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
 </body>
 
 </html>
