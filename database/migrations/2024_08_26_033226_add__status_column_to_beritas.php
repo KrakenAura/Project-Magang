@@ -9,20 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::table('beritas', function (Blueprint $table) {
-            $table->string('status')->default('pending');
-        });
-    }
+    // public function up(): void
+    // {
+    //     Schema::table('beritas', function (Blueprint $table) {
+    //         $table->string('status')->default('pending');
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::table('beritas', function (Blueprint $table) {
-            $table->dropColumn('status');
-        });
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  */
+    // public function down(): void
+    // {
+    //     Schema::table('beritas', function (Blueprint $table) {
+    //         $table->dropColumn('status');
+    //     });
+    // }
 };

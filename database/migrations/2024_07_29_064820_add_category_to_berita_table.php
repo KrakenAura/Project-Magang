@@ -9,17 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::table('beritas', function (Blueprint $table) {
-            $table->string('category')->nullable()->after('author');
-        });
-    }
+    // public function up(): void
+    // {
+    //     Schema::table('beritas', function (Blueprint $table) {
+    //         $table->string('category')->nullable()->after('author');
+    //     });
+    // }
 
-    public function down(): void
-    {
-        Schema::table('beritas', function (Blueprint $table) {
-            $table->dropColumn('category');
-        });
-    }
+    // public function down(): void
+    // {
+    //     Schema::table('beritas', function (Blueprint $table) {
+    //         $table->dropColumn('category');
+    //     });
+    // }
 };

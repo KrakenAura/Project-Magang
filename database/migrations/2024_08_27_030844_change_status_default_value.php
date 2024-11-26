@@ -9,22 +9,22 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::table('beritas', function (Blueprint $table) {
-            if (!Schema::hasColumn('beritas', 'status')) {
-                $table->string('status')->default('verified');
-            }
-        });
-    }
+    // public function up(): void
+    // {
+    //     Schema::table('beritas', function (Blueprint $table) {
+    //         if (!Schema::hasColumn('beritas', 'status')) {
+    //             $table->string('status')->default('verified');
+    //         }
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::table('beritas', function (Blueprint $table) {
-            $table->dropColumn('status');
-        });
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  */
+    // public function down(): void
+    // {
+    //     Schema::table('beritas', function (Blueprint $table) {
+    //         $table->dropColumn('status');
+    //     });
+    // }
 };

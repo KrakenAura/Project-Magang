@@ -75,9 +75,8 @@ class BeritaController extends Controller
             }
 
             $berita = Berita::create($validatedData);
-        
+
             return redirect('/citizen')->with('success', 'Your news has been submitted successfully and is pending review');
-        
         } catch (\Exception $e) {
             return redirect()->back()
                 ->withInput()

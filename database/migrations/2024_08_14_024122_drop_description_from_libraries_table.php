@@ -11,22 +11,22 @@ class DropDescriptionFromLibrariesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('libraries', function (Blueprint $table) {
-            $table->dropColumn('deskripsi');
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::table('libraries', function (Blueprint $table) {
+    //         $table->dropColumn('deskripsi');
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::table('libraries', function (Blueprint $table) {
-            $table->string('deskripsi')->nullable();
-        });
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  *
+    //  * @return void
+    //  */
+    // public function down()
+    // {
+    //     Schema::table('libraries', function (Blueprint $table) {
+    //         $table->string('deskripsi')->nullable();
+    //     });
+    // }
 }
