@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +17,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="{{ asset('images/browser-icon.png') }}" type="image/png">
-
+    <meta name="description" content="Situs resmi TV Desa Kota Batu. Dapatkan berita terbaru, siaran langsung, dan layanan publik.">
+    <meta name="keywords" content="TV Desa, Kota Batu, berita, siaran langsung, layanan publik, jurnalis warga, pembaruan pemerintah">
+    <meta name="author" content="TV Desa Kota Batu">
 
     <title>TV Desa Batu</title>
 </head>
