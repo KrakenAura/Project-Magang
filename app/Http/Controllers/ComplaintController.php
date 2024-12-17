@@ -47,10 +47,16 @@ class ComplaintController extends Controller
         ]);
 
         $validatedData['tanggal'] = now();
+
+        // Upload image
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('WargaBicara_images', 'public');
             $validatedData['image'] = $imagePath;
+            $complaint = Complaint::create($validatedData);
+        }catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to create complaint');
         }
+
         $complaint = Complaint::create($validatedData);
         return redirect()->route('complaint.landing')->with('success', 'Complaint created successfully');
     }
