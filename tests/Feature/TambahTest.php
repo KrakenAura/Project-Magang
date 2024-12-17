@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
-class CitizenJournalistTest extends TestCase
+class TambahTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 

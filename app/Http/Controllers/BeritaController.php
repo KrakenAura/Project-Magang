@@ -10,16 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class BeritaController extends Controller
 {
-    //General use for all category
-
-    //Function to return all Berita
     public function index()
     {
         $berita = Berita::all();
         return BeritaResource::collection($berita);
     }
-
-    //Function to return Berita by ID
     public function view_berita($id)
     {
         $berita = Berita::findOrFail($id);
@@ -27,15 +22,11 @@ class BeritaController extends Controller
         $comments = Comment::where('news_id', $id)->whereNull('parent_id')->with('replies')->get();
         return view('viewberita', compact('berita', 'comments', 'latestNews'));
     }
-
-    //Function to return Berita by ID
     public function show($id)
     {
         $berita = Berita::find($id);
         return new BeritaResource($berita);
     }
-
-
     public function store(Request $request)
     {
         try {
