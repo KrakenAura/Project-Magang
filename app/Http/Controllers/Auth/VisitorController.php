@@ -26,7 +26,6 @@ class VisitorController extends \App\Http\Controllers\Controller
                 'password.required' => 'Password is required',
                 'password.min' => 'Password must be at least 8 characters'
             ]);
-
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -53,12 +52,10 @@ class VisitorController extends \App\Http\Controllers\Controller
                 'password.required' => 'Password is required',
                 'password.min' => 'Password must be at least 8 characters'
             ]);
-
             if (Auth::attempt(array_merge($validatedData, ['role' => 'visitor']))) {
                 $request->session()->regenerate();
                 return redirect()->route('home');
             }
-
             return redirect()->back()->withErrors([
                 'error' => 'Invalid email or password. Please check your credentials.'
             ]);
