@@ -13,7 +13,7 @@
         <div class="slider">
             @foreach ( $slideshows as $slideshow )
 
-            <img id="slide" src="{{ asset('storage/' . $slideshow->image_path) }}" alt="">
+            <img id="slide" src="{{ asset('storage/' . $slideshow->image_path) }}" width="1200" height="600" alt="">
 
             @endforeach
         </div>
@@ -37,7 +37,7 @@
     <div class="content">
         <div class="column primary-column">
             <div class="header-content">
-                <p><span class="content-title">Berita Terbaru</span></p>
+                <p><span class="content-title">Berita Terbarua</span></p>
             </div>
 
             @foreach ($latestNews as $berita)

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
 use \Illuminate\Support\Facades\Log;
 use App\Models\Slideshow;
 use App\Models\Description;
@@ -82,13 +81,27 @@ class HomeController extends Controller
     public function storeSlideShow(Request $request)
     {
         $validatedData = $request->validate([
-            'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_path' => 'image|mimes:jpeg,png,jpg,gif,webp,avif|max:2048',
         ]);
 
         if ($request->hasFile('image_path')) {
-            $imagePath = $request->file('image_path')->store('Home_images', 'public');
+            $imageFile = $request->file('image_path');
+            $filename = uniqid() . '.webp';
+            $imagePath = 'Home_images/' . $filename;
+
+            // Load the image
+            $img = imagecreatefromstring(file_get_contents($imageFile));
+
+            // Save as WebP
+            $webpPath = storage_path('app/public/' . $imagePath);
+            imagewebp($img, $webpPath, 80); // 80 is the quality (0-100)
+
+            // Free up memory
+            imagedestroy($img);
+
             $validatedData['image_path'] = $imagePath;
         }
+
 
         $slideshow = Slideshow::create($validatedData);
         return redirect()->route('admin.beranda')->with('success', 'Outlook created successfully');
@@ -103,13 +116,16 @@ class HomeController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        if ($request->hasFile('image')) {
-            if ($slideshow->image_path) {
-                \Illuminate\Support\Facades\Storage::disk('public')->delete($slideshow->image_path);
-            }
+        if ($request->hasFile('image_path')) {
+            $imageFile = $request->file('image_path');
+            $filename = uniqid() . '.webp';
+            $imagePath = 'Home_images/' . $filename;
+            $img = imagecreatefromstring(file_get_contents($imageFile));
+            $webpPath = storage_path('app/public/' . $imagePath);
+            imagewebp($img, $webpPath, 80);
+            imagedestroy($img);
 
-            $imagePath = $request->file('image')->store('Home_images', 'public');
-            $slideshow->image_path = $imagePath;
+            $validatedData['image_path'] = $imagePath;
         }
 
         $slideshow->save();
@@ -127,13 +143,22 @@ class HomeController extends Controller
             'updated_at' => now(),
         ]);
 
-        if ($request->hasFile('banner')) {
-            if ($banner->banner) {
-                \Illuminate\Support\Facades\Storage::disk('public')->delete($banner->banner);
-            }
+        if ($request->hasFile('image_path')) {
+            $imageFile = $request->file('image_path');
+            $filename = uniqid() . '.webp';
+            $imagePath = 'Home_images/' . $filename;
 
-            $imagePath = $request->file('banner')->store('Home_images', 'public');
-            $validatedData['banner'] = $imagePath;
+            // Load the image
+            $img = imagecreatefromstring(file_get_contents($imageFile));
+
+            // Save as WebP
+            $webpPath = storage_path('app/public/' . $imagePath);
+            imagewebp($img, $webpPath, 80); // 80 is the quality (0-100)
+
+            // Free up memory
+            imagedestroy($img);
+
+            $validatedData['image_path'] = $imagePath;
         }
 
         $banner->update($validatedData);
