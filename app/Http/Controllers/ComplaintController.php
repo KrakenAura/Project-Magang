@@ -36,28 +36,23 @@ class ComplaintController extends Controller
     }
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nomor_pengaduan' => 'required',
-            'nama' => 'required',
-            'nomor_telepon' => 'required',
-            'email' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'deskripsi' => 'required',
-            'status' => 'required',
-        ]);
-
-        $validatedData['tanggal'] = now();
-
-        // Upload image
-        if ($request->hasFile('image')) {
+        try {
+            $validatedData = $request->validate([
+                'nomor_pengaduan' => 'required',
+                'nama' => 'required',
+                'nomor_telepon' => 'required',
+                'email' => 'required',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'deskripsi' => 'required',
+                'status' => 'required',
+            ]);
+            $validatedData['tanggal'] = now();
             $imagePath = $request->file('image')->store('WargaBicara_images', 'public');
             $validatedData['image'] = $imagePath;
             $complaint = Complaint::create($validatedData);
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to create complaint');
         }
-
-        $complaint = Complaint::create($validatedData);
         return redirect()->route('complaint.landing')->with('success', 'Complaint created successfully');
     }
     public function update(Request $request, $id)
